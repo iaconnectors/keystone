@@ -6,7 +6,7 @@ from typing import List, Optional, Dict
 class GenerativeOperatorsSuite:
     """
     Representa a '4.0_Creative_Operators_and_Engines'.
-    (Melhoria v26.0: Validação robusta centralizada e desacoplamento da UI).
+    (v27.0: Utiliza o KnowledgeBroker otimizado com Busca Fuzzy para validação resiliente).
     """
     def __init__(self, core_system: KeystoneCHROMA):
         self.system = core_system
@@ -35,23 +35,33 @@ class GenerativeOperatorsSuite:
 
     # ========================================================================
     #   OPERADORES TÉCNICOS
-    #   Definem parâmetros de execução com validação robusta.
     # ========================================================================
 
     def set_camera_package(self, pso: ProjectStateObject, camera: str, lens: str, **kwargs) -> bool:
-        """Define o pacote de câmara e lente, validando rigorosamente contra a KB."""
+        """Define o pacote de câmara e lente, validando (com Fuzzy Match) contra a KB."""
         
-        # Validação (Refatorada v26.0) - Usa o KnowledgeBroker melhorado.
-        path_cameras = "10.0_Technical_Execution_Ontology.10.1_Digital_Cinema_Cameras"
+        # Caminhos atualizados para a KB v27.0 (onde a estrutura foi ligeiramente ajustada)
+        path_cameras = "10.0_Technical_Execution_Ontology.10.1_Cameras"
         path_lenses = "10.0_Technical_Execution_Ontology.10.2_Lenses_and_Optics"
 
+        # (v27.0) Validação aprimorada com Fuzzy Match como fallback (Cutoff 0.7 para alta confiança)
         if not self.broker.validate_entry(path_cameras, camera):
-            print(f"❌ ERRO: Câmara '{camera}' inválida ou não encontrada na Ontologia Técnica.")
-            return False
+            closest_camera = self.broker.find_closest_match(path_cameras, camera, cutoff=0.7)
+            if closest_camera:
+                print(f"⚠️ AVISO: Câmara exata '{camera}' não encontrada. A utilizar correspondência mais próxima: '{closest_camera}'.")
+                camera = closest_camera
+            else:
+                print(f"❌ ERRO: Câmara '{camera}' inválida e nenhuma correspondência próxima encontrada.")
+                return False
             
         if not self.broker.validate_entry(path_lenses, lens):
-            print(f"❌ ERRO: Lente '{lens}' inválida ou não encontrada na Ontologia Técnica.")
-            return False
+            closest_lens = self.broker.find_closest_match(path_lenses, lens, cutoff=0.7)
+            if closest_lens:
+                print(f"⚠️ AVISO: Lente exata '{lens}' não encontrada. A utilizar correspondência mais próxima: '{closest_lens}'.")
+                lens = closest_lens
+            else:
+                print(f"❌ ERRO: Lente '{lens}' inválida e nenhuma correspondência próxima encontrada.")
+                return False
        
         # Aplicação ao PSO
         pso.camera_package["camera"] = camera
@@ -65,15 +75,20 @@ class GenerativeOperatorsSuite:
         return True
 
     def build_lighting_setup(self, pso: ProjectStateObject, style: str, key_light: str, modifiers: Optional[List[str]] = None, **kwargs) -> bool:
-        """Constrói um setup de iluminação detalhado, validando o equipamento."""
+        """Constrói um setup de iluminação detalhado."""
         
-        # Validação (Refatorada v26.0)
         path_lights = "10.0_Technical_Execution_Ontology.10.3_Professional_Lighting_Systems"
         path_modifiers = "10.0_Technical_Execution_Ontology.10.3_Professional_Lighting_Systems.Modifiers"
         
+        # (v27.0) Validação aprimorada com Fuzzy Match, mas permitindo termos genéricos.
         if not self.broker.validate_entry(path_lights, key_light):
-            print(f"❌ ERRO: Luz principal '{key_light}' inválida ou não encontrada na Ontologia Técnica.")
-            return False
+            closest_light = self.broker.find_closest_match(path_lights, key_light, cutoff=0.7)
+            if closest_light:
+                 print(f"⚠️ AVISO: Luz exata '{key_light}' não encontrada. A utilizar correspondência mais próxima: '{closest_light}'.")
+                 key_light = closest_light
+            else:
+                # Permitir luzes não listadas (e.g., "Luz Solar") mas emitir aviso
+                print(f"⚠️ AVISO: Luz principal '{key_light}' não encontrada na Ontologia Técnica. A prosseguir sem validação estrita.")
 
         valid_modifiers = []
         if modifiers:
@@ -81,7 +96,13 @@ class GenerativeOperatorsSuite:
                 if self.broker.validate_entry(path_modifiers, mod):
                     valid_modifiers.append(mod)
                 else:
-                    print(f"⚠️ AVISO: Modificador '{mod}' não encontrado. A ignorar este modificador.")
+                    # Tentativa de fuzzy match para modificadores
+                    closest_mod = self.broker.find_closest_match(path_modifiers, mod, cutoff=0.7)
+                    if closest_mod:
+                        valid_modifiers.append(closest_mod)
+                        print(f"⚠️ AVISO: Modificador '{mod}' não encontrado. Usando: '{closest_mod}'.")
+                    else:
+                        print(f"⚠️ AVISO: Modificador '{mod}' não encontrado. A ignorar.")
 
         # Aplicação ao PSO
         pso.lighting_setup["style"] = style
@@ -89,44 +110,50 @@ class GenerativeOperatorsSuite:
         pso.lighting_setup["modifiers"] = valid_modifiers
         pso.reasoning_chain.append(f"Setup de Iluminação: {style}")
 
+        # (v27.0) Processamento de fenômenos (se passado via kwargs)
+        phenomena = kwargs.get("phenomena")
+        if phenomena and isinstance(phenomena, list):
+            pso.lighting_setup["phenomena"] = phenomena
+            pso.reasoning_chain.append(f"Fenômenos Ópticos: {', '.join(phenomena)}")
+
         return True
 
     def define_camera_movement(self, pso: ProjectStateObject, rig_model: str, movement: str, **kwargs) -> bool:
         """Define o movimento da câmara e o equipamento de estabilização."""
 
-        # Validação (Refatorada v26.0)
         path_support = "10.0_Technical_Execution_Ontology.10.4_Camera_Support_and_Stabilization"
 
+        # (v27.0) Validação aprimorada com Fuzzy Match como fallback
         if not self.broker.validate_entry(path_support, rig_model):
-             print(f"❌ ERRO: Equipamento '{rig_model}' inválido ou não encontrado na Ontologia.")
-             return False
+            closest_rig = self.broker.find_closest_match(path_support, rig_model, cutoff=0.7)
+            if closest_rig:
+                 print(f"⚠️ AVISO: Equipamento exato '{rig_model}' não encontrado. A utilizar correspondência mais próxima: '{closest_rig}'.")
+                 rig_model = closest_rig
+            else:
+                print(f"❌ ERRO: Equipamento '{rig_model}' inválido e nenhuma correspondência próxima encontrada.")
+                return False
        
         # Aplicação ao PSO
         pso.stabilization_rig["model"] = rig_model
         pso.stabilization_rig["movement"] = movement
         pso.reasoning_chain.append(f"Movimento: {movement} com {rig_model}")
         
-        # Inferência de Tipo (Simplificada)
-        if "DJI" in rig_model or "Gimbal" in rig_model:
-             pso.stabilization_rig["type"] = "Gimbal"
-        
         return True
 
     # ========================================================================
     #   OPERADORES DE FLUXO DE TRABALHO (WORKFLOWS)
-    #   Guiam o processo criativo. Desacoplados da UI (v26.0).
     # ========================================================================
 
     def Workflow_Art_Direction(self, pso: ProjectStateObject, inputs: Dict[str, str], **kwargs) -> bool:
         """
         Preenche um WSO. Recebe inputs como parâmetros (agnóstico de UI).
-        inputs: Dicionário contendo 'world_name', 'mood', 'stylization'.
         """
         print("\n🎨: A iniciar a criação de um Guia de Estilo para o Mundo (WSO)...")
         
         world_name = inputs.get("world_name")
         mood = inputs.get("mood")
         stylization = inputs.get("stylization")
+        architectural_style = inputs.get("architectural_style") # (v27.0)
 
         if not world_name or not mood or not stylization:
             print("❌ ERRO: Inputs incompletos para Workflow_Art_Direction.")
@@ -136,9 +163,10 @@ class GenerativeOperatorsSuite:
         wso.aesthetic_laws['mood'] = mood
         wso.aesthetic_laws['stylization_level'] = stylization
 
+        if architectural_style:
+             wso.aesthetic_laws['architectural_style'] = architectural_style
+
         pso.world_state = wso
         pso.reasoning_chain.append(f"Direção de Arte definida: '{world_name}'")
         
         return True
-
-    # Outros operadores estratégicos (e.g., Workflow_Speculative_Design) seguiriam o mesmo padrão desacoplado.

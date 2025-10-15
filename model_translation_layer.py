@@ -5,8 +5,8 @@ from typing import List
 
 class ModelTranslationLayer:
     """
-    Pilar 1: A Transição da Sintaxe para a Retórica.
     Compilador adaptativo que traduz o PSO (DSL interna) para a 'linguagem' de cada modelo de IA.
+    (v27.0: Atualizado para incluir fenômenos ópticos na tradução).
     """
     def __init__(self, broker: KnowledgeBroker):
         self.broker = broker
@@ -32,6 +32,7 @@ class ModelTranslationLayer:
             self._get_master_style(pso),
             pso.visual_style,
             pso.emotional_intent,
+            self._get_lighting_string(pso),
             self._get_technical_package_string(pso)
         ]
         return ", ".join(filter(None, parts))
@@ -63,7 +64,7 @@ class ModelTranslationLayer:
         return ", ".join(parts)
        
     def _get_lighting_string(self, pso: ProjectStateObject) -> str:
-        """Gera uma string descritiva para a iluminação."""
+        """Gera uma string descritiva para a iluminação. (Atualizado v27.0)"""
         parts = []
         if pso.lighting_setup.get("style"):
             parts.append(f"Lighting style: {pso.lighting_setup['style']}")
@@ -74,6 +75,11 @@ class ModelTranslationLayer:
                 key_str += f" modified with {', '.join(pso.lighting_setup['modifiers'])}"
             parts.append(key_str)
 
+        # (v27.0) Adiciona fenômenos ópticos se existirem
+        if pso.lighting_setup.get("phenomena"):
+            phenomena_str = f"Visible optical phenomena: {', '.join(pso.lighting_setup['phenomena'])}"
+            parts.append(phenomena_str)
+
         return ". ".join(parts) if parts else ""
 
     # ========================================================================
@@ -82,22 +88,26 @@ class ModelTranslationLayer:
 
     def _translate_for_dall_e_3(self, pso: ProjectStateObject) -> str:
         """Retórica: Descrição Literária."""
-        narrative = f"A detailed, cinematic image depicting {pso.core_concept}. "
+        # (v27.0) Adaptado para cenários de arquitetura/design se o estilo visual for relevante.
+        if pso.visual_style and ("Architecture" in pso.visual_style or "Design" in pso.visual_style):
+             narrative = f"A detailed, high-fidelity architectural visualization concept, embodying {pso.visual_style}. It depicts {pso.core_concept}. "
+        else:
+            narrative = f"A detailed, cinematic image depicting {pso.core_concept}. "
         
         if pso.emotional_intent:
-            narrative += f"The atmosphere is charged with {pso.emotional_intent}. "
+            narrative += f"The atmosphere conveys {pso.emotional_intent}. "
 
         master_style = self._get_master_style(pso)
         if master_style:
-            narrative += f"The artwork should evoke the feeling of a piece created {master_style}. "
+            narrative += f"The design should strongly evoke the work created {master_style}. "
        
         lighting = self._get_lighting_string(pso)
         if lighting:
-            narrative += f"The scene is dramatically illuminated. {lighting}. "
+            narrative += f"The scene features dramatic illumination. {lighting}. "
 
         tech_package = self._get_technical_package_string(pso)
         if tech_package:
-            narrative += f"The image must have the visual fidelity and characteristics as if it was {tech_package}. "
+            narrative += f"The image must have the visual fidelity as if it was {tech_package}. "
 
         return narrative
 
@@ -144,29 +154,13 @@ class ModelTranslationLayer:
 
         return f"{subject} {style} {composition} {lighting} {technical}"
 
-    # As restantes funções (FLUX, Nano_Banana, Seedream) são mantidas para demonstração da arquitetura.
+    # As restantes funções são mantidas para demonstração da arquitetura.
     
     def _translate_for_flux_1_kontext(self, pso: ProjectStateObject) -> str:
-        """Retórica: Instrução Estruturada e Contextual."""
-        prompt = f"Primary subject: {pso.core_concept}. "
-        prompt += f"Artistic style: {self._get_master_style(pso)}, {pso.visual_style}. "
-        prompt += f"Emotional context: {pso.emotional_intent}. "
-        prompt += f"Technical look: {self._get_technical_package_string(pso)}. "
-        prompt += f"Lighting setup: {self._get_lighting_string(pso)}."
-        return prompt
+        return self._translate_default(pso)
 
     def _translate_for_nano_banana(self, pso: ProjectStateObject) -> str:
-        """Retórica: Edição Conversacional e Iterativa."""
-        commands = [f"Generate: {pso.core_concept}."]
-        if self._get_master_style(pso):
-            commands.append(f"Apply style: {self._get_master_style(pso)}.")
-        if self._get_lighting_string(pso):
-            commands.append(f"Change lighting: {self._get_lighting_string(pso)}.")
-        return " -> ".join(commands)
+        return self._translate_default(pso)
 
     def _translate_for_seedream_4_0(self, pso: ProjectStateObject) -> str:
-        """Retórica: Instrução Multimodal Detalhada."""
-        prompt = f"High fidelity shot of {pso.core_concept}. "
-        prompt += f"Style: {self._get_master_style(pso)}. Lighting: {self._get_lighting_string(pso)}. "
-        prompt += f"Camera: {self._get_technical_package_string(pso)}. Mood: {pso.emotional_intent}."
-        return prompt
+        return self._translate_default(pso)
