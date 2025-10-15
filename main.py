@@ -1,99 +1,126 @@
 # main.py
-# Este é um teste para o GitHub
-
 
 """
-Este ficheiro demonstra como todos os componentes do Keystone-CHROMA v25.1
-se integram para orquestrar um pedido criativo do início ao fim,
-alavancando a nova e expandida Base de Conhecimento técnica.
+Demonstração da integração do Keystone-CHROMA v26.0, 
+alavancando a KB expandida e a arquitetura semântica melhorada.
 """
 
 from core_architecture import KeystoneCHROMA, ProjectStateObject
 from operators_suite import GenerativeOperatorsSuite
 from model_translation_layer import ModelTranslationLayer
+from typing import Optional
+import traceback
 
-def setup_system() -> KeystoneCHROMA:
-    """Instancia e configura o sistema Keystone-CHROMA completo."""
-    
-    # 1. Instanciar o sistema principal, que carrega a KB.
-    keystone_system = KeystoneCHROMA(kb_path="Keystone-CHROMA-KB-v25.1.json")
+def setup_system() -> Optional[KeystoneCHROMA]:
+    """Instancia e configura o sistema completo."""
+   
+    # 1. Instanciar o sistema principal (utiliza o caminho padrão da KB v26.0).
+    try:
+        # O caminho padrão é "Keystone-CHROMA-KB-v26.0.json"
+        keystone_system = KeystoneCHROMA()
+    except (FileNotFoundError, ValueError) as e:
+        print(f"\nFalha ao inicializar o sistema: {e}")
+        return None
 
-    # 2. Injetar as dependências (Operadores e MTL) na instância principal.
-    #    Isto torna o sistema mais modular e testável.
+    # 2. Injetar as dependências (Dependency Injection).
     keystone_system.operators = GenerativeOperatorsSuite(keystone_system)
     keystone_system.mtl = ModelTranslationLayer(keystone_system.broker)
-    
+   
     return keystone_system
 
 def run_advanced_creative_session(keystone_system: KeystoneCHROMA):
-    """Simula uma sessão de utilizador avançada, utilizando os novos operadores técnicos."""
+    """Simula uma sessão avançada, testando a validação robusta e o desacoplamento da UI."""
+   
+    print("\n" + "="*70)
+    print("      INICIANDO SESSÃO CRIATIVA AVANÇADA (Keystone-CHROMA v26.0)      ")
+    print("="*70)
     
-    # --- FASE 1: BRIEFING E DIÁLOGO SOCRÁTICO ---
-    print("="*60)
-    print("INICIANDO SESSÃO CRIATIVA AVANÇADA COM KEYSTONE-CHROMA v25.1")
-    print("="*60)
-    user_brief = "Criar uma cena de thriller psicológico tensa ao estilo de David Fincher, focada numa personagem num escritório mal iluminado. Quero a sensação de que foi filmada com uma câmara de cinema digital moderna e um gimbal de topo para movimentos suaves e rastejantes."
+    # --- FASE 1: BRIEFING E CONSTRUÇÃO INICIAL ---
+    user_brief = "Criar uma cena de thriller psicológico tensa ao estilo de David Fincher, focada numa personagem num escritório mal iluminado. Sensação de câmara digital moderna e movimentos suaves."
+    print(f"👤 Briefing: {user_brief}\n")
+
+    # Simulação da escolha '2' (retrato clássico/dramático) do diálogo socrático.
+    pso = keystone_system._build_pso_simulation(user_brief, '2')
     
-    # O sistema inicia o diálogo e constrói um PSO base.
-    # Para esta demonstração, vamos simular a escolha '2' (retrato clássico/dramático).
-    print(f"\n: Recebido briefing: '{user_brief}'")
-    pso = keystone_system._build_pso(user_brief, '2')
-    pso.master_references.append("David_Fincher") # Adicionar o mestre principal
-    pso.reasoning_chain.append("Adicionada referência a David Fincher")
+    if "David Fincher" not in pso.master_references:
+        pso.master_references.append("David Fincher")
+        pso.reasoning_chain.append("Adicionada referência do briefing: David Fincher")
 
     # --- FASE 2: REFINAMENTO TÉCNICO COM OPERADORES ---
-    print("\n" + "-"*60)
-    print("FASE DE REFINAMENTO TÉCNICO")
-    print("-"*60)
-    
-    # O utilizador aplica operadores para especificar o plano de produção.
-    operators = keystone_system.operators
-    
-    # 2.1 Definir o pacote de câmara
-    operators.apply_operator("set_camera_package", pso, 
-                             camera="Sony VENICE 2", 
+    print("\n" + "-"*70)
+    print("      FASE DE REFINAMENTO TÉCNICO (Validação Robusta Ativa)      ")
+    print("-"*70)
+   
+    operators: GenerativeOperatorsSuite = keystone_system.operators
+   
+    # 2.1 Teste de Validação (Item Inválido) - Deve falhar.
+    print("Teste de Validação (Falha esperada):")
+    operators.apply_operator("set_camera_package", pso,
+                             camera="Câmera Inválida XYZ", # Inválido
+                             lens="Zeiss Supreme Prime Radiance")
+
+    # 2.2 Definir o pacote de câmara (Itens Válidos da KB v26.0) - Deve ter sucesso.
+    print("\nAplicação Válida:")
+    operators.apply_operator("set_camera_package", pso,
+                             camera="Sony VENICE 2",
                              lens="Zeiss Supreme Prime Radiance")
                              
-    # 2.2 Definir o setup de iluminação
+    # 2.3 Definir o setup de iluminação
     operators.apply_operator("build_lighting_setup", pso,
-                             style="Low-key, alto contraste, sombras suaves",
+                             style="Low-key, alto contraste (Fincher-esque), tons esverdeados",
                              key_light="Aputure Nova P600c",
-                             modifiers=["softbox", "grid"])
+                             # Testando um modificador válido e um inválido
+                             modifiers=["Softbox (Large)", "Grid (40 degree)", "Modificador Inexistente"])
 
-    # 2.3 Definir o movimento da câmara
+    # 2.4 Definir o movimento da câmara
     operators.apply_operator("define_camera_movement", pso,
                              rig_model="DJI RS 4 Pro",
-                             movement="slow push-in")
+                             movement="slow, creeping push-in")
 
-    # 2.4 (Opcional) Aplicar um workflow para criar um mundo consistente
-    apply_workflow = input("\nDeseja criar um 'Mundo' consistente para este projeto? (s/n): ")
-    if apply_workflow.lower() == 's':
-        operators.apply_operator("Workflow_Art_Direction", pso)
-        if pso.world_state:
-            print(pso.world_state)
+    # 2.5 Aplicar workflow de consistência (Desacoplado da UI)
+    print(f"\nSimulando inputs para criação de 'Mundo' (WSO)...")
+    # Os inputs são passados como um dicionário, simulando uma API ou UI externa.
+    art_direction_inputs = {
+        "world_name": "Escritório Neo-Noir",
+        "mood": "Tensão e Paranoia",
+        "stylization": "Realismo Cinematográfico"
+    }
+    # O operador recebe o dicionário no parâmetro 'inputs'.
+    operators.apply_operator("Workflow_Art_Direction", pso, inputs=art_direction_inputs)
 
-    # Mostrar o PSO final e enriquecido
-    print("\n" + "-"*60)
-    print("PLANO DE EXECUÇÃO (PSO) FINALIZADO")
-    print("-"*60)
+    # Mostrar o PSO final
+    print("\n" + "-"*70)
+    print("                PLANO DE EXECUÇÃO (PSO) FINALIZADO                ")
+    print("-"*70)
     print(pso)
 
     # --- FASE 3: ORQUESTRAÇÃO MULTIMODELO ---
-    target_models =
+    target_models = [
+        "DALL-E_3",
+        "Midjourney_V6",
+        "Stable_Diffusion_3",
+        "FLUX_1_Kontext",
+        "Nano_Banana",
+        "Seedream_4_0"
+    ]
 
-    print("\n" + "="*60)
-    print("INICIANDO ORQUESTRAÇÃO PARA MÚLTIPLOS MODELOS")
-    print("="*60)
+    print("\n" + "="*70)
+    print("               INICIANDO ORQUESTRAÇÃO MULTIMODELO (MTL)               ")
+    print("="*70)
 
     for model in target_models:
         keystone_system.orchestrate(pso, model)
-        print("\n" + "-"*50 + "\n")
+        print("\n") # Espaço entre modelos
 
 if __name__ == "__main__":
     try:
         system = setup_system()
-        run_advanced_creative_session(system)
+        if system:
+            run_advanced_creative_session(system)
+        else:
+            print("\nA encerrar a aplicação devido a falha na inicialização.")
     except Exception as e:
+        # Captura exceções não tratadas
         print(f"\n--- ERRO CRÍTICO NO SISTEMA ---")
-        print(f"Ocorreu um erro inesperado: {e}")
+        traceback.print_exc()
         print("A encerrar a aplicação.")

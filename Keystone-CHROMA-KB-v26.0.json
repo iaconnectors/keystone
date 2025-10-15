@@ -1,0 +1,291 @@
+{
+  "KB_ID": "Keystone-CHROMA-KB",
+  "KB_Version": "26.0.0",
+  "Focus_Domain": "Universal Creative Orchestration (Agnostic Nexus)",
+  "Description": "Versão 26.0. Expansão massiva dos domínios de Semiótica, Linguagem Visual, Léxico de Mestres e introdução da Ontologia Narrativa (11.0). Aprofundamento técnico para produção virtual.",
+  "1.0_Ontology_and_Philosophy": {
+    "Model_Architecture": "Agnóstico de Modelo (Universal Orchestrator).",
+    "Core_Concept": "O Nexus Agnóstico Evoluído. Camada de inteligência polímata que orquestra modelos via MTL.",
+    "Philosophy": {
+      "Skill_Acquisition_Efficiency (Chollet)": "Medido pelo crescimento e generalização de competências.",
+      "Possibility_Space (Will Wright)": "O sistema expande as opções criativas.",
+      "Symbiotic_Partnership": "A IA como catalisador para a criatividade humana."
+    }
+  },
+  "2.0_Semiotics_and_Psychology_Database": {
+    "Description": "Mapeia conceitos abstratos para códigos visuais acionáveis.",
+    "2.1_Semiotic_Theory": {
+      "Description": "[NOVO v26.0] Fundamentos teóricos para a análise e geração de significado visual.",
+      "Charles_Sanders_Peirce_Triad": {
+        "Icon": "Relação de semelhança (e.g., um retrato).",
+        "Index": "Relação de conexão física ou causal (e.g., fumaça indicando fogo).",
+        "Symbol": "Relação arbitrária ou convencional (e.g., uma bandeira)."
+      },
+      "Ferdinand_de_Saussure_Dyad": {
+        "Signifier (Significante)": "A forma material do signo (a imagem).",
+        "Signified (Significado)": "O conceito mental que o significante evoca."
+      },
+      "Roland_Barthes": {
+        "Denotation": "O significado literal.",
+        "Connotation": "Os significados culturais ou pessoais associados."
+      }
+    },
+    "2.2_Jungian_Archetypal_Framework": {
+      "The_Innocent": "Segurança",
+      "The_Hero": "Maestria",
+      "The_Creator": "Inovação",
+      "The_Sage": "Compreensão",
+      "The_Ruler": "Controlo",
+      "The_Magician": "Poder"
+    },
+    "2.3_Psychology_of_Perception": {
+      "Gestalt_Psychology": {
+        "Principles": ["Proximity", "Similarity", "Closure", "Continuity", "Figure-Ground"]
+      }
+    },
+    "2.4_Concepts_and_Philosophy": {
+      "Wabi-sabi": "A beleza da imperfeição e da transitoriedade.",
+      "O_Sublime": "Sentimento de grandiosidade avassaladora.",
+      "Solarpunk": "Estética otimista de um futuro sustentável.",
+      "Afrofuturism": "Exploração da diáspora africana com tecnologia.",
+      "Liminal_Spaces": "Estética de locais de transição vazios que evocam nostalgia e inquietação.",
+      "Kenopsia": "A atmosfera desoladora de um lugar abandonado.",
+      "Mono_no_aware": "A empatia pelas coisas e a consciência da sua impermanência."
+    }
+  },
+  "3.0_Visual_Language_and_Composition": {
+    "Description": "[EXPANDIDO v26.0] Fundamentos da sintaxe visual.",
+    "3.1_Compositional_Principles": [
+      "Rule of Thirds",
+      "Golden Ratio (Fibonacci Spiral)",
+      "Symmetry",
+      "Asymmetrical Balance",
+      "Leading Lines",
+      "Framing (Frame within a frame)",
+      "Negative Space",
+      "Rhythm and Repetition",
+      "Dynamic Tension"
+    ],
+    "3.2_Perspective_and_Depth": [
+      "One-Point Perspective",
+      "Two-Point Perspective",
+      "Three-Point Perspective (Worm's-eye/Bird's-eye view)",
+      "Atmospheric Perspective (Aerial)",
+      "Shallow Depth of Field (Bokeh)",
+      "Deep Focus"
+    ],
+    "3.3_Color_Theory": {
+      "Harmonies": [
+        "Monochromatic",
+        "Analogous",
+        "Complementary",
+        "Split-Complementary",
+        "Triadic",
+        "Tetradic"
+      ],
+      "Grading_Styles": ["Teal and Orange", "Bleach Bypass", "Cross Processing", "Vintage Film Emulation"]
+    }
+  },
+  "4.0_Creative_Operators_and_Engines": {
+    "Description": "[EXPANDIDO v26.0] Motores que aplicam regras e conhecimentos específicos.",
+    "4.1_Camera_and_Lens_Engine": ["Set Focal Length (e.g. 35mm)", "Set Aperture (e.g. f/1.4)", "Simulate Bokeh", "Define Shot Type (CU, MS, WS)"],
+    "4.2_Lighting_Engine": ["Chiaroscuro", "Rembrandt Lighting", "High-Key", "Low-Key", "Three-Point Lighting", "Motivated Lighting"],
+    "4.3_Material_and_Texture_Engine": ["PBR Workflow", "Subsurface Scattering (SSS)", "Weathering and Patina"],
+    "4.4_Post_Processing_Engine": ["Color Grade LUT", "Film Grain", "Vignetting", "Chromatic Aberration", "Lens Flare"]
+  },
+  "5.0_Masters_Lexicon": {
+    "Description": "[EXPANDIDO v26.0] Nós de referência estilística e conceitual.",
+    "5.1_Cinematic_References": {
+      "Directors": [
+        "Stanley Kubrick",
+        "David Fincher",
+        "Wes Anderson",
+        "Akira Kurosawa",
+        "Andrei Tarkovsky",
+        "Christopher Nolan",
+        "Denis Villeneuve",
+        "Wong Kar-wai",
+        "Alfred Hitchcock"
+      ],
+      "Directors_of_Photography": [
+        "Roger Deakins",
+        "Emmanuel Lubezki (Chivo)",
+        "Gordon Willis",
+        "Greig Fraser",
+        "Hoyte van Hoytema",
+        "Vittorio Storaro",
+        "Darius Khondji"
+      ],
+      "Production_Designers": ["Syd Mead", "H.R. Giger", "Adam Stockhausen", "Patrice Vermette", "Ken Adam"],
+      "VFX_Companies": ["DNEG", "ILM (Industrial Light & Magic)", "Weta FX", "Framestore"]
+    },
+    "5.2_Photographic_References": {
+      "Fashion_and_Portrait": [
+        "Annie Leibovitz",
+        "Richard Avedon",
+        "Helmut Newton",
+        "Tim Walker",
+        "Peter Lindbergh",
+        "Irving Penn"
+      ],
+      "Documentary": [
+        "Henri Cartier-Bresson",
+        "Sebastião Salgado",
+        "Robert Capa",
+        "Steve McCurry",
+        "Dorothea Lange"
+      ],
+      "Conceptual_and_Fine_Art": [
+        "Cindy Sherman",
+        "Andreas Gursky",
+        "Jeff Wall",
+        "Gregory Crewdson",
+        "Hiroshi Sugimoto"
+      ]
+    },
+    "5.3_Art_and_Design_References": {
+      "Painters": [
+        "Caravaggio",
+        "Rembrandt",
+        "J.M.W. Turner",
+        "Claude Monet",
+        "Vincent van Gogh",
+        "Salvador Dalí",
+        "Edward Hopper",
+        "Mark Rothko",
+        "Francis Bacon",
+        "Zdzisław Beksiński"
+      ],
+      "Architects": [
+        "Frank Lloyd Wright",
+        "Le Corbusier",
+        "Mies van der Rohe",
+        "Zaha Hadid",
+        "Tadao Ando",
+        "Bjarke Ingels (BIG)",
+        "Oscar Niemeyer"
+      ],
+      "Designers_and_Illustrators": [
+        "Saul Bass",
+        "Paul Rand",
+        "Dieter Rams",
+        "Moebius (Jean Giraud)",
+        "Ashley Wood"
+      ],
+      "Digital_Artists": [
+        "Refik Anadol",
+        "Beeple",
+        "Ash Thorp",
+        "GMUNK"
+      ]
+    }
+  },
+  "6.0_Workflow_and_State_Management": {
+    "State_Management_Architecture": {
+      "WSO": "World_State_Object",
+      "PSO": "Project_State_Object"
+    }
+  },
+  "7.0_Model_Translation_Layer_Profiles": {
+    "Description": "O compilador retórico adaptativo.",
+    "Model_Capability_Profiles": {
+      "DALL-E_3": {
+        "Rhetoric": "Descrição Literária"
+      },
+      "Midjourney_V6": {
+        "Rhetoric": "Instrução Artística Poética"
+      },
+      "Stable_Diffusion_3": {
+        "Rhetoric": "Receita Técnica"
+      },
+      "FLUX_1_Kontext": {
+        "Rhetoric": "Instrução Estruturada e Contextual"
+      },
+      "Nano_Banana": {
+        "Rhetoric": "Edição Conversacional e Iterativa"
+      },
+      "Seedream_4_0": {
+        "Rhetoric": "Instrução Multimodal Detalhada"
+      }
+    }
+  },
+  "8.0_Interdisciplinary_Domains": {
+    "Gastronomy": "Estética culinária.",
+    "Data_Visualization": "A arte da informação visual.",
+    "Bio-Art": "Intersecção de biologia e arte."
+  },
+  "9.0_Governance_and_Metrics": {
+    "Intelligence_Metrics_Framework": {
+      "CNS": "Conceptual_Novelty_Score"
+    }
+  },
+  "10.0_Technical_Execution_Ontology": {
+    "Description": "[EXPANDIDO v26.0] Léxico técnico para produção virtual.",
+    "10.1_Digital_Cinema_Cameras": {
+      "ARRI": ["ARRI Alexa 35", "ARRI Alexa Mini LF", "ARRI Alexa 65"],
+      "RED": ["RED V-Raptor X", "RED Komodo-X", "RED Monstro 8K VV"],
+      "Sony": ["Sony VENICE 2", "Sony FX9", "Sony Burano"],
+      "Panavision": ["Panavision Millennium DXL2"],
+      "Blackmagic": ["Blackmagic URSA Mini Pro 12K"],
+      "Film_Formats": ["Super 16mm (Kodak Vision3)", "35mm Film (Kodak Vision3)", "IMAX 70mm Film"]
+    },
+    "10.2_Lenses_and_Optics": {
+      "Anamorphic": ["Panavision G-Series", "Cooke Anamorphic/i", "ARRI Master Anamorphic", "Atlas Orion"],
+      "Spherical_Primes": ["Zeiss Supreme Prime Radiance", "Cooke S8/i", "ARRI Signature Prime", "Leica Summilux-C"],
+      "Zoom": ["Angenieux Optimo Ultra 12x", "Fujinon Premista"],
+      "Vintage": ["Canon K35", "Super Baltar", "Lomo Anamorphic (Vintage)"]
+    },
+    "10.3_Professional_Lighting_Systems": {
+      "ARRI": ["ARRI SkyPanel S60-C", "ARRI Orbiter", "ARRI M-Series HMI"],
+      "Aputure": ["Aputure Nova P600c", "Aputure LS 1200d Pro", "Aputure Electro Storm"],
+      "Astera": ["Astera Titan Tube"],
+      "Modifiers": [
+        "Softbox (Large)",
+        "Softbox (Small)",
+        "Octabank",
+        "Grid (40 degree)",
+        "Grid (60 degree)",
+        "Fresnel Lens",
+        "Reflector (Silver/Gold)",
+        "Diffusion (Silk)",
+        "Flag (Negative Fill)"
+      ]
+    },
+    "10.4_Camera_Support_and_Stabilization": {
+      "Gimbals": ["DJI Ronin 2", "DJI RS 4 Pro", "Freefly MōVI Pro"],
+      "Steadicam": ["Steadicam M-2", "ARRI TRINITY 2"],
+      "Tripods": ["OConnor 2575D (Fluid Head)", "Sachtler Video 18"],
+      "Dollies": ["Chapman/Leonard Hustler IV", "Dana Dolly"],
+      "Cranes": ["Technocrane SuperTechno 50"]
+    },
+    "10.5_Post_Production_Software_Suites": {
+      "Editing_NLE": ["Avid Media Composer", "Adobe Premiere Pro", "DaVinci Resolve"],
+      "VFX": ["Nuke (Foundry)", "Houdini (SideFX)", "Adobe After Effects"],
+      "Color_Grading": ["DaVinci Resolve Studio", "Baselight (Filmlight)"],
+      "3D": ["Maya", "Blender", "Cinema 4D", "ZBrush", "Unreal Engine"]
+    },
+    "10.6_Digital_Formats_and_Codecs": {
+      "RAW": ["ARRIRAW", "ProRes RAW", "BRAW (Blackmagic RAW)", "R3D (REDCODE RAW)"],
+      "Intermediate": ["Apple ProRes 4444 XQ", "Apple ProRes 4444", "Apple ProRes 422 HQ", "DNxHR"]
+    }
+  },
+  "11.0_Narrative_Structure_and_Storytelling": {
+    "Description": "[NOVO v26.0] Ontologia focada em estruturas narrativas e técnicas de storytelling.",
+    "11.1_Classic_Structures": {
+      "Three-Act_Structure": "Setup, Confrontation, Resolution.",
+      "The_Hero's_Journey (Monomyth)": "Joseph Campbell's 12 stages (Departure, Initiation, Return).",
+      "Save_the_Cat (Blake Snyder)": "Estrutura de 15 batidas (beats)."
+    },
+    "11.2_Alternative_Structures": {
+      "Kishōtenketsu": "Estrutura japonesa de quatro atos (Intro, Development, Twist, Conclusion). Foco no contraste.",
+      "Non-Linear_Narrative": "Eventos fora de ordem cronológica.",
+      "Episodic/Anthology": "Histórias independentes ligadas por tema."
+    },
+    "11.3_Storytelling_Techniques": {
+      "Show,_Don't_Tell": "Comunicar através de ação e visuais.",
+      "Foreshadowing": "Insinuar eventos futuros.",
+      "Chekhov's_Gun": "Todo elemento deve ser necessário.",
+      "In_Medias_Res": "Começar a história no meio da ação."
+    }
+  }
+}
