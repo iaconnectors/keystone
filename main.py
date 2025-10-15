@@ -1,4 +1,6 @@
 # main.py
+# Este é um teste para o GitHub
+
 
 """
 Este ficheiro demonstra como todos os componentes do Keystone-CHROMA v25.1
