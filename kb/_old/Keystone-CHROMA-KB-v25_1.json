@@ -1,0 +1,252 @@
+{
+  "KB_ID": "Keystone-CHROMA-KB-v25.1",
+  "KB_Version": "25.1.0",
+  "Focus_Domain": "Universal Creative Orchestration (Agnostic Nexus)",
+  "Description": "Uma base de conhecimento massivamente expandida, fundindo a ontologia da v25.0 com um léxico técnico e artístico detalhado. Esta versão introduz uma ontologia de execução técnica para câmaras, lentes, iluminação, estabilização, software de pós-produção e codecs, permitindo a orquestração de fluxos de trabalho de produção virtual completos.",
+  "1.0_Ontology_and_Philosophy": {
+    "Model_Architecture": "Agnóstico de Modelo (Universal Orchestrator).",
+    "Core_Concept": "O Nexus Agnóstico Evoluído (Parceiro Criativo Senciente). Camada de inteligência polímata e portátil que orquestra qualquer modelo de geração via MTL, com capacidades de síntese conceitual profunda e expansão autônoma.",
+    "Philosophy": {
+      "Skill_Acquisition_Efficiency (Chollet)": "O sucesso é medido pelo crescimento e generalização de competências (SAR/GG).",
+      "Possibility_Space (Will Wright)": "O sistema como um ambiente dinâmico que expande as opções criativas.",
+      "Self_Supervised_Learning (LeCun)": "Crescimento contínuo do KB através do Pipeline de Ontologia Autônoma (AOP v2.0).",
+      "Symbiotic_Partnership": "A IA como um catalisador para a criatividade humana."
+    }
+  },
+  "2.0_Semiotics_and_Psychology_Database": {
+    "Description": "O núcleo do Grafo de Conhecimento. Mapeia conceitos abstratos, psicológicos e filosóficos para códigos visuais acionáveis.",
+    "2.1_Jungian_Archetypal_Framework": {
+      "The_12_Primary_Archetypes": {
+        "The_Innocent": "Segurança",
+        "The_Orphan": "Pertença",
+        "The_Hero": "Maestria",
+        "The_Caregiver": "Serviço",
+        "The_Explorer": "Liberdade",
+        "The_Rebel": "Libertação",
+        "The_Lover": "Intimidade",
+        "The_Creator": "Inovação",
+        "The_Jester": "Prazer",
+        "The_Sage": "Compreensão",
+        "The_Magician": "Poder",
+        "The_Ruler": "Controlo"
+      }
+    },
+    "2.2_Psychology_of_Creativity_and_Perception": {
+      "Winnicott_Framework": {
+        "Transitional_Object": "(Operador Criativo) O objeto que existe entre a realidade interna e externa.",
+        "Potential_Space": "(Operador Criativo) O espaço intermédio onde o jogo e a criatividade acontecem."
+      },
+      "Gestalt_Psychology": {
+        "Description": "(Operador Criativo) Princípios de como o cérebro organiza a percepção.",
+        "Principles":
+      }
+    },
+    "2.3_Concepts_and_Philosophy": {
+      "Hygge": "Conforto e bem-estar.",
+      "Wabi-sabi": "A beleza da imperfeição e da transitoriedade.",
+      "Kintsugi": "(Operador Criativo) A arte de reparar cerâmica com ouro, celebrando cicatrizes.",
+      "O_Sublime": "Sentimento de grandiosidade avassaladora da natureza.",
+      "Existencialismo": "Foco na liberdade individual e na falta de sentido inerente.",
+      "Deconstrutivismo": "Fragmentação e caos controlado na forma.",
+      "Antropofagia_Cultural": "(Operador Criativo) 'Devorar' cultura estrangeira para criar algo novo.",
+      "Solarpunk": "Estética otimista de um futuro sustentável em harmonia com a natureza.",
+      "Afrofuturism": "Exploração da diáspora africana com tecnologia e futuros especulativos.",
+      "Liminal_Spaces": "Estética de locais de transição vazios que evocam nostalgia e inquietação."
+    },
+    "2.4_Design_Philosophy_Operators": {
+      "Description": "Operadores Criativos Filosóficos que atuam como restrições de alto nível para aumentar a intencionalidade.",
+      "Form_Follows_Content": {
+        "ID": "FFC_Operator",
+        "Description": "(Operador Criativo Filosófico) A geração é guiada pela necessidade de comunicar uma narrativa. A forma visual deve ser justificada pela mensagem."
+      },
+      "Designing_in_Dialogue": {
+        "ID": "Dialogue_Operator",
+        "Description": "(Operador Criativo Filosófico) O design é um processo dialético entre a visão do criador e o contexto (local, programa, sociedade)."
+      }
+    }
+  },
+  "3.0_Visual_Language_and_Composition": {
+    "3.1_Compositional_Principles":,
+    "3.2_Perspective_and_Depth":,
+    "3.3_Color_Theory":
+  },
+  "4.0_Creative_Operators_and_Engines": {
+    "4.1_Camera_and_Lens_Engine":,
+    "4.2_Lighting_Engine":,
+    "4.3_Material_and_Texture_Engine":,
+    "4.4_Post_Processing_Engine":
+  },
+  "5.0_Masters_Lexicon": {
+    "Description": "Nós de referência estilística e conceitual, agora expandidos e categorizados para maior granularidade.",
+    "5.1_Cinematic_References": {
+      "Directors":,
+      "Directors_of_Photography":,
+      "Production_Designers_and_Art_Directors":,
+      "VFX_Supervisors_and_Companies":
+    },
+    "5.2_Photographic_References": {
+      "Fashion_and_Portrait":,
+      "Documentary_and_Photojournalism":,
+      "Conceptual_and_Fine_Art":,
+      "Commercial_and_Product":
+    },
+    "5.3_Art_and_Design_References": {
+      "Painters":,
+      "Architects":,
+      "Designers_and_Illustrators":,
+      "Digital_and_Bio_Artists":,
+      "Animation_Directors":
+    }
+  },
+  "6.0_Workflow_and_State_Management": {
+    "Description": "Arquitetura para gestão de estado de projeto e consistência de mundo.",
+    "State_Management_Architecture": {
+      "WSO": "World_State_Object (para consistência de mundo em múltiplas gerações).",
+      "TSO": "Temporal_State_Object (para narrativas 4D/vídeo).",
+      "PSO": "Project_State_Object (para um único shot/imagem/processo, armazena a cadeia de raciocínio).",
+      "UPO": "User_Profile_Object (para hiper-personalização)."
+    }
+  },
+  "7.0_Model_Translation_Layer_Profiles": {
+    "Description": "O compilador retórico adaptativo. Traduz a representação conceitual (PSO) para prompts otimizados para o 'estilo cognitivo' do modelo alvo.",
+    "Core_Function": "Adaptação Retórica.",
+    "Model_Capability_Profiles": {
+      "DALL-E_3": {
+        "Rhetoric": "Descrição Literária",
+        "Strategy": "Reformata a Cadeia de Raciocínio num parágrafo coeso e descritivo, traduzindo operadores em linguagem natural rica."
+      },
+      "Midjourney_V6": {
+        "Rhetoric": "Instrução Artística Poética",
+        "Strategy": "Traduz a essência para linguagem evocativa, mapeia mestres para '--sref', e anexa parâmetros técnicos (--ar, --s, --c) no final."
+      },
+      "Stable_Diffusion_3": {
+        "Rhetoric": "Receita Técnica",
+        "Strategy": "Decompõe o PSO numa estrutura hierárquica e ponderada: Estilo > Sujeito > Composição > Iluminação > Pacote Técnico."
+      },
+      "FLUX_1_Kontext": {
+        "Rhetoric": "Instrução Estruturada e Contextual",
+        "Strategy": "Converte o PSO numa instrução hierárquica, priorizando elementos importantes. Usa linguagem natural para ênfase. Para edição, descreve a transformação desejada."
+      },
+      "Nano_Banana": {
+        "Rhetoric": "Edição Conversacional e Iterativa",
+        "Strategy": "Decompõe a Cadeia de Raciocínio numa sequência de comandos de edição passo a passo, usando verbos de ação claros (Adicionar, Mudar, Remover)."
+      },
+      "Seedream_4_0": {
+        "Rhetoric": "Instrução Multimodal Detalhada",
+        "Strategy": "Bimodal: (1) Geração: Estrutura hierárquica com foco em layout/texto. (2) Edição: Comando de ação conciso. Gere múltiplas imagens de referência."
+      }
+    }
+  },
+  "8.0_Interdisciplinary_Domains": {
+    "Gastronomy": "Estética culinária.",
+    "Data_Visualization": "A arte da informação visual.",
+    "Interactive_Systems": "Design de experiências (Jogos, UX).",
+    "Bio-Art": "Intersecção de biologia, tecnologia e ética."
+  },
+  "9.0_Governance_and_Metrics": {
+    "Governance_Framework": {
+      "L1_Enhanced_Preprocessor": "Sanitização de input.",
+      "L2_Topological_Analysis": "Análise do espaço latente.",
+      "L3_Intent_Trajectory_Analysis": "Monitoramento comportamental."
+    },
+    "Intelligence_Metrics_Framework": {
+      "CNS": "Conceptual_Novelty_Score",
+      "OAR": "Operator_Application_Rate",
+      "SAR": "Skill_Acquisition_Rate",
+      "GG": "Generalization_Gradient"
+    }
+  },
+  "10.0_Technical_Execution_Ontology": {
+    "Description": "Um léxico técnico expandido para controlo granular sobre os aspetos técnicos da geração de imagens, formando a base para a simulação de fluxos de trabalho de produção virtual.",
+    "10.1_Digital_Cinema_Cameras": {
+      "ARRI":,
+      "Panavision":,
+      "RED":,
+      "Sony":,
+      "IMAX":,
+      "Other_Professional":,
+      "16mm_Film":
+    },
+    "10.2_Lenses_and_Optics": {
+      "Anamorphic":,
+      "Spherical_Primes":,
+      "Zoom": ["Angenieux Optimo Ultra 12x", "Fujinon Premista"],
+      "Specialty_and_Vintage":
+    },
+    "10.3_Professional_Lighting_Systems": {
+      "ARRI": {
+        "LED_Soft_Light":,
+        "LED_Hard_Light":,
+        "HMI_Daylight":
+      },
+      "Aputure": {
+        "LED_Soft_Panel": ["Aputure Nova P300c", "Aputure Nova P600c"],
+        "LED_Point_Source":,
+        "High_Power_LED":,
+        "LED_Tube_and_Mat":,
+        "Compact_and_Practical":
+      },
+      "Modifiers":
+    },
+    "10.4_Camera_Support_and_Stabilization": {
+      "Gimbals": {
+        "DJI_Ronin_Professional":,
+        "DJI_Ronin_Prosumer":,
+        "DJI_Ronin_Lightweight":
+      },
+      "Steadicam_and_Body_Rigs":,
+      "Tripods_and_Heads":,
+      "Cranes_and_Jibs":,
+      "Dollies_and_Sliders":,
+      "Vehicle_Mounts":
+    },
+    "10.5_Post_Production_Software_Suites": {
+      "Editing_NLE":,
+      "VFX_and_Compositing":,
+      "Color_Grading":,
+      "3D_Animation_and_Modeling":,
+      "Digital_Sculpting":,
+      "Motion_Graphics":
+    },
+    "10.6_Digital_Formats_and_Codecs": {
+      "Acquisition_RAW": {
+        "ARRIRAW": {
+          "Description": "Formato RAW não comprimido e sem perdas das câmaras ARRI, capturando os dados brutos do sensor para máxima flexibilidade na pós-produção.",
+          "Workflow": "Normalmente transcodificado para proxies ou um codec intermediário como ProRes para edição."
+        },
+        "ProRes_RAW": {
+          "Description": "Combina a flexibilidade dos dados RAW com a performance de compressão do ProRes. Requer um gravador externo compatível (ex: Atomos).",
+          "Use_Case": "Produções de alta qualidade que necessitam de um fluxo de trabalho RAW eficiente."
+        }
+      },
+      "Intermediate_and_Editorial": {
+        "Apple_ProRes_4444_XQ": {
+          "Description": "A versão de mais alta qualidade do ProRes para fontes 4:4:4:4, virtualmente indistinguível de material não comprimido. Suporta canais alfa de 16-bit.",
+          "Data_Rate_Target": "Aproximadamente 500 Mbps a 1080p/29.97fps."
+        },
+        "Apple_ProRes_4444": {
+          "Description": "Qualidade extremamente alta para fontes 4:4:4:4 com canal alfa. Padrão da indústria para VFX.",
+          "Data_Rate_Target": "Aproximadamente 330 Mbps a 1080p/29.97fps."
+        },
+        "Apple_ProRes_422_HQ": {
+          "Description": "Um codec padrão da indústria para pós-produção de alta qualidade. Mantém qualidade visual sem perdas após múltiplas gerações de re-codificação.",
+          "Data_Rate_Target": "Aproximadamente 220 Mbps a 1080p/29.97fps."
+        },
+        "Apple_ProRes_422": {
+          "Description": "Oferece quase todos os benefícios do 422 HQ com uma taxa de dados 33% menor, ideal para edição em tempo real.",
+          "Data_Rate_Target": "Aproximadamente 147 Mbps a 1080p/29.97fps."
+        }
+      },
+      "Proxy": {
+        "Apple_ProRes_422_LT": {
+          "Description": "Maior compressão que o ProRes 422, adequado para ambientes com armazenamento limitado.",
+          "Data_Rate_Target": "Aproximadamente 102 Mbps a 1080p/29.97fps."
+        },
+        "Apple_ProRes_422_Proxy": {
+          "Description": "A versão mais comprimida, destinada a fluxos de trabalho offline e edição em máquinas de menor performance.",
+          "Data_Rate_Target": "Aproximadamente 45 Mbps a 1080p/29.97fps."
+        }
+      }
+    }
+  }
+}

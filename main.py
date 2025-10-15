@@ -1,107 +1,96 @@
 # main.py
 
 """
-Demonstração da integração do Keystone-CHROMA v27.0,
-alavancando a KB enciclopédica e o KnowledgeBroker otimizado (Cache + Fuzzy Search).
+Demonstração do fluxo de trabalho do CHROMA Nexus v1.0.
 """
 
-from core_architecture import KeystoneCHROMA, ProjectStateObject
-from operators_suite import GenerativeOperatorsSuite
-from model_translation_layer import ModelTranslationLayer 
-from typing import Optional
+from nexus.orchestrator import ChromaNexusOrchestrator
+from nexus.core.models import (
+    AbstractCreativeObject, ACOEmotion, ACOSubject, 
+    ACOEnvironment, ACOCompositionalFlow, ACOStyleConstraints, ACOConstraints, ACOIntent, ACOElements
+)
 import traceback
 
-def setup_system() -> Optional[KeystoneCHROMA]:
-    """Instancia e configura o sistema completo."""
-   
+def create_aco_pilar_i_composition() -> AbstractCreativeObject:
+    """
+    Teste do Pilar I: Composição Abstrata (spiral_inward).
+    """
+    aco = AbstractCreativeObject()
+    aco.intent = ACOIntent(
+        narrative_moment="The moment of singularity, where consciousness merges with the digital realm.",
+        # Teste chave para a IMTL: Fluxo abstrato
+        compositional_flow=ACOCompositionalFlow(
+            path="spiral_inward",
+            focal_point="center"
+        )
+    )
+    aco.elements = ACOElements(
+        subjects=[ACOSubject(id="figure", description="A human silhouette dissolving into light and data.")],
+        environment=ACOEnvironment(description="An abstract digital landscape.", atmosphere="ethereal")
+    )
+    return aco
+
+def create_aco_pilar_ii_process() -> AbstractCreativeObject:
+    """
+    Teste do Pilar II.2: Processos Físicos (Daguerreotype).
+    """
+    aco = AbstractCreativeObject()
+    aco.intent = ACOIntent(
+        narrative_moment="A portrait frozen in time."
+    )
+    aco.elements = ACOElements(
+        subjects=[ACOSubject(id="sailor", description="A Victorian-era sailor with a weathered face.")]
+    )
+    # Teste chave: Restrição de processo histórico
+    aco.constraints.style_constraints = ACOStyleConstraints(
+        historical_process="Daguerreotype"
+    )
+    return aco
+
+def create_aco_pilar_ii_cognitive() -> AbstractCreativeObject:
+    """
+    Teste do Pilar II.3: Operadores Cognitivos (Neuroestética).
+    """
+    aco = AbstractCreativeObject()
+    aco.intent = ACOIntent(
+        narrative_moment="A grand, imposing government building designed for stability."
+    )
+    aco.elements = ACOElements(
+        environment=ACOEnvironment(description="A modern plaza at midday.", atmosphere="formal")
+    )
+    # Os operadores serão aplicados pelo Orchestrator no pipeline cognitivo.
+    return aco
+
+
+def main():
     try:
-        # O caminho padrão é "Keystone-CHROMA-KB-v27.0.json"
-        keystone_system = KeystoneCHROMA()
-    except (FileNotFoundError, ValueError) as e:
-        print(f"\nFalha ao inicializar o sistema: {e}")
-        return None
+        # 1. Inicializar o Orquestrador
+        # Certifique-se que a KB está em 'kb/nexus_kb_v1.0.json'
+        nexus = ChromaNexusOrchestrator(kb_path="kb/nexus_kb_v1.0.json")
 
-    # Injetar as dependências (Dependency Injection).
-    keystone_system.operators = GenerativeOperatorsSuite(keystone_system)
-    keystone_system.mtl = ModelTranslationLayer(keystone_system.broker)
-   
-    return keystone_system
+        # 2. Definir modelos alvo
+        target_models = ["DALL-E_3", "Midjourney_V6", "Stable_Diffusion_3"]
 
-def run_advanced_creative_session(keystone_system: KeystoneCHROMA):
-    """Simula uma sessão avançada, demonstrando o uso da nova KB e a busca fuzzy nos operadores."""
-   
-    print("\n" + "="*70)
-    print("      INICIANDO SESSÃO CRIATIVA AVANÇADA (Keystone-CHROMA v27.0)      ")
-    print("="*70)
-    
-    # --- FASE 1: BRIEFING E CONSTRUÇÃO INICIAL (Foco em Arquitetura/Design) ---
-    
-    # Simulação da escolha '2' (Arquitetura Especulativa).
-    pso = keystone_system._build_pso_simulation("Briefing Inicial", '2')
+        # 3. Executar Demonstrações
 
-    # --- FASE 2: REFINAMENTO TÉCNICO (Testando o Fuzzy Match e Novos Domínios) ---
-    print("\n" + "-"*70)
-    print("      FASE DE REFINAMENTO TÉCNICO (Teste de Fuzzy Match Ativo)      ")
-    print("-"*70)
-   
-    operators: GenerativeOperatorsSuite = keystone_system.operators
-   
-    # 2.1 Definir a "câmara" (perspetiva arquitetônica)
-    # Teste Fuzzy: Usando nomes ligeiramente incorretos/simplificados que devem ser corrigidos pelo Broker.
-    print("Teste Fuzzy (Câmara e Lente):")
-    operators.apply_operator("set_camera_package", pso,
-                             camera="Canon R5 Architectural", # Deve corresponder a "Canon EOS R5 (High-Res Architectural)"
-                             lens="Canon TS-E 17mm Tilt") # Deve corresponder a "Canon TS-E 17mm f/4L (Tilt-Shift)"
-                             
-    # 2.2 Definir a iluminação e Fenômenos Ópticos (v27.0)
-    print("\nTeste Fuzzy e Novos Campos (Iluminação/Física):")
-    operators.apply_operator("build_lighting_setup", pso,
-                             style="Iluminação Natural Otimizada com Destaque (Accent Lighting) LED",
-                             key_light="Luz Solar Direta (Filtrada)", # Termo genérico
-                             modifiers=["Octabank Large", "Refletor Silver"], # Nomes ligeiramente diferentes
-                             # (v27.0) Passando fenômenos ópticos via kwargs
-                             phenomena=["Caustics (from nearby water feature)", "Volumetric Lighting (God rays)"])
+        print("\n\n=== DEMO 1: Composição Abstrata (Pilar I) ===")
+        aco1 = create_aco_pilar_i_composition()
+        nexus.run_workflow(aco1, target_models)
 
-    # 2.3 Definir o Workflow de Consistência
-    art_direction_inputs = {
-        "world_name": "Expo Futuro Sustentável 2050",
-        "mood": "Inspirador e Sereno",
-        "stylization": "Futurismo Orgânico",
-        "architectural_style": "Parametric Solarpunk" # (v27.0)
-    }
-    operators.apply_operator("Workflow_Art_Direction", pso, inputs=art_direction_inputs)
+        print("\n\n=== DEMO 2: Processos Físicos (Pilar II.2) ===")
+        aco2 = create_aco_pilar_ii_process()
+        nexus.run_workflow(aco2, target_models)
 
-    # Mostrar o PSO final
-    print("\n" + "-"*70)
-    print("                PLANO DE EXECUÇÃO (PSO) FINALIZADO                ")
-    print("-"*70)
-    print(pso)
+        print("\n\n=== DEMO 3: Operadores Cognitivos (Pilar II.3) ===")
+        aco3 = create_aco_pilar_ii_cognitive()
+        # Aplicar Simetria e Estrutura Fractal durante a compilação
+        cognitive_pipeline = ["Operator_ImposeSymmetry", "Operator_ApplyFractalStructure"]
+        nexus.run_workflow(aco3, target_models, cognitive_pipeline=cognitive_pipeline)
 
-    # --- FASE 3: ORQUESTRAÇÃO MULTIMODELO ---
-    target_models = [
-        "DALL-E_3",
-        "Midjourney_V6",
-        "Stable_Diffusion_3"
-    ]
 
-    print("\n" + "="*70)
-    print("               INICIANDO ORQUESTRAÇÃO MULTIMODELO (MTL)               ")
-    print("="*70)
-
-    for model in target_models:
-        keystone_system.orchestrate(pso, model)
-        print("\n")
+    except Exception as e:
+        print(f"\n--- ERRO CRÍTICO NO SISTEMA NEXUS ---")
+        traceback.print_exc()
 
 if __name__ == "__main__":
-    try:
-        system = setup_system()
-        if system:
-            run_advanced_creative_session(system)
-        else:
-            print("\nA encerrar a aplicação devido a falha na inicialização.")
-    except Exception as e:
-        # Captura exceções não tratadas
-        print(f"\n--- ERRO CRÍTICO NO SISTEMA ---")
-        traceback.print_exc()
-        print(f"Erro: {e}")
-        print("A encerrar a aplicação.")
+    main()
