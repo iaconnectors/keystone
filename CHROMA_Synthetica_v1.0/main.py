@@ -1,5 +1,3 @@
-# main.py
-
 """
 Demonstração do CHROMA Synthetica v1.1 (Hibridismo, Antropofagia, Contradição).
 """
@@ -26,7 +24,7 @@ def create_prototype_a_kinnari_solarpunk() -> AbstractCreativeObject:
     )
     # (v1.1) Definimos o sujeito para que o operador de Hibridismo possa atuar sobre ele.
     aco.elements = ACOElements(
-        subjects=
+        subjects=[ACOSubject(id="Kinnari", description="Human-bird hybrid diplomat.")]
     )
     return aco
 
@@ -38,7 +36,7 @@ def create_prototype_c_centaur_chiaroscuro() -> AbstractCreativeObject:
     )
     # (v1.1) Definimos o sujeito.
     aco.elements = ACOElements(
-        subjects=
+        subjects=[ACOSubject(id="CentaurAgent", description="Centaur security agent.")]
     )
     return aco
 
@@ -49,7 +47,7 @@ def main():
         # 1. Inicializar o Orquestrador Synthetica v1.1 (Broker Unificado)
         synthetica = ChromaSyntheticaOrchestrator(kb_path=KB_PATH)
 
-        target_models =
+        target_models = ["DALL-E_3"]
 
         # 2. Executar Protótipo A (Kinnari Solarpunk)
         print("\n\n" + "="*80)
@@ -60,7 +58,25 @@ def main():
         acoA = create_prototype_a_kinnari_solarpunk()
 
         # O pipeline agora usa a estrutura {name, params}
-        pipelineA =
+        pipelineA = [
+            # 1. Hibridismo (Pilar 2): Define a ontologia como Kinnari (Variante Pal_Subversive)
+            {"name": "Operator_DefineHybridism", "params": {
+                "subject_id": "Kinnari",
+                "ontology_ref": "2.0_Semiotics_and_Psychology_Database.2.7_Theriocephalic_Iconography.Kinnari",
+                "variant": "Pal_Subversive"
+            }},
+            # 2. Antropofagia (Pilar 3): Solarpunk devora Iris van Herpen
+            {"name": "Operator_CulturalCannibalize", "params": {
+                "devouring_culture": "11.0_Narrative_Structure_and_Storytelling.11.4_Speculative_Fiction_and_Futurism.Solarpunk",
+                "devoured_element": "5.0_Masters_Lexicon.5.6_Fashion_and_Costume_Design.Iris van Herpen",
+                "synthesis_mode": "Aesthetic"
+            }},
+            # 3. Dinâmica Arquetípica (Pilar 4): Assimilating (Trickster Interno)
+            {"name": "Operator_SetArchetypalDynamics", "params": {
+                "shadow_state": "Assimilating",
+                "trickster": "Internal_Catalyst"
+            }}
+        ]
         synthetica.run_workflow(acoA, target_models, operator_pipeline=pipelineA)
 
 
@@ -72,7 +88,19 @@ def main():
 
         acoC = create_prototype_c_centaur_chiaroscuro()
 
-        pipelineC =
+        pipelineC = [
+            # 1. Hibridismo (Pilar 2): Define a ontologia como Centauro (Variante Thessalian_Horde)
+            {"name": "Operator_DefineHybridism", "params": {
+                "subject_id": "CentaurAgent",
+                "ontology_ref": "2.0_Semiotics_and_Psychology_Database.2.7_Theriocephalic_Iconography.Centaur",
+                "variant": "Thessalian_Horde"
+            }},
+            # 2. Dinâmica Arquetípica (Pilar 4): Projected (Simulando o colapso de Repressed)
+            {"name": "Operator_SetArchetypalDynamics", "params": {
+                "shadow_state": "Projected",
+                "manifestation": "2.0_Semiotics_and_Psychology_Database.2.7_Theriocephalic_Iconography.Minotaur"
+            }}
+        ]
         synthetica.run_workflow(acoC, target_models, operator_pipeline=pipelineC)
 
 
