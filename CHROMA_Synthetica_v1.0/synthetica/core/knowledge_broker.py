@@ -1,17 +1,13 @@
-# nexus/core/knowledge_broker.py
-
+# synthetica/core/knowledge_broker.py
 import json
 from typing import Any, Dict, List, Optional
 import difflib
 
 class KnowledgeBroker:
-    """
-    Fornece acesso à Base de Conhecimento (KB). Otimizado com Caching e Busca Fuzzy.
-    """
     def __init__(self, kb_data: Dict[str, Any]):
         self._kb = kb_data
         self._cache: Dict[str, List[Any]] = {}
-        print("🧠: KnowledgeBroker inicializado (Caching + Fuzzy Search ativos).")
+        print(f"🧠: KnowledgeBroker inicializado para KB ID: {kb_data.get('KB_ID', 'Desconhecido')}.")
 
     def get_entry(self, path: str, default: Any = None) -> Any:
         keys = path.split('.')
@@ -31,10 +27,8 @@ class KnowledgeBroker:
     def get_flat_list(self, path: str) -> List[Any]:
         if path in self._cache:
             return self._cache[path]
-
         data = self.get_entry(path)
         result = self._flatten(data) if data is not None else []
-        
         self._cache[path] = result
         return result
 
@@ -55,7 +49,6 @@ class KnowledgeBroker:
             for item in data:
                 items.extend(self._flatten(item))
         elif isinstance(data, dict):
-            # Achata os valores (folhas)
             for value in data.values():
                 items.extend(self._flatten(value))
         else:

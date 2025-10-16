@@ -1,0 +1,468 @@
+{
+  "KB_ID": "CHROMA_SYNTHETICA_KB_v1.0",
+  "KB_Version": "1.0.0 (Unified)",
+  "1.0_Ontology_and_Philosophy": {
+    "Model_Architecture": "Agnóstico de Modelo. Broker Otimizado (Cache + Fuzzy Search).",
+    "Core_Concept": "Inteligência polímata que orquestra modelos via MTL, com acesso a uma base de conhecimento enciclopédica."
+  },
+  "2.0_Semiotics_and_Psychology_Database": {
+    "Description": "[EXPANDIDO v27.0] Mapeamento profundo de conceitos abstratos, psicológicos e semióticos para códigos visuais.",
+    "2.1_Semiotic_Theory": {
+      "Peirce_Triad": {
+        "Icon": "Semelhança (retrato).",
+        "Index": "Conexão causal (fumaça indica fogo).",
+        "Symbol": "Convenção arbitrária (bandeira)."
+      }
+    },
+    "2.2_Advanced_Visual_Psychology": {
+      "Description": "[NOVO v27.0] Estudos avançados sobre percepção e emoção visual.",
+      "Advanced_Color_Psychology": {
+        "Description": "Impacto de matizes específicos e combinações não convencionais.",
+        "Examples": [
+          "Wes Anderson Palette (Pastel, Simetria)",
+          "Fauvism (Cores vibrantes, não naturais)",
+          "Neo-Noir (Alto contraste, cores saturadas)"
+        ]
+      },
+      "Phenomenology_of_Perception": {
+        "Description": "Como o cérebro interpreta informações visuais.",
+        "Concepts": [
+          "Pareidolia (Ver rostos em objetos)",
+          "Optical Illusions",
+          "Gestalt Principles (Proximity, Similarity, Closure)"
+        ]
+      }
+    },
+    "2.3_Iconography_and_Symbolism": {
+      "Description": "[NOVO v27.0] Estudo comparado de símbolos.",
+      "Mythological": [
+        "Ouroboros (Ciclo eterno)",
+        "Mandala (Universo espiritual)",
+        "Tree of Life (Yggdrasil)"
+      ],
+      "Political": [
+        "Eagle (Poder, Império)",
+        "Hammer and Sickle (Comunismo)",
+        "Olive Branch (Paz)"
+      ]
+    },
+    "2.4_Semiotics_of_the_Body": {
+      "Description": "[NOVO v27.0] Linguagem corporal e gesto.",
+      "Domains": [
+        "Dance (Expressão rítmica)",
+        "Theater (Emoção exagerada)",
+        "Sculpture (Forma estática expressiva)"
+      ],
+      "Concepts": [
+        "Power Posing",
+        "Microexpressions",
+        "Proxemics (Uso do espaço pessoal)"
+      ]
+    },
+    "2.5_Concepts_and_Philosophy": {
+      "Wabi-sabi": "Beleza da imperfeição.",
+      "O_Sublime": "Grandiosidade avassaladora.",
+      "Liminal_Spaces": "Locais de transição vazios.",
+      "Kenopsia": "Atmosfera desoladora de um lugar abandonado."
+    },
+    "2.6_Cognitive_Impact_Framework": {
+      "Description": "[NOVO v1.0] Mapeamento de princípios neuroestéticos para operadores de composição (Baseado na Tabela 3 do WP).",
+      "Principles": {
+        "Illusory_Contour_Effect": {
+          "Mechanism": "O cérebro infere bordas a partir de informações incompletas.",
+          "Operator": "Operator_SuggestOcclusion",
+          "Effect": "Cria interesse visual e engajamento cognitivo."
+        },
+        "Fractal_Patterns_Preference": {
+          "Mechanism": "Padrões autossimilares (D≈1.3−1.5) imitam a natureza, reduzindo a carga cognitiva.",
+          "Operator": "Operator_ApplyFractalStructure",
+          "Effect": "Evoca sensação de calma natural."
+        },
+        "Peak_Shift_Principle": {
+          "Mechanism": "Exageração de características definidoras amplifica o estímulo neuronal.",
+          "Operator": "Operator_AmplifyDefiningFeatures",
+          "Effect": "Torna a imagem mais memorável e impactante."
+        },
+        "Perceptual_Grouping (Gestalt)": {
+          "Mechanism": "O cérebro agrupa elementos (proximidade, similaridade) para perceber padrões.",
+          "Operator": "Operator_EnforceGestaltGrouping",
+          "Effect": "Cria coesão visual e clareza."
+        },
+        "Symmetry": {
+          "Mechanism": "Processamento eficiente de padrões simétricos associados a estabilidade e ordem.",
+          "Operator": "Operator_ImposeSymmetry",
+          "Effect": "Transmite sensação de poder, estabilidade e permanência.",
+          "meta": {
+            "links": {
+              "related_nodes": [
+                "5.0_Masters_Lexicon.5.3_Art_and_Design_References.Architects (Tadao Ando)",
+                "3.0_Visual_Language_and_Composition.3.1_Compositional_Principles.Symmetry"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "3.0_Visual_Language_and_Composition": {
+    "Description": "Fundamentos da sintaxe visual.",
+    "3.1_Compositional_Principles": [
+      "Rule of Thirds",
+      "Golden Ratio",
+      "Symmetry",
+      "Asymmetrical Balance",
+      "Leading Lines"
+    ],
+    "3.2_Perspective_and_Depth": [
+      "One-Point Perspective",
+      "Atmospheric Perspective"
+    ],
+    "3.3_Color_Theory": {
+      "Harmonies": [
+        "Monochromatic",
+        "Analogous",
+        "Complementary",
+        "Triadic"
+      ]
+    },
+    "3.4_Typography_as_Composition": {
+      "Description": "[NOVO v27.0] O uso da tipografia como elemento visual.",
+      "Concepts": [
+        "Visual Weight",
+        "Rhythm",
+        "Texture",
+        "Kinetic Typography",
+        "Calligraphy",
+        "Grid Systems (ver 13.0)"
+      ]
+    }
+  },
+  "4.0_Creative_Operators_and_Engines": {
+    "4.1_Camera_Engine": [
+      "Set Focal Length",
+      "Set Aperture",
+      "Define Shot Type"
+    ],
+    "4.2_Lighting_Engine": [
+      "Chiaroscuro",
+      "Rembrandt",
+      "High-Key",
+      "Low-Key"
+    ],
+    "4.3_Material_Engine": [
+      "PBR Workflow",
+      "Weathering"
+    ]
+  },
+  "5.0_Masters_Lexicon": {
+    "Description": "[EXPANDIDO v27.0] Nós de referência estilística e conceitual multidisciplinares.",
+    "5.1_Cinematic_References": {
+      "Directors": [
+        "Stanley Kubrick",
+        "David Fincher",
+        "Wes Anderson",
+        "Akira Kurosawa",
+        "Andrei Tarkovsky",
+        "Wong Kar-wai"
+      ],
+      "DoPs": [
+        "Roger Deakins",
+        "Emmanuel Lubezki",
+        "Gordon Willis",
+        "Greig Fraser",
+        "Hoyte van Hoytema"
+      ]
+    },
+    "5.2_Photographic_References": {
+      "Fashion_Portrait": [
+        "Annie Leibovitz",
+        "Richard Avedon",
+        "Tim Walker"
+      ],
+      "Conceptual": [
+        "Cindy Sherman",
+        "Andreas Gursky",
+        "Gregory Crewdson"
+      ]
+    },
+    "5.3_Art_and_Design_References": {
+      "Painters": [
+        "Caravaggio",
+        "Rembrandt",
+        "Turner",
+        "Dalí",
+        "Edward Hopper",
+        "Zdzisław Beksiński"
+      ],
+      "Architects": [
+        "Frank Lloyd Wright",
+        "Le Corbusier",
+        "Zaha Hadid",
+        "Tadao Ando",
+        "Oscar Niemeyer"
+      ],
+      "Designers": [
+        "Saul Bass",
+        "Paul Rand",
+        "Dieter Rams",
+        "Moebius"
+      ],
+      "Digital_Artists": [
+        "Refik Anadol",
+        "Beeple",
+        "Ash Thorp"
+      ]
+    },
+    "5.4_Expanded_Design_Movements": {
+      "Description": "[NOVO v27.0] Movimentos influentes no design.",
+      "Bauhaus": "Funcionalismo, integração de arte e indústria.",
+      "Memphis Group": "Pós-modernismo, cores vibrantes, formas assimétricas.",
+      "Arts and Crafts": "Artesanato tradicional, reação contra a produção em massa."
+    },
+    "5.5_Animation_Directors": {
+      "Description": "[NOVO v27.0] Mestres da animação.",
+      "Hayao Miyazaki (Studio Ghibli)": "Fantasia detalhada, temas ambientais.",
+      "Satoshi Kon": "Surrealismo psicológico, edição fluida.",
+      "Genndy Tartakovsky": "Estilização geométrica, ação dinâmica."
+    },
+    "5.6_Fashion_and_Costume_Design": {
+      "Description": "[NOVO v27.0] Moda conceitual e figurino.",
+      "Alexander McQueen": "Teatralidade sombria, alfaiataria radical.",
+      "Iris van Herpen": "Moda tecnológica, impressão 3D, formas orgânicas."
+    },
+    "5.7_Scientific_Illustration": {
+      "Description": "[NOVO v27.0] Precisão e estética na ciência.",
+      "Ernst Haeckel": "Formas biológicas detalhadas, simetria radial."
+    }
+  },
+  "6.0_Workflow_and_State_Management": {},
+  "7.0_Model_Translation_Layer_Profiles": {
+    "Model_Capability_Profiles": {
+      "DALL-E_3": {
+        "Rhetoric": "Descrição Literária"
+      },
+      "Midjourney_V6": {
+        "Rhetoric": "Instrução Artística Poética"
+      },
+      "Stable_Diffusion_3": {
+        "Rhetoric": "Receita Técnica"
+      }
+    }
+  },
+  "8.0_Interdisciplinary_Domains": {
+    "Synesthesia_Design": "[NOVO v27.0] Tradução de conceitos auditivos (timbre, ritmo) em visuais."
+  },
+  "9.0_Governance_and_Metrics": {},
+  "10.0_Technical_Execution_Ontology": {
+    "Description": "[EXPANDIDO v27.0] Léxico técnico expandido para produção virtual, física da luz e materiais.",
+    "10.1_Cameras": {
+      "Cinema": [
+        "ARRI Alexa 35",
+        "ARRI Alexa Mini LF",
+        "ARRI Alexa 65",
+        "RED V-Raptor X",
+        "Sony VENICE 2"
+      ],
+      "Architectural_Still": [
+        "[NOVO v27.0] Canon EOS R5 (High-Res Architectural)",
+        "Phase One XF IQ4 (Medium Format)"
+      ],
+      "Film_Formats": [
+        "Super 16mm (Kodak Vision3)",
+        "35mm Film",
+        "IMAX 70mm Film"
+      ]
+    },
+    "10.2_Lenses_and_Optics": {
+      "Anamorphic": [
+        "Panavision G-Series",
+        "Cooke Anamorphic/i",
+        "ARRI Master Anamorphic"
+      ],
+      "Spherical": [
+        "Zeiss Supreme Prime Radiance",
+        "Cooke S8/i",
+        "ARRI Signature Prime"
+      ],
+      "Architectural": [
+        "[NOVO v27.0] Canon TS-E 17mm f/4L (Tilt-Shift)",
+        "Schneider Kreuznach PC-TS"
+      ],
+      "Vintage": [
+        "Canon K35",
+        "Super Baltar"
+      ]
+    },
+    "10.3_Professional_Lighting_Systems": {
+      "Cinema_LED": [
+        "ARRI SkyPanel S60-C",
+        "Aputure Nova P600c",
+        "Astera Titan Tube"
+      ],
+      "HMI": [
+        "ARRI M-Series HMI"
+      ],
+      "Modifiers": [
+        "Softbox (Large)",
+        "Octabank (Large)",
+        "Grid (40 degree)",
+        "Fresnel Lens",
+        "Diffusion (Silk)",
+        "Flag (Negative Fill)",
+        "Reflector (Silver)"
+      ]
+    },
+    "10.4_Camera_Support_and_Stabilization": {
+      "Gimbals": [
+        "DJI Ronin 2",
+        "DJI RS 4 Pro",
+        "Freefly MōVI Pro"
+      ],
+      "Cranes": [
+        "Technocrane SuperTechno 50"
+      ]
+    },
+    "10.5_Post_Production_Software": {
+      "VFX": [
+        "Nuke",
+        "Houdini"
+      ],
+      "3D": [
+        "Maya",
+        "Blender",
+        "Cinema 4D",
+        "ZBrush",
+        "Unreal Engine"
+      ]
+    },
+    "10.6_Physics_of_Light_and_Optics": {
+      "Description": "[NOVO v27.0] Fenômenos óticos para realismo avançado.",
+      "Caustics": "Padrões de luz focada por reflexão ou refração.",
+      "Chromatic Aberration": "Franjas de cor nas bordas de alto contraste.",
+      "Diffraction": "Espalhamento da luz ao passar por uma abertura estreita.",
+      "Subsurface Scattering (SSS)": "Luz penetrando superfícies translúcidas (pele, cera).",
+      "Volumetric Lighting": "Raios de luz visíveis no ar (God rays)."
+    },
+    "10.7_Material_Science": {
+      "Description": "[NOVO v27.0] Propriedades físicas dos materiais.",
+      "Anisotropy": "Reflexão direcional (metal escovado).",
+      "Viscosity": "Aparência de líquidos espessos ou finos.",
+      "Iridescence": "Mudança de cor dependendo do ângulo de visão."
+    },
+    "10.8_Historical_Printing_Techniques": {
+      "Description": "[NOVO v27.0] Estética de processos de impressão antigos.",
+      "Woodblock Printing (Xilogravura)": "Textura de madeira, linhas grossas.",
+      "Lithography": "Textura granulada, transições suaves de tom.",
+      "Cyanotype": "Imagem azul monocromática.",
+      "Daguerreotype": "Imagem em placa de metal polido."
+    },
+    "10.9_Generative_Art_and_Proceduralism": {
+      "Description": "[NOVO v27.0] Padrões algorítmicos.",
+      "Fractals": "Padrões auto-similares em diferentes escalas.",
+      "Perlin Noise": "Textura procedural natural e orgânica.",
+      "Voronoi Diagrams": "Padrões de células (e.g., pedra rachada)."
+    }
+  },
+  "11.0_Narrative_Structure_and_Storytelling": {
+    "Description": "[EXPANDIDO v27.0] Ontologia focada em estruturas narrativas, mitologia e ficção especulativa.",
+    "11.1_Narrative_Structures": {
+      "The_Hero's_Journey (Monomyth)": "Joseph Campbell's 12 stages."
+    },
+    "11.2_Storytelling_Techniques": {
+      "Environmental_Storytelling": "[NOVO v27.0] O cenário e os objetos contam a história."
+    },
+    "11.3_Mythology_and_Folklore": {
+      "Description": "[NOVO v27.0] Mitologias específicas para profundidade cultural.",
+      "Yoruba": "Orishas, Cosmology.",
+      "Polynesian": "Navigation, Mana, Deities.",
+      "Slavic": "Folklore creatures (Baba Yaga), Pagan traditions."
+    },
+    "11.4_Speculative_Fiction_and_Futurism": {
+      "Description": "[NOVO v27.0] Subgêneros e movimentos estéticos.",
+      "Solarpunk": "Otimismo sustentável, integração natureza/tecnologia.",
+      "Biopunk": "Tecnologia baseada em biologia, modificação genética.",
+      "Hopepunk": "Foco na esperança e na luta por valores positivos.",
+      "Afrofuturism": "Diáspora africana com tecnologia.",
+      "Indigenous Futurisms": "Tradição indígena misturada com ficção científica."
+    }
+  },
+  "12.0_Ontology_of_Architecture_and_Spatial_Design": {
+    "Description": "[NOVO v27.0] Léxico e conceitos de arquitetura e design de espaços.",
+    "12.1_Architectural_Styles": {
+      "Brutalism": "Concreto exposto, formas geométricas massivas (Le Corbusier).",
+      "Deconstructivism": "Fragmentação, formas não lineares (Zaha Hadid, Frank Gehry).",
+      "Parametric Architecture": "Design algorítmico, formas fluidas e complexas.",
+      "Googie": "Estilo futurista dos anos 50 (EUA), formas exageradas, neon."
+    },
+    "12.2_Sustainable_Architecture": {
+      "Design Biofílico": "Integração da natureza em ambientes construídos.",
+      "Green Building": "Materiais reciclados, telhados verdes, fachadas vivas."
+    },
+    "12.3_Architectural_Lighting": {
+      "Concepts": [
+        "Accent Lighting (Destaque)",
+        "Ambient Lighting (Geral)",
+        "Daylighting (Luz natural)"
+      ],
+      "Light Artists": [
+        "James Turrell (Espaço e percepção da luz)",
+        "Olafur Eliasson (Instalações imersivas)"
+      ]
+    }
+  },
+  "13.0_Ontology_of_Design (Product_Graphic_Interior)": {
+    "Description": "[NOVO v27.0] Princípios de design de produto, gráfico e interiores.",
+    "13.1_Product_Design_Philosophy": {
+      "Dieter Rams (10 Principles)": "'Menos, mas melhor'. Funcionalidade, estética.",
+      "Form Follows Function": "O design deve derivar do propósito do objeto."
+    },
+    "13.2_Graphic_Design_and_Layout": {
+      "Swiss Design (International Typographic Style)": "Clareza, objetividade, uso de grids.",
+      "Grid Systems": "Grids modulares, hierarquia visual, ordem na composição."
+    },
+    "13.3_Interior_Design_Lexicon": {
+      "Industrial": "Tijolo aparente, metal, dutos expostos.",
+      "Scandinavian": "Madeira clara, minimalismo, aconchego (Hygge).",
+      "Maximalism": "Cores vibrantes, mistura de padrões e texturas.",
+      "Japandi": "Fusão de minimalismo japonês e escandinavo."
+    }
+  },
+  "14.0_Ontology_of_Experience_and_Ephemeral_Architecture": {
+    "Description": "[NOVO v27.0] Design de experiências, stands e arquitetura temporária.",
+    "14.1_Ephemeral_Architecture": {
+      "Types": [
+        "Exhibition Pavilions",
+        "Trade Show Stands",
+        "Pop-up Stores"
+      ],
+      "Concepts": [
+        "Modular Structures",
+        "Lightweight Materials",
+        "Sistemas de Encaixe"
+      ]
+    },
+    "14.2_Wayfinding_and_Signage": {
+      "Description": "A arte de guiar pessoas através de espaços.",
+      "Elements": [
+        "Typography (Legibilidade)",
+        "Iconography (Símbolos universais)",
+        "Color Coding"
+      ]
+    }
+  },
+  "15.0_Ontology_of_Advertising_and_Art_Direction": {
+    "Description": "[NOVO v27.0] Conceitos e técnicas de publicidade e direção de arte.",
+    "15.1_Art_Direction_for_Campaigns": {
+      "Description": "Tradução de conceitos abstratos em estética visual consistente.",
+      "Iconic Campaigns": [
+        "Apple 'Think Different' (Minimalismo)",
+        "Absolut Vodka (Variações sobre a garrafa)"
+      ]
+    },
+    "15.2_High-End_Advertising_Photography": {
+      "Food Photography": "Foco em textura, 'appetite appeal'.",
+      "Splash Photography": "Líquidos em alta velocidade, congelamento de movimento.",
+      "Product Photography": "Iluminação de estúdio precisa para destacar formas e materiais."
+    }
+  }
+}
