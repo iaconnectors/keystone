@@ -1,6 +1,7 @@
 # synthetica/orchestrator.py
 
 import json
+from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 # Importações dos componentes do Synthetica
@@ -38,14 +39,35 @@ class ChromaSyntheticaOrchestrator:
         print(f"\n✅ Sistema Operacional. KB v{self.broker.get_entry('KB_Version')}")
 
     def _load_kb(self, kb_path: str) -> Dict[str, Any]:
-        try:
-            with open(kb_path, 'r', encoding='utf-8') as f:
-                return json.load(f)
-        except FileNotFoundError:
-            raise FileNotFoundError(f"❌ ERRO CRÍTICO: KB não encontrada em '{kb_path}'. Verifique o caminho.")
+        kb_file = Path(kb_path)
+
+        search_paths = []
+        if kb_file.is_absolute():
+            search_paths.append(kb_file)
+        else:
+            search_paths.extend([
+                Path.cwd() / kb_file,
+                Path(__file__).resolve().parent / kb_file,
+                Path(__file__).resolve().parent.parent / kb_file,
+            ])
+
+        for candidate in search_paths:
+            if candidate.exists():
+                with candidate.open('r', encoding='utf-8') as handle:
+                    return json.load(handle)
+
+        raise FileNotFoundError(
+            f"❌ ERRO CRÍTICO: KB não encontrada. Caminhos verificados: "
+            f"{', '.join(str(path) for path in search_paths)}."
+        )
         
     # (v1.1) O pipeline agora aceita dicionários {name, params}.
-    def run_workflow(self, aco: AbstractCreativeObject, target_models: List[str], operator_pipeline: List[Dict] = []) -> Dict[str, str]:
+    def run_workflow(
+        self,
+        aco: AbstractCreativeObject,
+        target_models: List[str],
+        operator_pipeline: Optional[List[Dict]] = None,
+    ) -> Dict[str, str]:
         """
         Executa o fluxo de trabalho da Mente Híbrida.
         """
@@ -53,6 +75,8 @@ class ChromaSyntheticaOrchestrator:
         print("      INICIANDO FLUXO DE TRABALHO CHROMA SYNTHETICA v1.1      ")
         print("="*70)
         
+        operator_pipeline = operator_pipeline or []
+
         # FASE 1: Raciocínio Abstrato (ACO -> ITI)
         print("\n--- FASE 1: RACIOCÍNIO ABSTRATO (Compiler + Operadores) ---")
         iti = self.compiler.compile_to_iti(aco, operator_pipeline)
