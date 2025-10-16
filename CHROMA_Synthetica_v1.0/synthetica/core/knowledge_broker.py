@@ -9,6 +9,9 @@ class KnowledgeBroker:
         self._cache: Dict[str, List[Any]] = {}
         print(f"🧠: KnowledgeBroker inicializado para KB ID: {kb_data.get('KB_ID', 'Desconhecido')}.")
 
+    # get_entry, get_flat_list, validate_entry, find_closest_match permanecem iguais à v1.0.
+    # (Omitidos para brevidade, use a versão anterior se necessário)
+
     def get_entry(self, path: str, default: Any = None) -> Any:
         keys = path.split('.')
         value = self._kb
@@ -44,13 +47,34 @@ class KnowledgeBroker:
         return matches[0] if matches else None
 
     def _flatten(self, data: Any) -> List[Any]:
+        """
+        (v1.1) Ajustado para lidar com a nova estrutura do Masters Lexicon (Dicionário de Objetos).
+        """
         items = []
         if isinstance(data, list):
             for item in data:
                 items.extend(self._flatten(item))
         elif isinstance(data, dict):
-            for value in data.values():
-                items.extend(self._flatten(value))
+            # Heurística v1.1: Detecta se é uma estrutura de léxico.
+            # Se os valores do dicionário forem objetos complexos (outros dicionários), 
+            # assumimos que as chaves são as entidades que queremos extrair (e.g., Nomes de Artistas).
+            
+            # Verifica se o dicionário não está vazio e se o primeiro valor é um dicionário
+            if data and isinstance(next(iter(data.values()), None), dict):
+                 # Verifica se a maioria (>80%) dos valores são dicionários
+                 is_entity_lexicon = sum(isinstance(v, dict) for v in data.values()) / len(data.values()) > 0.8
+            else:
+                 is_entity_lexicon = False
+
+            if is_entity_lexicon:
+                # Extrai as chaves (nomes) e formata (e.g. Ganesh_Pyne -> Ganesh Pyne)
+                formatted_keys = [k.replace('_', ' ') for k in data.keys()]
+                items.extend(formatted_keys)
+            else:
+                # Comportamento padrão: recursão nos valores
+                for value in data.values():
+                    items.extend(self._flatten(value))
         else:
+            # Valor final (folha)
             items.append(data)
         return items

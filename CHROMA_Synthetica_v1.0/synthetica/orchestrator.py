@@ -12,58 +12,56 @@ from synthetica.engines.imtl import IMTLPolicyEngine
 
 class ChromaSyntheticaOrchestrator:
     """
-    A classe principal do CHROMA Synthetica v1.0. Orquestra a Mente Híbrida com Dual Brokers.
+    A classe principal do CHROMA Synthetica v1.1. Orquestra a Mente Híbrida com Broker Unificado.
     """
-    def __init__(self, nexus_kb_path: str, keystone_kb_path: str):
-        print("🚀 Inicializando CHROMA Synthetica v1.0 (Mente Híbrida)...")
+    # (v1.1) O construtor agora aceita um único caminho para a KB Unificada.
+    def __init__(self, kb_path: str = "kb/synthetica_kb_v1.1.json"):
+        print(f"🚀 Inicializando CHROMA Synthetica v1.1 (Filosofia Gerativa Ativa)...")
         
-        # 1. Carregar as Bases de Conhecimento
-        nexus_kb_data = self._load_kb(nexus_kb_path)
-        keystone_kb_data = self._load_kb(keystone_kb_path)
+        # 1. Carregar a Base de Conhecimento Unificada
+        kb_data = self._load_kb(kb_path)
 
-        # 2. Inicializar Brokers Distintos
-        print("\nInicializando Brokers:")
-        # Broker de Raciocínio (Nexus KB)
-        self.nexus_broker = KnowledgeBroker(nexus_kb_data)
-        # Broker Enciclopédico (Keystone KB)
-        self.keystone_broker = KnowledgeBroker(keystone_kb_data)
+        # 2. Inicializar Broker Unificado
+        print("\nInicializando Broker:")
+        self.broker = KnowledgeBroker(kb_data)
         
-        # 3. Inicializar Componentes da Mente Híbrida
+        # 3. Inicializar Componentes da Mente Híbrida (Todos usam o Broker Unificado)
         print("\nInicializando Serviços:")
-        # Fase 1: Raciocínio (Usa Nexus Broker)
-        self.compiler = NexusCompiler(self.nexus_broker)
-        # Fase 2: Enriquecimento (Usa Keystone Broker)
-        self.enrichment_service = EnrichmentService(self.keystone_broker)
+        # Fase 1: Raciocínio
+        self.compiler = NexusCompiler(self.broker)
+        # Fase 2: Enriquecimento
+        self.enrichment_service = EnrichmentService(self.broker)
         
-        # 4. Inicializar Motor de Tradução (IMTL) - Usa Nexus Broker para perfis retóricos
-        self.imtl = IMTLPolicyEngine(self.nexus_broker)
+        # 4. Inicializar Motor de Tradução (IMTL)
+        self.imtl = IMTLPolicyEngine(self.broker)
        
-        print(f"\n✅ Sistema Operacional. Nexus v{self.nexus_broker.get_entry('KB_Version')} | Keystone v{self.keystone_broker.get_entry('KB_Version')}")
+        print(f"\n✅ Sistema Operacional. KB v{self.broker.get_entry('KB_Version')}")
 
     def _load_kb(self, kb_path: str) -> Dict[str, Any]:
         try:
             with open(kb_path, 'r', encoding='utf-8') as f:
                 return json.load(f)
         except FileNotFoundError:
-            raise FileNotFoundError(f"❌ ERRO CRÍTICO: KB não encontrada em '{kb_path}'.")
+            raise FileNotFoundError(f"❌ ERRO CRÍTICO: KB não encontrada em '{kb_path}'. Verifique o caminho.")
         
-    def run_workflow(self, aco: AbstractCreativeObject, target_models: List[str], cognitive_pipeline: List[str] = []) -> Dict[str, str]:
+    # (v1.1) O pipeline agora aceita dicionários {name, params}.
+    def run_workflow(self, aco: AbstractCreativeObject, target_models: List[str], operator_pipeline: List[Dict] = []) -> Dict[str, str]:
         """
-        Executa o fluxo de trabalho da Mente Híbrida: ACO -> ITI -> PSO -> Prompts.
+        Executa o fluxo de trabalho da Mente Híbrida.
         """
         print("\n" + "="*70)
-        print("      INICIANDO FLUXO DE TRABALHO CHROMA SYNTHETICA v1.0      ")
+        print("      INICIANDO FLUXO DE TRABALHO CHROMA SYNTHETICA v1.1      ")
         print("="*70)
         
         # FASE 1: Raciocínio Abstrato (ACO -> ITI)
-        print("\n--- FASE 1: RACIOCÍNIO ABSTRATO (Compiler + Nexus KB) ---")
-        iti = self.compiler.compile_to_iti(aco, cognitive_pipeline)
+        print("\n--- FASE 1: RACIOCÍNIO ABSTRATO (Compiler + Operadores) ---")
+        iti = self.compiler.compile_to_iti(aco, operator_pipeline)
         
         print("\n--- ESTADO INTERMEDIÁRIO (ITI) ---")
         print(iti)
 
-        # FASE 2: Enriquecimento Técnico (ITI + Keystone KB -> PSO)
-        print("\n--- FASE 2: ENRIQUECIMENTO TÉCNICO (EnrichmentService + Keystone KB) ---")
+        # FASE 2: Enriquecimento Técnico (ITI -> PSO)
+        print("\n--- FASE 2: ENRIQUECIMENTO TÉCNICO (EnrichmentService) ---")
         pso = self.enrichment_service.enrich_to_pso(iti)
 
         print("\n--- ESTADO FINAL (PSO) ---")
@@ -79,12 +77,8 @@ class ChromaSyntheticaOrchestrator:
         
         return results
 
-    def introspect_knowledge(self, query: str) -> str:
-        """(Épico 3.3) Operador de Introspecção (Simulado)."""
-        print(f"\n🔍 Introspecção (Simulado): '{query}'")
-        return "Operador de Introspecção (Épico 3.3) ainda não implementado (requer Grafo de Conhecimento)."
-
     def _generate_report(self, model: str, prompt: str):
+        # (Mantido)
         print("\n" + "-"*70)
         print(f" Prompt Otimizado (IMTL -> {model}):\n")
         print(f"{prompt}")
