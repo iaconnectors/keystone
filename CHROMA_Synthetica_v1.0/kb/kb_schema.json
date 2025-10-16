@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Chroma Synthetica Knowledge Base Schema",
+  "description": "Schema for validating the structure of the unified Synthetica KB.",
+  "type": "object",
+  "required": ["KB_ID", "KB_Version", "1.0_Ontology_and_Philosophy"],
+  "properties": {
+    "KB_ID": {
+      "type": "string"
+    },
+    "KB_Version": {
+      "type": "string"
+    },
+    "2.0_Semiotics_and_Psychology_Database": {
+      "type": "object",
+      "properties": {
+        "2.6_Cognitive_Impact_Framework": {
+          "type": "object",
+          "required": ["Principles"],
+          "properties": {
+            "Principles": {"type": "object"}
+          }
+        }
+      }
+    }
+  },
+  "patternProperties": {
+    "^[0-9]+\\..*": {
+      "type": "object",
+      "description": "Ensures that all knowledge domains (e.g., 1.0_..., 5.0_...) are objects."
+    }
+  }
+}
