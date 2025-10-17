@@ -18,6 +18,7 @@ const state = {
   references: [],
   cases: {},
   activeHistoryTab: "all",
+  selectedCaseId: null,
 };
 
 const elements = {
@@ -59,7 +60,7 @@ async function loadCases() {
   } catch (error) {
     console.warn(error.message);
     elements.casesList.innerHTML =
-      '<p class="muted">Não foi possível carregar os presets.</p>';
+      '<p class="muted">Nao foi possivel carregar os presets.</p>';
   }
 }
 
@@ -85,7 +86,7 @@ function renderCases() {
 
     const desc = document.createElement("p");
     desc.className = "card-brief";
-    desc.textContent = caseData.brief || "Brief não definido.";
+    desc.textContent = caseData.brief || "Brief nao definido.";
 
     const buttonRow = document.createElement("div");
     buttonRow.className = "card-actions";
@@ -119,7 +120,7 @@ function showStatus(message, type = "info") {
 async function fetchHistory() {
   try {
     const res = await fetch(`${API_BASE}/history`);
-    if (!res.ok) throw new Error("Falha ao obter histórico.");
+    if (!res.ok) throw new Error("Falha ao obter historico.");
     const data = await res.json();
     state.history = data.items || [];
   } catch (error) {
@@ -131,7 +132,7 @@ async function fetchHistory() {
 async function fetchReferences() {
   try {
     const res = await fetch(`${API_BASE}/references`);
-    if (!res.ok) throw new Error("Falha ao obter referências.");
+    if (!res.ok) throw new Error("Falha ao obter referencias.");
     const data = await res.json();
     state.references = data.items || [];
   } catch (error) {
@@ -150,7 +151,7 @@ function renderHistory() {
 
   if (!items.length) {
     elements.historyList.innerHTML =
-      '<p class="muted">Nenhum registro disponível.</p>';
+      '<p class="muted">Nenhum registro disponivel.</p>';
     return;
   }
 
@@ -174,7 +175,7 @@ function renderHistory() {
       elements.theme.value = session.theme;
       elements.tags.value = (session.tags || []).join(", ");
       state.selectedCaseId = session.case_id || null;
-      showStatus("Sessão carregada no formulário.", "success");
+      showStatus("Sessao carregada no formulario.", "success");
     });
 
     const likeBtn = fragment.querySelector(".like-toggle");
@@ -197,7 +198,7 @@ async function toggleLike(sessionId, liked) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ liked }),
     });
-    if (!res.ok) throw new Error("Não foi possível atualizar o like.");
+    if (!res.ok) throw new Error("Nao foi possivel atualizar o like.");
     await refreshHistory();
     if (state.currentSession && state.currentSession.id === sessionId) {
       state.currentSession.liked = liked;
@@ -270,7 +271,7 @@ function updateLikeButton() {
     elements.likeBtn.textContent = "Curtido";
     elements.likeBtn.classList.add("liked");
   } else {
-    elements.likeBtn.textContent = "Curtir referência";
+    elements.likeBtn.textContent = "Curtir referencia";
     elements.likeBtn.classList.remove("liked");
   }
 }
@@ -286,7 +287,7 @@ async function handleSubmit(event) {
     .filter(Boolean);
 
   if (!brief) {
-    showStatus("Informe um briefing válido.", "error");
+    showStatus("Informe um briefing valido.", "error");
     return;
   }
 
@@ -361,7 +362,7 @@ function initCopyBlueprint() {
   elements.copyBlueprintBtn.addEventListener("click", () => {
     if (!state.currentSession) return;
     navigator.clipboard.writeText(state.currentSession.blueprint);
-    showStatus("Blueprint copiado para a área de transferência.", "success");
+    showStatus("Blueprint copiado para a area de transferencia.", "success");
   });
 }
 
