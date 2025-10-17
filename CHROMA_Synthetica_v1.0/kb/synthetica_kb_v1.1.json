@@ -5,7 +5,18 @@
   "1.0_Ontology_and_Philosophy": {
     "Model_Architecture": "Agnóstico de Modelo. Broker Otimizado (Cache + Fuzzy Search).",
     "Core_Concept": "Inteligência polímata que orquestra modelos via MTL, com acesso a uma base de conhecimento enciclopédica.",
-    "Generative_Philosophy": "[NOVO v1.1] Matriz de Hibridismo (Ontologia), Antropofagia (Processo Criativo) e Contradição (Motor Psicológico)."
+    "Generative_Philosophy": "[NOVO v1.1] Matriz de Hibridismo (Ontologia), Antropofagia (Processo Criativo) e Contradição (Motor Psicológico).",
+    "Design_Principles": [
+      "Hibridismo como catalisador de imaginarios pos-humanos.",
+      "Antropofagia curatorial para integrar referencia global sem colonialismo.",
+      "Contradicao produtiva para explorar psicologia de sombras.",
+      "Governanca responsiva: toda mudanca precisa de rastreabilidade."
+    ],
+    "Ethical_Guardrails": {
+      "Cultural_Sensitivity": "Evitar exotizacao e creditar fontes originais.",
+      "Environmental_Impact": "Priorizar imaginarios de regeneracao ecologica.",
+      "Human_Agency": "Manter supervisao humana em todas as etapas do pipeline."
+    }
   },
   "2.0_Semiotics_and_Psychology_Database": {
     "Description": "[EXPANDIDO v1.1] Mapeamento profundo de conceitos abstratos, psicológicos, semióticos, cognitivos e arquetípicos.",
@@ -101,7 +112,12 @@
       },
       "Andrade_Anthropophagic_Manifesto": {
         "Description": "[NOVO v1.1] Teoria do modernismo brasileiro (Oswald de Andrade, 1928). Propõe a 'devoração' simbólica de culturas estrangeiras para metabolizá-las em algo novo e autêntico. 'Tupi or not Tupi'.",
-        "Keywords": ["Cultural Cannibalism", "Postcolonial Synthesis", "Asymmetric Fusion", "Antropofagia"]
+        "Keywords": [
+          "Cultural Cannibalism",
+          "Postcolonial Synthesis",
+          "Asymmetric Fusion",
+          "Antropofagia"
+        ]
       }
     },
     "2.6_Cognitive_Impact_Framework": {
@@ -229,16 +245,21 @@
           "feminist hybrid"
         ],
         "meta": {
-            "links": {
-              "artist_reference": [
-                "5.0_Masters_Lexicon.5.3_Art_and_Design_References.Painters.Gogi_Saroj_Pal"
-              ]
-            }
+          "links": {
+            "artist_reference": [
+              "5.0_Masters_Lexicon.5.3_Art_and_Design_References.Painters.Gogi_Saroj_Pal"
+            ]
+          }
         }
       },
       "Minotaur": {
         "Description": "Personificação da Sombra reprimida. Natureza bestial aprisionada no labirinto (inconsciente).",
-        "Keywords": ["repressed shadow", "labyrinthine prison", "primal fury", "bestial nature"]
+        "Keywords": [
+          "repressed shadow",
+          "labyrinthine prison",
+          "primal fury",
+          "bestial nature"
+        ]
       },
       "Anubis": {
         "Description": "Deus com cabeça de chacal. Psicopompo. Exemplo de Sombra integrada, navega o submundo com maestria.",
@@ -347,19 +368,98 @@
   },
   "4.0_Creative_Operators_and_Engines": {
     "4.1_Camera_Engine": [
-      "Set Focal Length",
-      "Set Aperture",
-      "Define Shot Type"
+      {
+        "Operation": "Set Focal Length",
+        "Parameters": {
+          "focal_length_mm": "14-200"
+        },
+        "Effect": "Controla campo de visao e compressao da cena.",
+        "Pairs_Well_With": [
+          "Operator_ImposeSymmetry",
+          "Operator_SetArchetypalDynamics"
+        ]
+      },
+      {
+        "Operation": "Set Aperture",
+        "Parameters": {
+          "f_stop": "T1.3-T16"
+        },
+        "Effect": "Define profundidade de campo e quantidade de luz.",
+        "Pairs_Well_With": [
+          "Operator_DefineHybridism"
+        ]
+      },
+      {
+        "Operation": "Define Shot Type",
+        "Parameters": {
+          "options": [
+            "wide",
+            "medium",
+            "close-up"
+          ]
+        },
+        "Effect": "Determina proximidade narrativa e foco emocional.",
+        "Pairs_Well_With": [
+          "Operator_CulturalCannibalize"
+        ]
+      }
     ],
     "4.2_Lighting_Engine": [
-      "Chiaroscuro",
-      "Rembrandt",
-      "High-Key",
-      "Low-Key"
+      {
+        "Operation": "Set Key Light",
+        "Parameters": {
+          "temperature_K": "2800-6500",
+          "intensity_ratio": "key:fill"
+        },
+        "Effect": "Modela volume e clima psicologico.",
+        "Pairs_Well_With": [
+          "Operator_SetArchetypalDynamics"
+        ]
+      },
+      {
+        "Operation": "Add Practical Lights",
+        "Parameters": {
+          "sources": [
+            "neon",
+            "incandescent",
+            "holographic"
+          ]
+        },
+        "Effect": "Adiciona credibilidade diegetica e acentos cromaticos.",
+        "Pairs_Well_With": [
+          "Operator_CulturalCannibalize"
+        ]
+      }
     ],
     "4.3_Material_Engine": [
-      "PBR Workflow",
-      "Weathering"
+      {
+        "Operation": "Assign Surface Shader",
+        "Parameters": {
+          "material": [
+            "biopolymers",
+            "procedural metal",
+            "volumetric mist"
+          ]
+        },
+        "Effect": "Define interacao luz-materia para reforcar simbolismos.",
+        "Pairs_Well_With": [
+          "Operator_DefineHybridism"
+        ]
+      },
+      {
+        "Operation": "Apply Weathering",
+        "Parameters": {
+          "controls": [
+            "oxidation",
+            "erosion",
+            "organic growth"
+          ]
+        },
+        "Effect": "Sugere temporalidade e narrativa ambiental.",
+        "Pairs_Well_With": [
+          "Operator_SetArchetypalDynamics"
+        ]
+      }
     ],
     "4.4_Conceptual_Operators": {
       "Description": "[NOVO v1.1] Operadores que manipulam conceitos em um nível abstrato.",
@@ -370,40 +470,108 @@
           "devoured_element": "(Caminho KB) O elemento a ser consumido e transformado (o léxico).",
           "synthesis_mode": "[Aesthetic | Narrative | Symbolic] Domínio da transformação."
         },
-        "Logic": "Prioriza as regras semióticas da 'devouring_culture'. Extrai significantes do 'devoured_element' e os re-injeta na estrutura da cultura devoradora, transformando seu significado."
+        "Logic": "Prioriza as regras semióticas da 'devouring_culture'. Extrai significantes do 'devoured_element' e os re-injeta na estrutura da cultura devoradora, transformando seu significado.",
+        "Best_Practices": [
+          "Confirmar que ambos os caminhos existem na KB",
+          "Registrar keywords sintetizadas para auditoria",
+          "Usar synthesis_mode coerente com o output desejado"
+        ]
+      },
+      "Operator_DefineHybridism": {
+        "Description": "Mapeia sujeitos para ontologias hibridas e variantes.",
+        "Inputs": [
+          "subject_id",
+          "ontology_ref",
+          "variant"
+        ],
+        "Outputs": [
+          "Hybrid Traits keywords",
+          "Atualizacao do reasoning chain"
+        ],
+        "Failure_Modes": [
+          "Sujeito inexistente",
+          "Variante sem keywords"
+        ],
+        "Best_Practices": [
+          "Validar ontologia com KnowledgeBroker",
+          "Adicionar descricoes narrativas personalizadas"
+        ]
+      },
+      "Operator_SetArchetypalDynamics": {
+        "Description": "Define estado da sombra e manifestacoes arquetipicas.",
+        "Inputs": [
+          "shadow_state",
+          "manifestation",
+          "trickster"
+        ],
+        "Outputs": [
+          "Atualizacao do ACO",
+          "Translation matrix seeds"
+        ],
+        "Failure_Modes": [
+          "Estado invalido",
+          "Manifestacao fora da KB"
+        ],
+        "Best_Practices": [
+          "Cruzar com matriz 2.8 antes de aplicar",
+          "Registrar motivacoes psicologicas"
+        ]
       }
     }
   },
   "5.0_Masters_Lexicon": {
     "Description": "Nós de referência estilística e conceitual multidisciplinares.",
     "5.1_Cinematic_References": {
-      "Directors": [
-        "Stanley Kubrick",
-        "David Fincher",
-        "Wes Anderson",
-        "Akira Kurosawa",
-        "Andrei Tarkovsky",
-        "Wong Kar-wai"
-      ],
-      "DoPs": [
-        "Roger Deakins",
-        "Emmanuel Lubezki",
-        "Gordon Willis",
-        "Greig Fraser",
-        "Hoyte van Hoytema"
-      ]
+      "Directors": {
+        "Stanley Kubrick": {
+          "Signature": "Composicoes simetricas e rigor geometrico.",
+          "Use_When": "Narrativas de controle calculado"
+        },
+        "Wong Kar-wai": {
+          "Signature": "Cor saturada e temporalidade fragmentada.",
+          "Use_When": "Histórias de melancolia poetica"
+        },
+        "Andrei Tarkovsky": {
+          "Signature": "Planos longos e poética espiritual.",
+          "Use_When": "Explorar contemplacao metafisica"
+        }
+      },
+      "DoPs": {
+        "Roger Deakins": {
+          "Signature": "Luz naturalista, composicao clara.",
+          "Use_When": "Drama com foco em realismo"
+        },
+        "Emmanuel Lubezki": {
+          "Signature": "Planos-sequencia fluidos, luz natural.",
+          "Use_When": "Experiencias sensoriais imersivas"
+        },
+        "Hoyte van Hoytema": {
+          "Signature": "Escala IMAX, contraste elevado.",
+          "Use_When": "Narrativas grandiosas"
+        }
+      }
     },
     "5.2_Photographic_References": {
-      "Fashion_Portrait": [
-        "Annie Leibovitz",
-        "Richard Avedon",
-        "Tim Walker"
-      ],
-      "Conceptual": [
-        "Cindy Sherman",
-        "Andreas Gursky",
-        "Gregory Crewdson"
-      ]
+      "Fashion_Portrait": {
+        "Annie Leibovitz": {
+          "Signature": "Retratos cenograficos e cores ricas.",
+          "Use_When": "Construir personagens iconicos"
+        },
+        "Tim Walker": {
+          "Signature": "Estetica onirica, surrealismo fashion.",
+          "Use_When": "Campanhas imaginativas"
+        }
+      },
+      "Conceptual": {
+        "Cindy Sherman": {
+          "Signature": "Autorretratos performaticos.",
+          "Use_When": "Discussao sobre identidade"
+        },
+        "Gregory Crewdson": {
+          "Signature": "Cenas cinematograficas encenadas.",
+          "Use_When": "Atmosferas suburbanas misteriosas"
+        }
+      }
     },
     "5.3_Art_and_Design_References": {
       "Description": "[RESTRUTURADO v1.1] Convertido de listas para dicionários de objetos para permitir meta.links e profundidade semântica.",
@@ -449,11 +617,12 @@
         }
       },
       "Architects": {
-        "Frank_Lloyd_Wright": {},
-        "Le_Corbusier": {},
-        "Zaha_Hadid": {},
-        "Tadao_Ando": {},
-        "Oscar_Niemeyer": {}
+        "Tadao_Ando": {
+          "Signature": "Concreto brutalista, luz zen."
+        },
+        "Zaha_Hadid": {
+          "Signature": "Geometrias fluidas, dinamismo futurista."
+        }
       },
       "Designers": {
         "Saul_Bass": {},
@@ -475,7 +644,10 @@
     },
     "5.5_Animation_Directors": {
       "Description": "Mestres da animação.",
-      "Hayao Miyazaki (Studio Ghibli)": "Fantasia detalhada, temas ambientais.",
+      "Hayao Miyazaki (Studio Ghibli)": {
+        "Signature": "Fantasia organica, temas ambientais.",
+        "Recommended_For": "Narrativas de magia suave e ecologia"
+      },
       "Satoshi Kon": "Surrealismo psicológico, edição fluida.",
       "Genndy Tartakovsky": "Estilização geométrica, ação dinâmica."
     },
@@ -489,62 +661,339 @@
       "Ernst Haeckel": "Formas biológicas detalhadas, simetria radial."
     }
   },
-  "6.0_Workflow_and_State_Management": {},
+  "6.0_Workflow_and_State_Management": {
+    "Pipeline_Stages": {
+      "Discovery": {
+        "Purpose": "Monitor fontes externas e requisicoes internas para identificar oportunidades de atualizacao da KB.",
+        "Entry_Criteria": [
+          "Sinal de mudanca de modelo",
+          "Nova referencia cultural ou tecnica"
+        ],
+        "Exit_Criteria": [
+          "Brief validado pelo agente Scout",
+          "Registro de contexto no raw_data"
+        ]
+      },
+      "Analysis": {
+        "Purpose": "Converter dados brutos em patch estruturado, validando coerencia semantica.",
+        "Entry_Criteria": [
+          "Brief Discovery registrado"
+        ],
+        "Exit_Criteria": [
+          "Patch JSON normalizado",
+          "Resumo conceitual gerado pelo Analyst"
+        ]
+      },
+      "Curation": {
+        "Purpose": "Executar pipelines de QA (schema, ontologia, links) e documentar resultados.",
+        "Entry_Criteria": [
+          "Patch proposto",
+          "Resumo analitico"
+        ],
+        "Exit_Criteria": [
+          "Relatorio de testes com status SUCCESS/FAIL",
+          "Checklist de auditoria preenchido"
+        ]
+      },
+      "Integration": {
+        "Purpose": "Aplicar alteracoes aprovadas na KB e abrir PR com rastreabilidade completa.",
+        "Entry_Criteria": [
+          "Relatorio de QA SUCCESS",
+          "Aprovacao de curadoria"
+        ],
+        "Exit_Criteria": [
+          "Branch criado",
+          "Commit assinado",
+          "PR com diff e metricas"
+        ]
+      },
+      "Post_Deployment": {
+        "Purpose": "Monitorar impacto das alteracoes e atualizar metricas de eficacia.",
+        "Entry_Criteria": [
+          "Merge concluido"
+        ],
+        "Exit_Criteria": [
+          "Metricas atualizadas",
+          "Alerts revisados"
+        ]
+      }
+    },
+    "State_Transitions": {
+      "Discovery->Analysis": "Requer ficha de descoberta registrada no Knowledge Broker.",
+      "Analysis->Curation": "Patch validado semanticamente e sem conflitos.",
+      "Curation->Integration": "Todos os testes obrigatorios aprovados.",
+      "Integration->Post_Deployment": "Merge aprovado pelo revisor humano.",
+      "Fallback": "Qualquer falha critica retorna para Discovery com anotacoes."
+    },
+    "Artifacts": {
+      "Discovery": [
+        "raw_data.json",
+        "source_metadata.md"
+      ],
+      "Analysis": [
+        "kb_patch.json",
+        "analysis_summary.md"
+      ],
+      "Curation": [
+        "validation_report.json",
+        "governance_checklist.md"
+      ],
+      "Integration": [
+        "pull_request.md",
+        "commit_message.txt"
+      ],
+      "Post_Deployment": [
+        "metric_snapshot.csv",
+        "incident_log.md"
+      ]
+    },
+    "Fallback_Rules": [
+      {
+        "Condition": "Validador de esquema falha",
+        "Action": "Analyst ajusta patch para corresponder ao kb_schema e reapresenta"
+      },
+      {
+        "Condition": "Integridade referencial reprovada",
+        "Action": "Curator adiciona links ausentes ou cria tarefa de enriquecimento"
+      },
+      {
+        "Condition": "Revisor humano rejeita PR",
+        "Action": "Discovery registra motivos e abre ciclo de retrabalho"
+      }
+    ]
+  },
   "7.0_Model_Translation_Layer_Profiles": {
     "Model_Capability_Profiles": {
       "DALL-E_3": {
-        "Rhetoric": "Descrição Literária"
+        "Rhetoric": "Descrição Literária",
+        "Prompt_Format": "Narrativa longa com contexto, max 800 caracteres",
+        "Negative_Cues": [
+          "texto tipografico",
+          "assinaturas",
+          "artefatos de render"
+        ]
       },
       "Midjourney_V6": {
-        "Rhetoric": "Instrução Artística Poética"
+        "Rhetoric": "Instrução Artística Poética",
+        "Prompt_Format": "Frases curtas conectadas por :: ou virgulas, max 60 palavras",
+        "Negative_Cues": [
+          "watermark",
+          "low detail",
+          "overexposed"
+        ],
+        "Style_Tokens": [
+          "--stylize 250",
+          "--ar 3:2"
+        ]
       },
       "Stable_Diffusion_3": {
-        "Rhetoric": "Receita Técnica"
+        "Rhetoric": "Receita Técnica",
+        "Prompt_Format": "Estrutura step-based com secoes positivas e negativas",
+        "Negative_Cues": [
+          "blurry",
+          "double face",
+          "bad anatomy"
+        ],
+        "Sampler_Default": "DPM++ 2M Karras"
+      },
+      "Seedream_4_0": {
+        "Rhetoric": "Roteiro Cinematico Modular",
+        "Prompt_Format": "Modulos sequenciais separados por headings",
+        "Negative_Cues": [
+          "stutter motion",
+          "flat shading"
+        ]
+      },
+      "Nano_Banana": {
+        "Rhetoric": "Instrucao Minimalista Ludica",
+        "Prompt_Format": "Listas curtas com palavras-chave ludicas",
+        "Negative_Cues": [
+          "monochrome",
+          "somber mood"
+        ]
+      },
+      "Flux_1": {
+        "Rhetoric": "Brief Tecnico Dinamico",
+        "Prompt_Format": "Brief executivo com bullets ou linhas curtas",
+        "Negative_Cues": [
+          "low contrast",
+          "slow cadence"
+        ]
       }
     }
   },
   "8.0_Interdisciplinary_Domains": {
-    "Synesthesia_Design": "Tradução de conceitos auditivos (timbre, ritmo) em visuais."
+    "Synesthesia_Design": {
+      "Description": "Traducao de conceitos auditivos (timbre, ritmo) em visuais.",
+      "Cross_Disciplines": [
+        "Music Theory",
+        "Color Science"
+      ],
+      "Use_Case": "Criar briefs cromaticos para performances imersivas"
+    },
+    "BioCybernetic_Design": {
+      "Description": "Integra sensores biometricos em narrativas visuais responsivas.",
+      "Cross_Disciplines": [
+        "Biofeedback",
+        "Interactive Architecture"
+      ],
+      "Use_Case": "Prompts adaptativos que respondem a batimentos cardiacos"
+    },
+    "Data_Sculpture": {
+      "Description": "Transforma conjuntos de dados em estruturas 3D narrativas.",
+      "Cross_Disciplines": [
+        "Information Design",
+        "Generative Fabrication"
+      ],
+      "Use_Case": "Visualizar emissoes de carbono como paisagens escultoricas"
+    },
+    "NeuroAesthetic_Therapy": {
+      "Description": "Aplicacao de matrizes arquetipicas para terapias visuais.",
+      "Cross_Disciplines": [
+        "Clinical Psychology",
+        "VR Storytelling"
+      ],
+      "Use_Case": "Protocolos visuais para reduzir ansiedade em ambientes virtuais"
+    }
   },
-  "9.0_Governance_and_Metrics": {},
+  "9.0_Governance_and_Metrics": {
+    "Roles": {
+      "Curator": "Garante consistencia epistemologica da KB.",
+      "Guardian": "Acompanha metricas e incidentes, autoriza rollbacks.",
+      "Observer": "Coleta feedback de modelos e artistas.",
+      "Maintainer": "Responsavel por merges e versionamento."
+    },
+    "Quality_Metrics": {
+      "Schema_Compliance": {
+        "Description": "Percentual de entradas aprovadas pelo validation_pipeline.",
+        "Target": ">= 0.98",
+        "Collection": "Execucoes automaticas em CI/CD"
+      },
+      "Ontology_Coverage": {
+        "Description": "Proporcao de dominios com descricoes enriquecidas e links cruzados.",
+        "Target": ">= 0.85",
+        "Collection": "Auditoria mensal"
+      },
+      "Prompt_Efficacy": {
+        "Description": "Taxa de prompts aprovados sem edicao pelo operador humano.",
+        "Target": ">= 0.75",
+        "Collection": "Amostragem semanal por modelo"
+      }
+    },
+    "Review_Checklist": [
+      "Patch possui referencias cruzadas atualizadas?",
+      "Novos termos estao alinhados com a filosofia 1.0?",
+      "Metadata tecnico inclui unidades e contexto historico?",
+      "Model profiles atualizados com limites e tokens bloqueados?"
+    ],
+    "Escalation_Policy": [
+      {
+        "Trigger": "Metricas abaixo do target por 2 ciclos",
+        "Response": "Reuniao extraordinaria de governanca e congelamento de merges"
+      },
+      {
+        "Trigger": "Falha critica em producao",
+        "Response": "Rollback automatico da KB e analise post-mortem"
+      }
+    ],
+    "Audit_Log_Requirements": {
+      "Retention_Days": 180,
+      "Fields": [
+        "timestamp",
+        "agent",
+        "acao",
+        "artefato",
+        "resultado"
+      ],
+      "Storage": "Repositorio versionado com acesso controlado"
+    }
+  },
   "10.0_Technical_Execution_Ontology": {
     "Description": "Léxico técnico expandido para produção virtual, física da luz e materiais.",
     "10.1_Cameras": {
       "Cinema": [
-        "ARRI Alexa 35",
-        "ARRI Alexa Mini LF",
-        "ARRI Alexa 65",
-        "RED V-Raptor X",
-        "Sony VENICE 2"
+        {
+          "Name": "ARRI Alexa 35",
+          "Sensor": "4.6K Super 35",
+          "Dynamic_Range_stops": 17,
+          "Use_Case": "Drama com latitude extrema"
+        },
+        {
+          "Name": "ARRI Alexa Mini LF",
+          "Sensor": "Large Format 4.5K",
+          "Dynamic_Range_stops": 14.5,
+          "Use_Case": "Producoes com camera em movimento e gimbals"
+        },
+        {
+          "Name": "RED V-Raptor X",
+          "Sensor": "VistaVision 8K",
+          "Dynamic_Range_stops": 17,
+          "Use_Case": "Captura de alta resolucao para VFX"
+        },
+        {
+          "Name": "Sony VENICE 2",
+          "Sensor": "Full-Frame 8.6K",
+          "Dynamic_Range_stops": 15,
+          "Use_Case": "Narrativas com color grading agressivo"
+        }
       ],
       "Architectural_Still": [
-        "Canon EOS R5 (High-Res Architectural)",
-        "Phase One XF IQ4 (Medium Format)"
+        {
+          "Name": "Phase One XF IQ4",
+          "Sensor": "Medium Format 150MP",
+          "Use_Case": "Still detalhado de arquitetura"
+        },
+        {
+          "Name": "Canon EOS R5",
+          "Sensor": "Full-Frame 45MP",
+          "Use_Case": "Hibrido foto/video para visualizacoes rapidas"
+        }
       ],
       "Film_Formats": [
-        "Super 16mm (Kodak Vision3)",
-        "35mm Film",
-        "IMAX 70mm Film"
+        {
+          "Name": "IMAX 65mm",
+          "Aspect_Ratio": "1.43:1",
+          "Texture": "Granulosidade fina, escala monumental"
+        },
+        {
+          "Name": "Super 16mm",
+          "Aspect_Ratio": "1.66:1",
+          "Texture": "Grain organico, look documental"
+        }
       ]
     },
     "10.2_Lenses_and_Optics": {
       "Anamorphic": [
-        "Panavision G-Series",
-        "Cooke Anamorphic/i",
-        "ARRI Master Anamorphic"
+        {
+          "Name": "Panavision G-Series",
+          "Look": "Flare azul, compressao horizontal"
+        },
+        {
+          "Name": "ARRI Master Anamorphic",
+          "Look": "Nitidez uniforme, bokeh eliptico"
+        }
       ],
       "Spherical": [
-        "Zeiss Supreme Prime Radiance",
-        "Cooke S8/i",
-        "ARRI Signature Prime"
+        {
+          "Name": "Cooke S4/i",
+          "Look": "Warm glow, faces suaves"
+        },
+        {
+          "Name": "Zeiss Supreme Prime",
+          "Look": "Nitidez moderna, contraste controlado"
+        }
       ],
       "Architectural": [
-        "Canon TS-E 17mm f/4L (Tilt-Shift)",
-        "Schneider Kreuznach PC-TS"
+        {
+          "Name": "Canon TS-E 17mm",
+          "Look": "Controle de perspectiva tilt-shift"
+        }
       ],
       "Vintage": [
-        "Canon K35",
-        "Super Baltar"
+        {
+          "Name": "Canon K35",
+          "Look": "Low contrast, highlights halated"
+        }
       ]
     },
     "10.3_Professional_Lighting_Systems": {

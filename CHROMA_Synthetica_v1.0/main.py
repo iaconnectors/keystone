@@ -47,7 +47,14 @@ def main():
         # 1. Inicializar o Orquestrador Synthetica v1.1 (Broker Unificado)
         synthetica = ChromaSyntheticaOrchestrator(kb_path=KB_PATH)
 
-        target_models = ["DALL-E_3"]
+        target_models = [
+            "DALL-E_3",
+            "Midjourney_V6",
+            "Stable_Diffusion_3",
+            "Seedream_4_0",
+            "Nano_Banana",
+            "Flux_1",
+        ]
 
         # 2. Executar Protótipo A (Kinnari Solarpunk)
         print("\n\n" + "="*80)

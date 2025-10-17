@@ -11,10 +11,10 @@ try:
     from jsonschema import validate, ValidationError
     JSONSCHEMA_AVAILABLE = True
 except ImportError:
-    print("⚠️ AVISO: 'jsonschema' não encontrado. A validação estrutural será ignorada.")
-    print("Instale com 'pip install jsonschema' para validação completa.\n")
+    print("WARNING: 'jsonschema' nao encontrado. A validacao estrutural sera ignorada.")
+    print("Instale com 'pip install jsonschema' para validacao completa.\n")
     JSONSCHEMA_AVAILABLE = False
-    ValidationError = Exception # Define dummy exception
+    ValidationError = Exception  # Define dummy exception
 
 # Define o caminho para o arquivo de esquema (relativo à raiz do projeto)
 # Assumimos que o script é executado a partir da raiz do projeto.
@@ -38,13 +38,17 @@ class ValidationPipeline:
             with open(path, 'r', encoding='utf-8') as f:
                 return json.load(f)
         except FileNotFoundError:
-            print(f"❌ ERRO CRÍTICO (Sintaxe/Carregamento): Arquivo não encontrado em {path}")
+            print(
+                f"CRITICAL ERROR (Sintaxe/Carregamento): Arquivo nao encontrado em {path}"
+            )
             # Verifica se o schema está faltando e dá instruções claras
             if path == SCHEMA_PATH:
-                 print("Certifique-se de que kb/kb_schema.json existe.")
-            sys.exit(1) # Saída com erro
+                print("Certifique-se de que kb/kb_schema.json existe.")
+            sys.exit(1)  # Saída com erro
         except json.JSONDecodeError:
-            print(f"❌ ERRO CRÍTICO (Sintaxe/Carregamento): Arquivo JSON inválido em {path}")
+            print(
+                f"CRITICAL ERROR (Sintaxe/Carregamento): Arquivo JSON invalido em {path}"
+            )
             sys.exit(1)
 
     def run(self):
@@ -67,10 +71,10 @@ class ValidationPipeline:
 
     def _report_test(self, test_name: str, success: bool, message: str = ""):
         if success:
-            print(f"✅ PASS: {test_name}")
+            print(f"PASS: {test_name}")
             self.tests_passed += 1
         else:
-            print(f"❌ FAIL: {test_name} (Detalhes: {message})")
+            print(f"FAIL: {test_name} (Detalhes: {message})")
             self.tests_failed += 1
 
     # --- Implementação dos Testes ---
@@ -78,7 +82,7 @@ class ValidationPipeline:
     def test_schema_validation(self):
         """Camada 1: Verifica se o JSON está em conformidade com o esquema formal."""
         if not JSONSCHEMA_AVAILABLE:
-            print("⚠️ SKIP: Validação de Esquema JSON (jsonschema não instalado)")
+            print("SKIP: Validacao de Esquema JSON (jsonschema nao instalado)")
             return
 
         try:
@@ -117,10 +121,12 @@ class ValidationPipeline:
                 return
 
             # Verifica se o link esperado (Tadao Ando) existe nos links gerados
-            if any("Tadao Ando" in link for link in links):
+            normalized_links = [link.replace("_", " ") for link in links]
+
+            if any("Tadao Ando" in link for link in normalized_links):
                 self._report_test("Integridade Referencial (meta.links)", True)
             else:
-                 self._report_test("Integridade Referencial (meta.links)", False, "Link esperado (Symmetry -> Tadao Ando) não encontrado.")
+                 self._report_test("Integridade Referencial (meta.links)", False, "Link esperado (Symmetry -> Tadao Ando) nao encontrado.")
 
         except (KeyError, TypeError):
              # Se a estrutura não existir (e.g., KB antiga ou migração falhou), o teste falha.
@@ -166,11 +172,11 @@ class ValidationPipeline:
         print(f"Falharam: {self.tests_failed}")
 
         if self.tests_failed > 0:
-            print("\nSTATUS DO PIPELINE: ❌ FALHOU")
-            sys.exit(1) # Saída com erro para o CI/CD interromper o merge
+            print("\nSTATUS DO PIPELINE: FALHOU")
+            sys.exit(1)  # Saída com erro para o CI/CD interromper o merge
         else:
-            print("\nSTATUS DO PIPELINE: ✅ SUCESSO")
-            sys.exit(0) # Saída com sucesso
+            print("\nSTATUS DO PIPELINE: SUCESSO")
+            sys.exit(0)  # Saída com sucesso
 
 if __name__ == "__main__":
     # Interface de Linha de Comando (CLI) para integração com CI/CD

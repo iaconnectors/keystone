@@ -11,11 +11,13 @@ from synthetica.engines.imtl import IMTLPolicyEngine
 
 class ChromaSyntheticaOrchestrator:
     """
-    A classe principal do CHROMA Synthetica v1.1. Orquestra a Mente Híbrida com Broker Unificado.
+    Core orchestrator for CHROMA Synthetica v1.1 (unified broker).
     """
-    # (v1.1) O construtor agora aceita um único caminho para a KB Unificada.
     def __init__(self, kb_path: str = "kb/synthetica_kb_v1.1.json"):
-        print(f"🚀 Inicializando CHROMA Synthetica v1.1 (Filosofia Gerativa Ativa)...")
+        print(
+            "[Orchestrator] Initialising CHROMA Synthetica v1.1 "
+            "(Active Generative Philosophy)."
+        )
         
         # 1. Carregar a Base de Conhecimento Unificada
         kb_data = self._load_kb(kb_path)
@@ -34,7 +36,10 @@ class ChromaSyntheticaOrchestrator:
         # 4. Inicializar Motor de Tradução (IMTL)
         self.imtl = IMTLPolicyEngine(self.broker)
        
-        print(f"\n✅ Sistema Operacional. KB v{self.broker.get_entry('KB_Version')}")
+        print(
+            f"\n[Orchestrator] System online. "
+            f"KB version: {self.broker.get_entry('KB_Version')}"
+        )
 
     def _load_kb(self, kb_path: str) -> Dict[str, Any]:
         kb_file = Path(kb_path)
@@ -55,8 +60,8 @@ class ChromaSyntheticaOrchestrator:
                     return json.load(handle)
 
         raise FileNotFoundError(
-            f"❌ ERRO CRÍTICO: KB não encontrada. Caminhos verificados: "
-            f"{', '.join(str(path) for path in search_paths)}."
+            "CRITICAL ERROR: knowledge base not found. "
+            f"Checked paths: {', '.join(str(path) for path in search_paths)}."
         )
         
     # (v1.1) O pipeline agora aceita dicionários {name, params}.

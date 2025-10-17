@@ -95,7 +95,7 @@
           "meta": {
             "links": {
               "related_nodes": [
-                "5.0_Masters_Lexicon.5.3_Art_and_Design_References.Architects (Tadao Ando)",
+                "5.0_Masters_Lexicon.5.3_Art_and_Design_References.Architects.Tadao_Ando",
                 "3.0_Visual_Language_and_Composition.3.1_Compositional_Principles.Symmetry"
               ]
             }
@@ -246,6 +246,15 @@
       },
       "Stable_Diffusion_3": {
         "Rhetoric": "Receita Técnica"
+      },
+      "Seedream_4_0": {
+        "Rhetoric": "Roteiro Cinematico Modular"
+      },
+      "Nano_Banana": {
+        "Rhetoric": "Instrucao Minimalista Ludica"
+      },
+      "Flux_1": {
+        "Rhetoric": "Brief Tecnico Dinamico"
       }
     }
   },

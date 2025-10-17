@@ -6,7 +6,10 @@ class KnowledgeBroker:
     def __init__(self, kb_data: Dict[str, Any]):
         self._kb = kb_data
         self._cache: Dict[str, List[Any]] = {}
-        print(f"🧠: KnowledgeBroker inicializado para KB ID: {kb_data.get('KB_ID', 'Desconhecido')}.")
+        print(
+            "[KnowledgeBroker] Initialised for KB ID: "
+            f"{kb_data.get('KB_ID', 'Desconhecido')}."
+        )
 
     # ==============================================================================
     # FUNÇÃO 'get_entry' CORRIGIDA

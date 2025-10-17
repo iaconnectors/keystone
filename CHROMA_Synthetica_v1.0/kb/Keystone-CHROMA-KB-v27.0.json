@@ -20,22 +20,46 @@
       "Description": "[NOVO v27.0] Estudos avançados sobre percepção e emoção visual.",
       "Advanced_Color_Psychology": {
         "Description": "Impacto de matizes específicos e combinações não convencionais.",
-        "Examples": ["Wes Anderson Palette (Pastel, Simetria)", "Fauvism (Cores vibrantes, não naturais)", "Neo-Noir (Alto contraste, cores saturadas)"]
+        "Examples": [
+          "Wes Anderson Palette (Pastel, Simetria)",
+          "Fauvism (Cores vibrantes, não naturais)",
+          "Neo-Noir (Alto contraste, cores saturadas)"
+        ]
       },
       "Phenomenology_of_Perception": {
         "Description": "Como o cérebro interpreta informações visuais.",
-        "Concepts": ["Pareidolia (Ver rostos em objetos)", "Optical Illusions", "Gestalt Principles (Proximity, Similarity, Closure)"]
+        "Concepts": [
+          "Pareidolia (Ver rostos em objetos)",
+          "Optical Illusions",
+          "Gestalt Principles (Proximity, Similarity, Closure)"
+        ]
       }
     },
     "2.3_Iconography_and_Symbolism": {
       "Description": "[NOVO v27.0] Estudo comparado de símbolos.",
-      "Mythological": ["Ouroboros (Ciclo eterno)", "Mandala (Universo espiritual)", "Tree of Life (Yggdrasil)"],
-      "Political": ["Eagle (Poder, Império)", "Hammer and Sickle (Comunismo)", "Olive Branch (Paz)"]
+      "Mythological": [
+        "Ouroboros (Ciclo eterno)",
+        "Mandala (Universo espiritual)",
+        "Tree of Life (Yggdrasil)"
+      ],
+      "Political": [
+        "Eagle (Poder, Império)",
+        "Hammer and Sickle (Comunismo)",
+        "Olive Branch (Paz)"
+      ]
     },
     "2.4_Semiotics_of_the_Body": {
       "Description": "[NOVO v27.0] Linguagem corporal e gesto.",
-      "Domains": ["Dance (Expressão rítmica)", "Theater (Emoção exagerada)", "Sculpture (Forma estática expressiva)"],
-      "Concepts": ["Power Posing", "Microexpressions", "Proxemics (Uso do espaço pessoal)"]
+      "Domains": [
+        "Dance (Expressão rítmica)",
+        "Theater (Emoção exagerada)",
+        "Sculpture (Forma estática expressiva)"
+      ],
+      "Concepts": [
+        "Power Posing",
+        "Microexpressions",
+        "Proxemics (Uso do espaço pessoal)"
+      ]
     },
     "2.5_Concepts_and_Philosophy": {
       "Wabi-sabi": "Beleza da imperfeição.",
@@ -58,33 +82,100 @@
       "Atmospheric Perspective"
     ],
     "3.3_Color_Theory": {
-      "Harmonies": ["Monochromatic", "Analogous", "Complementary", "Triadic"]
+      "Harmonies": [
+        "Monochromatic",
+        "Analogous",
+        "Complementary",
+        "Triadic"
+      ]
     },
     "3.4_Typography_as_Composition": {
       "Description": "[NOVO v27.0] O uso da tipografia como elemento visual.",
-      "Concepts": ["Visual Weight", "Rhythm", "Texture", "Kinetic Typography", "Calligraphy", "Grid Systems (ver 13.0)"]
+      "Concepts": [
+        "Visual Weight",
+        "Rhythm",
+        "Texture",
+        "Kinetic Typography",
+        "Calligraphy",
+        "Grid Systems (ver 13.0)"
+      ]
     }
   },
   "4.0_Creative_Operators_and_Engines": {
-    "4.1_Camera_Engine": ["Set Focal Length", "Set Aperture", "Define Shot Type"],
-    "4.2_Lighting_Engine": ["Chiaroscuro", "Rembrandt", "High-Key", "Low-Key"],
-    "4.3_Material_Engine": ["PBR Workflow", "Weathering"]
+    "4.1_Camera_Engine": [
+      "Set Focal Length",
+      "Set Aperture",
+      "Define Shot Type"
+    ],
+    "4.2_Lighting_Engine": [
+      "Chiaroscuro",
+      "Rembrandt",
+      "High-Key",
+      "Low-Key"
+    ],
+    "4.3_Material_Engine": [
+      "PBR Workflow",
+      "Weathering"
+    ]
   },
   "5.0_Masters_Lexicon": {
     "Description": "[EXPANDIDO v27.0] Nós de referência estilística e conceitual multidisciplinares.",
     "5.1_Cinematic_References": {
-      "Directors": ["Stanley Kubrick", "David Fincher", "Wes Anderson", "Akira Kurosawa", "Andrei Tarkovsky", "Wong Kar-wai"],
-      "DoPs": ["Roger Deakins", "Emmanuel Lubezki", "Gordon Willis", "Greig Fraser", "Hoyte van Hoytema"]
+      "Directors": [
+        "Stanley Kubrick",
+        "David Fincher",
+        "Wes Anderson",
+        "Akira Kurosawa",
+        "Andrei Tarkovsky",
+        "Wong Kar-wai"
+      ],
+      "DoPs": [
+        "Roger Deakins",
+        "Emmanuel Lubezki",
+        "Gordon Willis",
+        "Greig Fraser",
+        "Hoyte van Hoytema"
+      ]
     },
     "5.2_Photographic_References": {
-      "Fashion_Portrait": ["Annie Leibovitz", "Richard Avedon", "Tim Walker"],
-      "Conceptual": ["Cindy Sherman", "Andreas Gursky", "Gregory Crewdson"]
+      "Fashion_Portrait": [
+        "Annie Leibovitz",
+        "Richard Avedon",
+        "Tim Walker"
+      ],
+      "Conceptual": [
+        "Cindy Sherman",
+        "Andreas Gursky",
+        "Gregory Crewdson"
+      ]
     },
     "5.3_Art_and_Design_References": {
-      "Painters": ["Caravaggio", "Rembrandt", "Turner", "Dalí", "Edward Hopper", "Zdzisław Beksiński"],
-      "Architects": ["Frank Lloyd Wright", "Le Corbusier", "Zaha Hadid", "Tadao Ando", "Oscar Niemeyer"],
-      "Designers": ["Saul Bass", "Paul Rand", "Dieter Rams", "Moebius"],
-      "Digital_Artists": ["Refik Anadol", "Beeple", "Ash Thorp"]
+      "Painters": [
+        "Caravaggio",
+        "Rembrandt",
+        "Turner",
+        "Dalí",
+        "Edward Hopper",
+        "Zdzisław Beksiński"
+      ],
+      "Architects": [
+        "Frank Lloyd Wright",
+        "Le Corbusier",
+        "Zaha Hadid",
+        "Tadao Ando",
+        "Oscar Niemeyer"
+      ],
+      "Designers": [
+        "Saul Bass",
+        "Paul Rand",
+        "Dieter Rams",
+        "Moebius"
+      ],
+      "Digital_Artists": [
+        "Refik Anadol",
+        "Beeple",
+        "Ash Thorp"
+      ]
     },
     "5.4_Expanded_Design_Movements": {
       "Description": "[NOVO v27.0] Movimentos influentes no design.",
@@ -111,9 +202,24 @@
   "6.0_Workflow_and_State_Management": {},
   "7.0_Model_Translation_Layer_Profiles": {
     "Model_Capability_Profiles": {
-      "DALL-E_3": {"Rhetoric": "Descrição Literária"},
-      "Midjourney_V6": {"Rhetoric": "Instrução Artística Poética"},
-      "Stable_Diffusion_3": {"Rhetoric": "Receita Técnica"}
+      "DALL-E_3": {
+        "Rhetoric": "Descrição Literária"
+      },
+      "Midjourney_V6": {
+        "Rhetoric": "Instrução Artística Poética"
+      },
+      "Stable_Diffusion_3": {
+        "Rhetoric": "Receita Técnica"
+      },
+      "Seedream_4_0": {
+        "Rhetoric": "Roteiro Cinematico Modular"
+      },
+      "Nano_Banana": {
+        "Rhetoric": "Instrucao Minimalista Ludica"
+      },
+      "Flux_1": {
+        "Rhetoric": "Brief Tecnico Dinamico"
+      }
     }
   },
   "8.0_Interdisciplinary_Domains": {
@@ -123,19 +229,52 @@
   "10.0_Technical_Execution_Ontology": {
     "Description": "[EXPANDIDO v27.0] Léxico técnico expandido para produção virtual, física da luz e materiais.",
     "10.1_Cameras": {
-      "Cinema": ["ARRI Alexa 35", "ARRI Alexa Mini LF", "ARRI Alexa 65", "RED V-Raptor X", "Sony VENICE 2"],
-      "Architectural_Still": ["[NOVO v27.0] Canon EOS R5 (High-Res Architectural)", "Phase One XF IQ4 (Medium Format)"],
-      "Film_Formats": ["Super 16mm (Kodak Vision3)", "35mm Film", "IMAX 70mm Film"]
+      "Cinema": [
+        "ARRI Alexa 35",
+        "ARRI Alexa Mini LF",
+        "ARRI Alexa 65",
+        "RED V-Raptor X",
+        "Sony VENICE 2"
+      ],
+      "Architectural_Still": [
+        "[NOVO v27.0] Canon EOS R5 (High-Res Architectural)",
+        "Phase One XF IQ4 (Medium Format)"
+      ],
+      "Film_Formats": [
+        "Super 16mm (Kodak Vision3)",
+        "35mm Film",
+        "IMAX 70mm Film"
+      ]
     },
     "10.2_Lenses_and_Optics": {
-      "Anamorphic": ["Panavision G-Series", "Cooke Anamorphic/i", "ARRI Master Anamorphic"],
-      "Spherical": ["Zeiss Supreme Prime Radiance", "Cooke S8/i", "ARRI Signature Prime"],
-      "Architectural": ["[NOVO v27.0] Canon TS-E 17mm f/4L (Tilt-Shift)", "Schneider Kreuznach PC-TS"],
-      "Vintage": ["Canon K35", "Super Baltar"]
+      "Anamorphic": [
+        "Panavision G-Series",
+        "Cooke Anamorphic/i",
+        "ARRI Master Anamorphic"
+      ],
+      "Spherical": [
+        "Zeiss Supreme Prime Radiance",
+        "Cooke S8/i",
+        "ARRI Signature Prime"
+      ],
+      "Architectural": [
+        "[NOVO v27.0] Canon TS-E 17mm f/4L (Tilt-Shift)",
+        "Schneider Kreuznach PC-TS"
+      ],
+      "Vintage": [
+        "Canon K35",
+        "Super Baltar"
+      ]
     },
     "10.3_Professional_Lighting_Systems": {
-      "Cinema_LED": ["ARRI SkyPanel S60-C", "Aputure Nova P600c", "Astera Titan Tube"],
-      "HMI": ["ARRI M-Series HMI"],
+      "Cinema_LED": [
+        "ARRI SkyPanel S60-C",
+        "Aputure Nova P600c",
+        "Astera Titan Tube"
+      ],
+      "HMI": [
+        "ARRI M-Series HMI"
+      ],
       "Modifiers": [
         "Softbox (Large)",
         "Octabank (Large)",
@@ -147,12 +286,27 @@
       ]
     },
     "10.4_Camera_Support_and_Stabilization": {
-      "Gimbals": ["DJI Ronin 2", "DJI RS 4 Pro", "Freefly MōVI Pro"],
-      "Cranes": ["Technocrane SuperTechno 50"]
+      "Gimbals": [
+        "DJI Ronin 2",
+        "DJI RS 4 Pro",
+        "Freefly MōVI Pro"
+      ],
+      "Cranes": [
+        "Technocrane SuperTechno 50"
+      ]
     },
     "10.5_Post_Production_Software": {
-      "VFX": ["Nuke", "Houdini"],
-      "3D": ["Maya", "Blender", "Cinema 4D", "ZBrush", "Unreal Engine"]
+      "VFX": [
+        "Nuke",
+        "Houdini"
+      ],
+      "3D": [
+        "Maya",
+        "Blender",
+        "Cinema 4D",
+        "ZBrush",
+        "Unreal Engine"
+      ]
     },
     "10.6_Physics_of_Light_and_Optics": {
       "Description": "[NOVO v27.0] Fenômenos óticos para realismo avançado.",
@@ -218,8 +372,15 @@
       "Green Building": "Materiais reciclados, telhados verdes, fachadas vivas."
     },
     "12.3_Architectural_Lighting": {
-      "Concepts": ["Accent Lighting (Destaque)", "Ambient Lighting (Geral)", "Daylighting (Luz natural)"],
-      "Light Artists": ["James Turrell (Espaço e percepção da luz)", "Olafur Eliasson (Instalações imersivas)"]
+      "Concepts": [
+        "Accent Lighting (Destaque)",
+        "Ambient Lighting (Geral)",
+        "Daylighting (Luz natural)"
+      ],
+      "Light Artists": [
+        "James Turrell (Espaço e percepção da luz)",
+        "Olafur Eliasson (Instalações imersivas)"
+      ]
     }
   },
   "13.0_Ontology_of_Design (Product_Graphic_Interior)": {
@@ -242,19 +403,34 @@
   "14.0_Ontology_of_Experience_and_Ephemeral_Architecture": {
     "Description": "[NOVO v27.0] Design de experiências, stands e arquitetura temporária.",
     "14.1_Ephemeral_Architecture": {
-      "Types": ["Exhibition Pavilions", "Trade Show Stands", "Pop-up Stores"],
-      "Concepts": ["Modular Structures", "Lightweight Materials", "Sistemas de Encaixe"]
+      "Types": [
+        "Exhibition Pavilions",
+        "Trade Show Stands",
+        "Pop-up Stores"
+      ],
+      "Concepts": [
+        "Modular Structures",
+        "Lightweight Materials",
+        "Sistemas de Encaixe"
+      ]
     },
     "14.2_Wayfinding_and_Signage": {
       "Description": "A arte de guiar pessoas através de espaços.",
-      "Elements": ["Typography (Legibilidade)", "Iconography (Símbolos universais)", "Color Coding"]
+      "Elements": [
+        "Typography (Legibilidade)",
+        "Iconography (Símbolos universais)",
+        "Color Coding"
+      ]
     }
   },
   "15.0_Ontology_of_Advertising_and_Art_Direction": {
     "Description": "[NOVO v27.0] Conceitos e técnicas de publicidade e direção de arte.",
     "15.1_Art_Direction_for_Campaigns": {
       "Description": "Tradução de conceitos abstratos em estética visual consistente.",
-      "Iconic Campaigns": ["Apple 'Think Different' (Minimalismo)", "Absolut Vodka (Variações sobre a garrafa)"]
+      "Iconic Campaigns": [
+        "Apple 'Think Different' (Minimalismo)",
+        "Absolut Vodka (Variações sobre a garrafa)"
+      ]
     },
     "15.2_High-End_Advertising_Photography": {
       "Food Photography": "Foco em textura, 'appetite appeal'.",

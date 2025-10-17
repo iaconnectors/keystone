@@ -3,19 +3,26 @@
   "KB_Version": "1.0.0 (Nexus)",
   "Focus_Domain": "Universal Creative Orchestration (Nexus Architecture)",
   "Description": "Versão 1.0.0 do Nexus. Integração de Ontologias Cognitivas (Neuroestética - Pilar II.3) e Taxonomias de Processos Físicos (Pilar II.2).",
-  
   "1.0_Ontology_and_Philosophy": {
     "Architecture": "Pilar I (Nexus Estilístico), Pilar II (Ontologia Multidimensional), Pilar III (Ecossistema Autônomo), Pilar IV (Governança)."
   },
-
   "2.0_Semiotics_and_Psychology_Database": {
     "Description": "[EXPANDIDO v1.0] Mapeamento profundo de conceitos abstratos, psicológicos, semióticos e cognitivos.",
-    "2.1_Semiotic_Theory": { "...": "..." },
-    "2.2_Advanced_Visual_Psychology": { "...": "..." },
-    "2.3_Iconography_and_Symbolism": { "...": "..." },
-    "2.4_Semiotics_of_the_Body": { "...": "..." },
-    "2.5_Concepts_and_Philosophy": { "...": "..." },
-    
+    "2.1_Semiotic_Theory": {
+      "...": "..."
+    },
+    "2.2_Advanced_Visual_Psychology": {
+      "...": "..."
+    },
+    "2.3_Iconography_and_Symbolism": {
+      "...": "..."
+    },
+    "2.4_Semiotics_of_the_Body": {
+      "...": "..."
+    },
+    "2.5_Concepts_and_Philosophy": {
+      "...": "..."
+    },
     "2.6_Cognitive_Impact_Framework (Neuroaesthetics)": {
       "Description": "[NOVO v1.0] Mapeamento de princípios neuroestéticos para operadores de composição (Baseado na Tabela 3 do WP).",
       "Principles": {
@@ -47,78 +54,160 @@
       }
     }
   },
-
-  "3.0_Visual_Language_and_Composition": { "...": "..." },
-  "4.0_Creative_Operators_and_Engines": { "...": "..." },
-  "5.0_Masters_Lexicon": { "...": "..." },
-  
+  "3.0_Visual_Language_and_Composition": {
+    "...": "..."
+  },
+  "4.0_Creative_Operators_and_Engines": {
+    "...": "..."
+  },
+  "5.0_Masters_Lexicon": {
+    "...": "..."
+  },
   "7.0_Model_Translation_Layer_Profiles": {
     "Description": "Perfis retóricos para o Motor de Políticas (IMTL).",
     "Model_Capability_Profiles": {
-      "DALL-E_3": {"Rhetoric": "Descrição Literária (Narrativa)"},
-      "Midjourney_V6": {"Rhetoric": "Instrução Artística Poética"},
-      "Stable_Diffusion_3": {"Rhetoric": "Receita Técnica"}
+      "DALL-E_3": {
+        "Rhetoric": "Descrição Literária (Narrativa)"
+      },
+      "Midjourney_V6": {
+        "Rhetoric": "Instrução Artística Poética"
+      },
+      "Stable_Diffusion_3": {
+        "Rhetoric": "Receita Técnica"
+      },
+      "Seedream_4_0": {
+        "Rhetoric": "Roteiro Cinematico Modular"
+      },
+      "Nano_Banana": {
+        "Rhetoric": "Instrucao Minimalista Ludica"
+      },
+      "Flux_1": {
+        "Rhetoric": "Brief Tecnico Dinamico"
+      }
     }
   },
-
   "10.0_Technical_Execution_Ontology": {
     "Description": "[EXPANDIDO v1.0] Léxico técnico expandido, incluindo a Taxonomia de Artefatos.",
     "10.1_Cameras": {
-      "Cinema": ["ARRI Alexa 35", "ARRI Alexa Mini LF", "RED V-Raptor X", "Sony VENICE 2"],
-      "Architectural_Still": ["Canon EOS R5 (High-Res Architectural)", "Phase One XF IQ4 (Medium Format)"]
+      "Cinema": [
+        "ARRI Alexa 35",
+        "ARRI Alexa Mini LF",
+        "RED V-Raptor X",
+        "Sony VENICE 2"
+      ],
+      "Architectural_Still": [
+        "Canon EOS R5 (High-Res Architectural)",
+        "Phase One XF IQ4 (Medium Format)"
+      ]
     },
-    "10.2_Lenses_and_Optics": { "...": "..." },
-    "10.3_Professional_Lighting_Systems": { "...": "..." },
-    "10.4_Camera_Support_and_Stabilization": { "...": "..." },
-    "10.5_Post_Production_Software": { "...": "..." },
-    "10.6_Physics_of_Light_and_Optics": { "...": "..." },
-    "10.7_Material_Science": { "...": "..." },
-    
+    "10.2_Lenses_and_Optics": {
+      "...": "..."
+    },
+    "10.3_Professional_Lighting_Systems": {
+      "...": "..."
+    },
+    "10.4_Camera_Support_and_Stabilization": {
+      "...": "..."
+    },
+    "10.5_Post_Production_Software": {
+      "...": "..."
+    },
+    "10.6_Physics_of_Light_and_Optics": {
+      "...": "..."
+    },
+    "10.7_Material_Science": {
+      "...": "..."
+    },
     "10.8_Physical_Process_Artifact_Taxonomy": {
       "Description": "[NOVO v1.0] Taxonomia estruturada de imperfeições e artefatos de processos físicos (Baseado na Tabela 2 do WP).",
       "Daguerreotype": {
         "Chemical_Aberration": {
           "Name": "Daguerreian Measles",
-          "Keywords": ["subtle brown spotting", "chemical residue", "daguerreian measles artifact", "age spots"]
+          "Keywords": [
+            "subtle brown spotting",
+            "chemical residue",
+            "daguerreian measles artifact",
+            "age spots"
+          ]
         },
         "Optical_Property": {
           "Name": "Specular Reflection",
-          "Keywords": ["highly polished silver plate", "specular reflections", "metallic sheen", "mirror-like shadows"]
+          "Keywords": [
+            "highly polished silver plate",
+            "specular reflections",
+            "metallic sheen",
+            "mirror-like shadows"
+          ]
         },
         "Deterioration": {
           "Name": "Tarnish Spots",
-          "Keywords": ["iridescent tarnish", "silver sulfide patina", "tarnished edges", "atmospheric corrosion"]
+          "Keywords": [
+            "iridescent tarnish",
+            "silver sulfide patina",
+            "tarnished edges",
+            "atmospheric corrosion"
+          ]
         }
       },
       "Woodblock_Printing (Ukiyo-e)": {
         "Matrix_Artifact": {
           "Name": "Wood Grain Texture",
-          "Keywords": ["subtle wood grain texture", "ukiyo-e woodblock lines", "visible grain pattern"]
+          "Keywords": [
+            "subtle wood grain texture",
+            "ukiyo-e woodblock lines",
+            "visible grain pattern"
+          ]
         },
         "Ink_Artifact": {
           "Name": "Ink Bleed",
-          "Keywords": ["slight ink bleed", "imperfect color registration", "hand-printed look", "overlapping colors"]
+          "Keywords": [
+            "slight ink bleed",
+            "imperfect color registration",
+            "hand-printed look",
+            "overlapping colors"
+          ]
         }
       },
       "Lithography": {
         "Tonal_Artifact": {
           "Name": "Tusche Wash",
-          "Keywords": ["lithograph texture", "granular tones", "tusche wash effect", "stone grain"]
+          "Keywords": [
+            "lithograph texture",
+            "granular tones",
+            "tusche wash effect",
+            "stone grain"
+          ]
         }
       },
       "Cyanotype": {
         "Chemical_Property": {
           "Name": "Prussian Blue Monochrome",
-          "Keywords": ["cyanotype blue", "prussian blue monochrome", "sun print aesthetic", "chemical wash"]
+          "Keywords": [
+            "cyanotype blue",
+            "prussian blue monochrome",
+            "sun print aesthetic",
+            "chemical wash"
+          ]
         }
       }
     },
-    "10.9_Generative_Art_and_Proceduralism": { "...": "..." }
+    "10.9_Generative_Art_and_Proceduralism": {
+      "...": "..."
+    }
   },
-
-  "11.0_Narrative_Structure_and_Storytelling": { "...": "..." },
-  "12.0_Ontology_of_Architecture_and_Spatial_Design": { "...": "..." },
-  "13.0_Ontology_of_Design (Product_Graphic_Interior)": { "...": "..." },
-  "14.0_Ontology_of_Experience_and_Ephemeral_Architecture": { "...": "..." },
-  "15.0_Ontology_of_Advertising_and_Art_Direction": { "...": "..." }
+  "11.0_Narrative_Structure_and_Storytelling": {
+    "...": "..."
+  },
+  "12.0_Ontology_of_Architecture_and_Spatial_Design": {
+    "...": "..."
+  },
+  "13.0_Ontology_of_Design (Product_Graphic_Interior)": {
+    "...": "..."
+  },
+  "14.0_Ontology_of_Experience_and_Ephemeral_Architecture": {
+    "...": "..."
+  },
+  "15.0_Ontology_of_Advertising_and_Art_Direction": {
+    "...": "..."
+  }
 }

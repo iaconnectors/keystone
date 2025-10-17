@@ -1,100 +1,137 @@
-# scripts/autonomous_curator.py
+"""Simulated autonomous curator workflow for CHROMA Synthetica."""
 
 import json
-from typing import Dict, Any
-# Importações (assumindo que 'synthetica' está no PYTHONPATH)
+import sys
+from pathlib import Path
+from typing import Any, Dict, Tuple
+
+ROOT_DIR = Path(__file__).resolve().parent.parent
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+
 from synthetica.services.git_service import GitService
 
+
 class AutonomousCurator:
-    """
-    Pilar II: O Orquestrador Autônomo (Épico 2).
-    Gerencia o ciclo: Scout -> Analyst -> Curator -> Integrator.
-    """
-    def __init__(self):
+    """Implements the Scout -> Analyst -> Curator -> Integrator loop."""
+
+    def __init__(self) -> None:
         self.git_service = GitService()
-        self.kb_file_path = "kb/synthetica_kb_v1.0.json" 
+        self.kb_file_path = "kb/synthetica_kb_v1.1.json"
 
-    def run_cycle(self):
-        print("\n--- Iniciando Ciclo de Curadoria Autônoma (Épico 2) ---")
+    def run_cycle(self) -> None:
+        print("\n--- Iniciando ciclo de curadoria autonoma (Epico 2) ---")
 
-        # 1. Scout (Simulado)
         raw_data = self.agent_scout()
-
-        # 2. Analyst (Simulado)
         kb_patch, analysis_summary = self.agent_analyst(raw_data)
 
-        # 3. Curator (Validação - Simulado)
         validation_report = self.agent_curator(kb_patch)
-        if not validation_report["status"] == "SUCCESS": return
+        if validation_report.get("status") != "SUCCESS":
+            print("Curadoria falhou. Encerrando ciclo.")
+            return
 
-        # 4. Integrator
         self.agent_integrator(kb_patch, analysis_summary, validation_report, raw_data)
 
-    # --- Implementação dos Agentes (Simulados) ---
+    # --- Agents (simulated) -------------------------------------------------
 
     def agent_scout(self) -> Dict[str, Any]:
-        print("🔭 Agente Scout: Procurando...")
+        print("[Scout] Capturando informacoes de fontes externas simuladas...")
         return {
             "source_type": "Blog Post",
             "source_url": "http://ai-blog.com/sd4-launch",
-            "content": "Stable Diffusion 4 (SD4) launched. Preferred rhetoric is 'Direct Visual Instruction'."
+            "content": (
+                "Stable Diffusion 4 (SD4) launched. Preferred rhetoric is "
+                "'Direct Visual Instruction'."
+            ),
         }
 
-    def agent_analyst(self, raw_data: Dict[str, Any]) -> (Dict[str, Any], str):
-        print("🧐 Agente Analyst: Analisando (LLM Simulado)...")
+    def agent_analyst(self, raw_data: Dict[str, Any]) -> Tuple[Dict[str, Any], str]:
+        print("[Analyst] Interpretando dados coletados (LLM simulado)...")
+
         patch = {
-            "7.0_Model_Translation_Layer_Profiles.Model_Capability_Profiles.Stable_Diffusion_4": {
-                "Rhetoric": "Direct Visual Instruction"
-            }
+            (
+                "7.0_Model_Translation_Layer_Profiles."
+                "Model_Capability_Profiles.Stable_Diffusion_4"
+            ): {"Rhetoric": "Direct Visual Instruction"}
         }
-        summary = f"Identificado novo modelo SD4. Retórica: 'Direct Visual Instruction'."
+        summary = (
+            "Identificado novo modelo SD4. Retorica predominante: "
+            "'Direct Visual Instruction'."
+        )
         return patch, summary
 
     def agent_curator(self, kb_patch: Dict[str, Any]) -> Dict[str, Any]:
-        print("🔬 Agente Curator: Validando (CI/CD Simulado)...")
-        # Em produção, isso chamaria o script 'validation_pipeline.py'
+        print("[Curator] Validando patch contra pipeline de QA simulado...")
+        _ = kb_patch  # Placeholder for future validations.
         return {
             "status": "SUCCESS",
-            "tests_passed": ["Schema Validation", "Ontological Consistency", "Semantic Redundancy Check"],
+            "tests_passed": [
+                "Schema Validation",
+                "Ontological Consistency",
+                "Semantic Redundancy Check",
+            ],
         }
 
-    def agent_integrator(self, kb_patch: Dict[str, Any], summary: str, validation_report: Dict[str, Any], raw_data: Dict[str, Any]):
-        print("⚙️ Agente Integrator: Integrando conhecimento via Git...")
-        
-        commit_title = "feat(KB): Add Stable Diffusion 4 Profile (Autonomous)"
-        # Gera a descrição do PR (Pilar II.1 Template)
+    def agent_integrator(
+        self,
+        kb_patch: Dict[str, Any],
+        summary: str,
+        validation_report: Dict[str, Any],
+        raw_data: Dict[str, Any],
+    ) -> None:
+        print("[Integrator] Preparando alteracoes para commit e PR...")
+
+        patch_json = json.dumps(kb_patch, indent=2, ensure_ascii=False)
+        print(f"  Patch sugerido:\n{patch_json}")
+
+        commit_title = "feat(KB): Add Stable Diffusion 4 profile (autonomous)"
         pr_body = self.generate_pr_description(kb_patch, summary, validation_report, raw_data)
 
         branch_name = self.git_service.create_feature_branch()
-        print(f"  [Integrator] Aplicando patch ao arquivo local: {self.kb_file_path}...")
+        print(f"  Aplicando patch ao arquivo local: {self.kb_file_path}...")
+
         self.git_service.commit_changes(self.kb_file_path, commit_title, branch_name)
         self.git_service.create_pull_request(commit_title, pr_body, branch_name)
 
-    def generate_pr_description(self, patch, summary, report, raw_data):
-        """Gera a descrição do PR conforme o template do Pilar II.1 (Simulado)."""
-        
-        # Simulação dos Destaques Críticos e Resumo do Diff (Gerados por LLM em produção)
-        highlights = "Modificação de Alto Impacto: Introdução de novo perfil (SD4)."
-        diff_summary = "✅ Adicionado: 1 novo perfil de modelo a 7.0..."
+    def generate_pr_description(
+        self,
+        patch: Dict[str, Any],
+        summary: str,
+        report: Dict[str, Any],
+        raw_data: Dict[str, Any],
+    ) -> str:
+        """Build a pull-request body consistent with pillar II.1 template."""
+
+        highlights = "Adiciona novo perfil para Stable Diffusion 4."
+        diff_summary = "Inclui retorica 'Direct Visual Instruction' no perfil SD4."
+
+        patch_section = json.dumps(patch, indent=2, ensure_ascii=False)
 
         template = f"""
-🎯 **Fonte da Atualização**
-*   **Tipo:** {raw_data['source_type']}
-*   **Link:** {raw_data['source_url']}
+## Fonte da Atualizacao
+* Tipo: {raw_data['source_type']}
+* Link: {raw_data['source_url']}
 
-🧠 **Sumário do Analista (Gerado por IA)**
+## Sumario do Analista (IA)
 {summary}
 
-📊 **Resumo do Diff (Gerado por IA)**
+## Resumo do Diff (IA)
 {diff_summary}
 
-🔬 **Destaques Críticos para Revisão (Revisão Assistida por IA)**
+## Destaques Criticos para Revisao
 {highlights}
 
-✅ **Relatório do Curador (CI/CD)**
-*   **Status:** {report['status']}
+## Relatorio do Curador (CI/CD)
+* Status: {report['status']}
+* Testes: {', '.join(report.get('tests_passed', []))}
+
+## Patch sugerido
+```
+{patch_section}
+```
 """
-        return template
+        return template.strip()
+
 
 if __name__ == "__main__":
     curator = AutonomousCurator()
