@@ -1,4 +1,5 @@
 import json
+import os
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
@@ -34,28 +35,45 @@ class ChromaSyntheticaOrchestrator:
         )
 
     def _load_kb(self, kb_path: str) -> Dict[str, Any]:
-        kb_file = Path(kb_path)
+        def expand_candidates(raw_path: str) -> List[Path]:
+            if not raw_path:
+                return []
+            kb_file = Path(raw_path)
+            if kb_file.is_absolute():
+                return [kb_file]
+            base_dir = Path(__file__).resolve().parent
+            return [
+                Path.cwd() / kb_file,
+                base_dir / kb_file,
+                base_dir.parent / kb_file,
+            ]
 
-        search_paths = []
-        if kb_file.is_absolute():
-            search_paths.append(kb_file)
-        else:
-            search_paths.extend(
-                [
-                    Path.cwd() / kb_file,
-                    Path(__file__).resolve().parent / kb_file,
-                    Path(__file__).resolve().parent.parent / kb_file,
-                ]
-            )
+        env_override = os.getenv("SYNTHETICA_KB_PATH")
+
+        search_paths: List[Path] = []
+        seen: set[str] = set()
+        for candidate in (
+            expand_candidates(env_override)
+            + expand_candidates(kb_path)
+            + expand_candidates("kb/synthetica_kb_v1.0.json")
+        ):
+            key = str(candidate.resolve())
+            if key not in seen:
+                seen.add(key)
+                search_paths.append(candidate)
 
         for candidate in search_paths:
             if candidate.exists():
                 with candidate.open("r", encoding="utf-8") as handle:
                     return json.load(handle)
 
+        search_list = "\n  - ".join(str(path) for path in search_paths)
         raise FileNotFoundError(
-            "CRITICAL ERROR: knowledge base not found. "
-            f"Checked paths: {', '.join(str(path) for path in search_paths)}."
+            "CRITICAL ERROR: knowledge base not found.\n"
+            "Paths verificadas:\n"
+            f"  - {search_list}\n"
+            "Defina SYNTHETICA_KB_PATH ou execute 'python scripts/migrate_kb.py' "
+            "para gerar a KB v1.1 antes de continuar."
         )
 
     def run_workflow(

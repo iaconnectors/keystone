@@ -21,7 +21,7 @@ class ACOCompositionalFlow:
     path: Optional[str] = None
     focal_point: Optional[str] = None
 
-# (v1.1) Novo: Parâmetros Psicológicos (Pilar 4)
+# (v1.1) Novo: Parametros Psicologicos (Pilar 4)
 @dataclass
 class ACOArchetypalDynamics:
     persona_definition: Optional[str] = None
@@ -33,10 +33,10 @@ class ACOArchetypalDynamics:
 class ACOIntent:
     narrative_moment: Optional[str] = None
     compositional_flow: Optional[ACOCompositionalFlow] = None
-    # (v1.1) Adição do motor psicológico
+    # (v1.1) Adicao do motor psicologico
     archetypal_dynamics: Optional[ACOArchetypalDynamics] = None
 
-# (v1.1) Adição de ACOElements e ACOSubject para suportar Hibridismo (Pilar 2)
+# (v1.1) Adicao de ACOElements e ACOSubject para suportar Hibridismo (Pilar 2)
 @dataclass
 class ACOSubject:
     id: str
@@ -88,9 +88,9 @@ class AbstractDirectives:
     master_references_query: List[str] = field(default_factory=list)
     camera_query: Optional[str] = None
     historical_process: Optional[str] = None
-    # (v1.1) Adição de diretivas de alto nível
+    # (v1.1) Adicao de diretivas de alto nivel
     antropofagia_directive: Optional[CulturalCannibalizeDirective] = None
-    # (v1.1) Adição de estado psicológico para a Translation Matrix
+    # (v1.1) Adicao de estado psicologico para a Translation Matrix
     psychological_state: Optional[ShadowIntegrationState] = None
 
 @dataclass
@@ -118,7 +118,7 @@ class ProjectStateObject:
     core_concept: str = ""
     reasoning_chain: List[str] = field(default_factory=list)
     master_references: List[str] = field(default_factory=list)
-    # (v1.1) Adição de estilo visual derivado da Translation Matrix ou Antropofagia
+    # (v1.1) Adicao de estilo visual derivado da Translation Matrix ou Antropofagia
     visual_style_keywords: List[str] = field(default_factory=list)
     composition: Optional[str] = None
     camera_package: CameraPackage = field(default_factory=dict)
@@ -138,7 +138,7 @@ class ProjectStateObject:
  Mestres:  {masters}
  Estilo (Keywords): {styles}
 ------------------------------------------------------------------
-|                   CADEIA DE RACIOCÍNIO (Híbrida)               |
+|                   CADEIA DE RACIOCINIO (Hibrida)               |
 ------------------------------------------------------------------
   -> {chain}
 +----------------------------------------------------------------+

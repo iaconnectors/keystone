@@ -8,7 +8,7 @@ import sys
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Tuple
 
-from synthetica.services.llm_client import GeminiClient
+from synthetica.services.llm_client import BaseLLMClient, create_llm_client
 
 SEA_PLAYBOOK_PATH = Path("kb/synthetica_kb_v1.1.json")
 SEA_PLAYBOOK_KEY = "16.0_Creative_Suites_Playbooks"
@@ -84,7 +84,7 @@ def _payload_is_english(payload: Dict[str, Any]) -> bool:
     return True
 
 
-def _request_payload(llm: GeminiClient, system_prompt: str, user_prompt: str) -> Dict[str, Any]:
+def _request_payload(llm: BaseLLMClient, system_prompt: str, user_prompt: str) -> Dict[str, Any]:
     prompt = user_prompt
     last_payload: Dict[str, Any] | None = None
     for _ in range(3):
@@ -95,7 +95,7 @@ def _request_payload(llm: GeminiClient, system_prompt: str, user_prompt: str) ->
     raise RuntimeError("Gemini did not return an English response after retries.")
 
 
-def _ensure_ascii(text: str, llm: GeminiClient) -> str:
+def _ensure_ascii(text: str, llm: BaseLLMClient) -> str:
     if not text or all(ord(ch) < 128 for ch in text):
         return text
     translation_prompt = (
@@ -161,7 +161,7 @@ def _set_field(payload: Dict[str, Any], component: str, field: str | None, value
         payload[component][field] = value
 
 
-def _enforce_defaults(payload: Dict[str, Any], theme_defaults: Dict[str, Any], llm: GeminiClient) -> None:
+def _enforce_defaults(payload: Dict[str, Any], theme_defaults: Dict[str, Any], llm: BaseLLMClient) -> None:
     defaults = theme_defaults.get("defaults", {})
     camera_block = payload["camera_lens_film"]
 
@@ -286,7 +286,7 @@ def run_interaction(user_brief: str, model_name: str, theme_key: str) -> None:
     theme_data = themes[theme_key]
     theme_desc = theme_data.get("description", theme_key)
 
-    llm = GeminiClient(model_name=model_name)
+    llm = create_llm_client(model_name=model_name)
     system_prompt = build_system_prompt(playbook, theme_key, theme_data)
     user_prompt = build_user_prompt(user_brief, theme_key)
     payload_raw = _request_payload(llm, system_prompt, user_prompt)

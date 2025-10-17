@@ -22,7 +22,7 @@ from interactive_assistant import (
     build_user_prompt,
     _request_payload,
 )
-from synthetica.services.llm_client import GeminiClient
+from synthetica.services.llm_client import create_llm_client
 
 
 @lru_cache(maxsize=1)
@@ -61,7 +61,7 @@ def generate_prompt_session(
             detail=f"Theme '{theme_key}' is not configured in the playbook.",
         )
 
-    llm = GeminiClient(model_name=model_name)
+    llm = create_llm_client(model_name=model_name)
 
     system_prompt = build_system_prompt(playbook, theme_key, theme_data)
     user_prompt = build_user_prompt(brief, theme_key)

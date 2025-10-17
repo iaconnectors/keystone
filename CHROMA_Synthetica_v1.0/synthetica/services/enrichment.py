@@ -49,31 +49,7 @@ class EnrichmentService:
             f"Resolving anthropophagy directive ({directive.synthesis_mode})."
         )
 
-        devouring = directive.devouring_culture.split(".")[-1]
-        devoured = directive.devoured_element.split(".")[-1]
-
-        if devouring == "Solarpunk" and "Iris van Herpen" in devoured:
-            synthesis = [
-                "Sustainable solarpunk aesthetic",
-                "3D printed photosynthetic structures",
-                "Biophilic high-tech fashion",
-                "Complex organic forms inspired by Iris van Herpen",
-            ]
-        elif devouring == "Yoruba" and devoured == "Brutalism":
-            synthesis = [
-                "Yoruba cosmology translated into architecture",
-                "Monumental exposed concrete",
-                "Geometric patterns derived from Ifa cosmology",
-            ]
-        else:
-            devouring_keywords = self._string_list(
-                self.broker.get_flat_list(directive.devouring_culture)
-            )
-            devoured_keywords = self._string_list(
-                self.broker.get_flat_list(directive.devoured_element)
-            )
-            synthesis = devouring_keywords[:3] + devoured_keywords[:1]
-
+        synthesis = self._synthesize_anthropophagy(directive)
         pso.visual_style_keywords.extend(synthesis)
         pso.reasoning_chain.append(f"Anthropophagy result: {synthesis}.")
 
@@ -132,3 +108,55 @@ class EnrichmentService:
     @staticmethod
     def _string_list(values: List[object]) -> List[str]:
         return [str(value) for value in values if isinstance(value, (str, bytes))]
+
+    @staticmethod
+    def _normalise_label(raw: str) -> str:
+        return raw.replace("_", " ")
+
+    @staticmethod
+    def _dedupe_preserve_order(items: List[str]) -> List[str]:
+        seen = set()
+        ordered: List[str] = []
+        for item in items:
+            key = item.lower()
+            if key in seen or not item:
+                continue
+            seen.add(key)
+            ordered.append(item)
+        return ordered
+
+    def _synthesize_anthropophagy(
+        self, directive: CulturalCannibalizeDirective
+    ) -> List[str]:
+        devouring_label = self._normalise_label(
+            directive.devouring_culture.split(".")[-1]
+        )
+        devoured_label = self._normalise_label(
+            directive.devoured_element.split(".")[-1]
+        )
+
+        devouring_keywords = self._string_list(
+            self.broker.get_flat_list(directive.devouring_culture)
+        )
+        devoured_keywords = self._string_list(
+            self.broker.get_flat_list(directive.devoured_element)
+        )
+
+        if not devouring_keywords:
+            devouring_keywords = [devouring_label]
+        if not devoured_keywords:
+            devoured_keywords = [devoured_label]
+
+        synthesis: List[str] = [
+            f"{devouring_label} converges with {devoured_label} "
+            f"({directive.synthesis_mode.lower()} synthesis)"
+        ]
+        synthesis.extend(devouring_keywords[:3])
+        synthesis.extend(devoured_keywords[:2])
+
+        if directive.synthesis_mode == "Narrative":
+            synthesis.append(f"Narrative throughline led by {devouring_label}")
+        elif directive.synthesis_mode == "Symbolic":
+            synthesis.append(f"Symbolic tension between {devouring_label} and {devoured_label}")
+
+        return self._dedupe_preserve_order(synthesis)
