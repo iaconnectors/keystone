@@ -1,0 +1,54 @@
+{
+  "cases": {
+    "marketing_product_consistency": {
+      "title": "Consistent Product Launch Kit",
+      "theme": "cinematografico",
+      "brief": "Hero shot for eco-friendly skincare serum placed on reflective mineral slab, morning dew atmosphere, include tagline slot top-right.",
+      "notes": [
+        "Use Custom Characters/Objects for the hero bottle before running the case.",
+        "After generation, duplicate variants with Reimagine to build the full product carousel.",
+        "Finalize typography and CTA zones inside the Freepik editor."
+      ]
+    },
+    "tipografia_evento": {
+      "title": "Festival Poster With Typographic Hierarchy",
+      "theme": "design",
+      "brief": "Poster for 'Luz e Som Festival 2026', dominant headline centered, secondary acts listed along left column, neon magenta and electric blue palette, stage lasers in background, 16:9 format.",
+      "notes": [
+        "Prioritize text instructions in Atmosphere and Intent - SeaDream handles typography edits well.",
+        "Use Colors panel to fine-tune the neon palette after the base render.",
+        "Check kerning and alignment with Retouch commands if necessary."
+      ]
+    },
+    "storyboard_exploracao": {
+      "title": "Exploratory Storyboard, 6 Frames",
+      "theme": "criacao_de_cena",
+      "brief": "Mini series following a bio-luminescent diver exploring submerged sci-fi ruins, emphasize evolving light color per frame, maintain protagonist silhouette consistency.",
+      "notes": [
+        "Leverage Reimagine batching to spin up all six frames quickly.",
+        "Track color script changes in Notes to synchronize post-production.",
+        "Upscale final selections to 4K for presentation reels."
+      ]
+    },
+    "arquitetura_pavilhao_lux": {
+      "title": "Architectural Pavilion at Golden Hour",
+      "theme": "arquitetura",
+      "brief": "Exterior render of a modular cultural pavilion with parametric wood fins and glass curtain walls, golden hour lighting, include pedestrian flow and soft signage placeholders.",
+      "notes": [
+        "Utilize Composition to reserve areas for wayfinding graphics before generation.",
+        "After the base render, detail material highlights via Retouch to emphasize wood grain.",
+        "Generate an alternate nighttime variant with Reimagine for presentation boards."
+      ]
+    },
+    "stand_imersivo_tech": {
+      "title": "Immersive Tech Booth Experience",
+      "theme": "montagem_de_stands",
+      "brief": "Trade show booth for a spatial computing brand, central holographic demo zone, interactive pillars along the sides, cyan and amber accent lighting, include overhead signage frame.",
+      "notes": [
+        "Start with a wide composition and crop variants later inside the Freepik editor.",
+        "Use Custom Objects for branded hardware before running the preset.",
+        "Plan follow-up shots with close-ups using the same prompt in Seedream's edit mode."
+      ]
+    }
+  }
+}

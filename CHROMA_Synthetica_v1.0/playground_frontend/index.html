@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SeaDream Prompt Playground</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="sidebar" id="cases-panel">
+        <h2>Cases & Presets</h2>
+        <div id="cases-list" class="list"></div>
+      </aside>
+
+      <main class="main-panel">
+        <header class="header">
+          <h1>SeaDream Prompt Playground</h1>
+          <p class="subtitle">
+            Geração assistida de prompts com histórico e referências curtidas.
+          </p>
+        </header>
+
+        <section class="form-section">
+          <form id="prompt-form">
+            <div class="field">
+              <label for="brief">Briefing</label>
+              <textarea
+                id="brief"
+                name="brief"
+                rows="6"
+                placeholder="Descreva o briefing criativo..."
+                required
+              ></textarea>
+            </div>
+
+            <div class="grid-two">
+              <div class="field">
+                <label for="theme">Tema</label>
+                <select id="theme" name="theme"></select>
+              </div>
+
+              <div class="field">
+                <label for="model">Modelo Gemini</label>
+                <select id="model" name="model">
+                  <option value="models/gemini-2.5-pro">gemini-2.5-pro</option>
+                  <option value="models/gemini-2.0-pro">gemini-2.0-pro</option>
+                  <option value="models/gemini-1.5-pro">gemini-1.5-pro</option>
+                  <option value="models/gemini-2.5-flash">gemini-2.5-flash</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="tags">Tags (separe por vírgula)</label>
+              <input
+                id="tags"
+                name="tags"
+                type="text"
+                placeholder="campanha, produto, reels"
+              />
+            </div>
+
+            <div class="actions">
+              <button type="submit" id="generate-btn">Gerar Prompt</button>
+              <span id="status-message" class="status"></span>
+            </div>
+          </form>
+        </section>
+
+        <section class="results-section" id="results-section" hidden>
+          <div class="results-header">
+            <h2>Resultado</h2>
+            <div class="results-actions">
+              <button id="like-btn" class="secondary">Curtir referência</button>
+              <button id="copy-blueprint-btn" class="secondary">Copiar Blueprint</button>
+            </div>
+          </div>
+          <div class="result-block">
+            <h3>Blueprint</h3>
+            <pre id="blueprint-output" class="mono"></pre>
+          </div>
+          <div class="result-block">
+            <h3>Prompts por modelo</h3>
+            <div id="prompts-output"></div>
+          </div>
+          <div class="result-block" id="notes-block" hidden>
+            <h3>Checklist / Notas</h3>
+            <ul id="notes-list"></ul>
+          </div>
+        </section>
+      </main>
+
+      <aside class="sidebar" id="history-panel">
+        <h2>Histórico</h2>
+        <div class="tabs">
+          <button data-tab="all" class="tab active">Todos</button>
+          <button data-tab="liked" class="tab">Curtidos</button>
+        </div>
+        <div id="history-list" class="list"></div>
+      </aside>
+    </div>
+
+    <template id="prompt-card-template">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="theme-pill"></span>
+            <span class="timestamp"></span>
+          </div>
+          <p class="card-brief"></p>
+          <div class="card-actions">
+            <button class="use-btn">Usar como base</button>
+            <button class="like-toggle">Curtir</button>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
+
