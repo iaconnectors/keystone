@@ -29,7 +29,9 @@ class KnowledgeGapResolver:
         self.external_hub = ExternalKnowledgeHub()
         self.generated_entries: List[GapSuggestion] = []
         self._auto_log_path = (
-            Path(__file__).resolve().parent.parent / "kb" / "auto_generated_entries.json"
+            Path(__file__).resolve().parent.parent.parent
+            / "kb"
+            / "auto_generated_entries.json"
         )
 
     def ensure_paths(self, items: Iterable[Dict[str, Any]]) -> None:
@@ -73,7 +75,11 @@ class KnowledgeGapResolver:
             "topic": suggestion.topic,
             "sources": suggestion.sources,
         }
-        self.broker.inject_entry(path, entry)
+        try:
+            self.broker.inject_entry(path, entry)
+        except ValueError as exc:
+            LOGGER.warning("Failed to inject KB entry for %s: %s", path, exc)
+            return
         self._persist_suggestion(suggestion)
 
     def _log_suggestion(self, suggestion: GapSuggestion) -> None:

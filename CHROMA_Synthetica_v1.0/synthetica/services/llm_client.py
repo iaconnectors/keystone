@@ -1,4 +1,4 @@
-﻿"""Gemini client wrapper for structured prompt generation."""
+"""Gemini client wrapper for structured prompt generation."""
 
 import json
 import os
@@ -9,8 +9,8 @@ try:
     import google.generativeai as genai
 except ImportError as exc:  # pragma: no cover - handled at runtime
     raise RuntimeError(
-        "A biblioteca 'google-generativeai' é necessária para usar o GeminiClient. "
-        "Instale com 'pip install google-generativeai'."
+        "The 'google-generativeai' package is required by GeminiClient. "
+        "Install it with 'pip install google-generativeai'."
     ) from exc
 
 
@@ -34,8 +34,8 @@ class GeminiClient:
         key = api_key or os.getenv("GEMINI_API_KEY") or _load_key_from_config()
         if not key:
             raise RuntimeError(
-                "GeminiClient requer uma chave de API. Defina GEMINI_API_KEY ou crie "
-                "config/gemini_api_key.txt com a chave."
+                "GeminiClient requires an API key. Set GEMINI_API_KEY or create "
+                "config/gemini_api_key.txt using the key."
             )
 
         genai.configure(api_key=key)
@@ -43,7 +43,7 @@ class GeminiClient:
         self._safety_settings = safety_settings or {}
 
     def generate_json(self, system_prompt: str, user_prompt: str) -> Dict[str, Any]:
-        """Solicita ao modelo um JSON e faz parsing seguro."""
+        """Request JSON output from the model and parse it safely."""
         model = genai.GenerativeModel(
             self._model_name,
             system_instruction=system_prompt,
@@ -53,13 +53,31 @@ class GeminiClient:
             safety_settings=self._safety_settings,
         )
 
-        if not response.candidates:
-            raise RuntimeError("Resposta vazia do Gemini.")
+        if not getattr(response, "candidates", None):
+            raise RuntimeError("Empty response from Gemini.")
 
-        text = response.candidates[0].content.parts[0].text.strip()
+        candidate = response.candidates[0]
+        content = getattr(candidate, "content", None)
+        parts = getattr(content, "parts", []) if content else []
 
-        if text.startswith("`"):
-            text = text.strip("")
+        text_fragment: Optional[str] = None
+        for part in parts:
+            value = getattr(part, "text", None)
+            if value:
+                text_fragment = value
+                break
+
+        if not text_fragment:
+            raise RuntimeError("Gemini response did not contain text content.")
+
+        text = text_fragment.strip()
+
+        if text.startswith("```"):
+            text = text.strip("`")
+            if text.lower().startswith("json"):
+                text = text[4:].lstrip()
+        elif text.startswith("`"):
+            text = text.strip("`")
             if text.lower().startswith("json"):
                 text = text[4:].lstrip()
 
@@ -67,5 +85,5 @@ class GeminiClient:
             return json.loads(text)
         except json.JSONDecodeError as exc:
             raise ValueError(
-                f"Não foi possível decodificar JSON do Gemini. Conteúdo: {text}"
+                f"Could not decode JSON returned by Gemini. Content: {text}"
             ) from exc

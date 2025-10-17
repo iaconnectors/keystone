@@ -1,6 +1,6 @@
-import json
-from typing import Any, Dict, List, Optional
 import difflib
+from typing import Any, Dict, List, Optional
+
 
 class KnowledgeBroker:
     def __init__(self, kb_data: Dict[str, Any]):
@@ -8,65 +8,55 @@ class KnowledgeBroker:
         self._cache: Dict[str, List[Any]] = {}
         print(
             "[KnowledgeBroker] Initialised for KB ID: "
-            f"{kb_data.get('KB_ID', 'Desconhecido')}."
+            f"{kb_data.get('KB_ID', 'Unknown')}."
         )
 
-    # ==============================================================================
-    # FUNÇÃO 'get_entry' CORRIGIDA
-    # ==============================================================================
-    
+    # ==========================================================================
+    # Entry navigation helpers
+    # ==========================================================================
+
     def get_entry(self, path: str, default: Any = None) -> Any:
         """
-        Navega pela KB.
-        Esta versão corrigida trata chaves que contêm pontos
-        (e.g., "11.0_Narrative_Structure_and_Storytelling").
+        Navigate the knowledge base using dotted paths.
+        Handles keys that already contain dots (e.g. "11.0_Narrative...").
         """
         try:
-            parts = path.split('.')
+            parts = path.split(".")
             current_level = self._kb
-            
+
             i = 0
             while i < len(parts):
                 if not isinstance(current_level, dict):
-                    # Não é um dicionário, não podemos navegar mais
                     return default
 
-                # 1. Tenta encontrar a chave simples primeiro (e.g., "Solarpunk")
                 current_key = parts[i]
                 if current_key in current_level:
                     current_level = current_level[current_key]
                     i += 1
                     continue
 
-                # 2. Se a chave simples falhar, tenta construir uma chave composta
-                # (e.g., "11.0_Narrative_Structure_and_Storytelling")
                 compound_key = current_key
                 found_compound = False
-                
-                # Itera de j=i+1 até o fim das partes
                 for j in range(i + 1, len(parts)):
                     compound_key += "." + parts[j]
                     if compound_key in current_level:
-                        # Encontrou uma chave composta válida!
                         current_level = current_level[compound_key]
-                        i = j + 1  # Pula o índice para depois da chave composta
+                        i = j + 1
                         found_compound = True
                         break
-                
+
                 if found_compound:
                     continue
 
-                # 3. Se nem a chave simples nem a composta funcionaram
                 return default
-                
+
             return current_level
         except Exception:
-            # Captura qualquer outro erro (e.g., TypeError) e retorna o padrão
             return default
 
-    # ==============================================================================
-    # O RESTANTE DO ARQUIVO (Sem alterações)
-    # ==============================================================================
+    # ==========================================================================
+    # Cache-aware utilities
+    # ==========================================================================
 
     def get_flat_list(self, path: str) -> List[Any]:
         if path in self._cache:
@@ -78,11 +68,8 @@ class KnowledgeBroker:
 
     def validate_entry(self, path: str, entry: Any) -> bool:
         flat_list = self.get_flat_list(path)
-        # (v1.1) Validação agora usa get_entry corrigido
         if not flat_list and entry:
-             # Se a lista está vazia porque get_entry falhou, retorna False
-             # (A menos que a entrada esperada também seja vazia/None)
-             return False
+            return False
         return any(str(item).lower() == str(entry).lower() for item in flat_list)
 
     def find_closest_match(self, path: str, query: str, cutoff: float = 0.6) -> Optional[str]:
@@ -93,39 +80,75 @@ class KnowledgeBroker:
         return matches[0] if matches else None
 
     def inject_entry(self, path: str, entry: Any) -> None:
-        """Injects an entry into the in-memory KB cache (used for gap fills)."""
-        self._kb[path] = entry
-        self._cache.clear()
+        """Inject or override an entry inside the KB using dotted paths."""
+        parts = path.split(".")
+        current_level: Dict[str, Any] = self._kb
+        i = 0
+
+        while i < len(parts):
+            if not isinstance(current_level, dict):
+                break
+
+            current_key = parts[i]
+            if current_key in current_level:
+                if i == len(parts) - 1:
+                    current_level[current_key] = entry
+                    self._cache.clear()
+                    return
+                current_level = current_level[current_key]
+                i += 1
+                continue
+
+            compound_key = current_key
+            found_compound = False
+            for j in range(i + 1, len(parts)):
+                compound_key += "." + parts[j]
+                if compound_key in current_level:
+                    if j == len(parts) - 1:
+                        current_level[compound_key] = entry
+                        self._cache.clear()
+                        return
+                    current_level = current_level[compound_key]
+                    i = j + 1
+                    found_compound = True
+                    break
+
+            if found_compound:
+                continue
+
+            remaining_key = ".".join(parts[i:])
+            current_level[remaining_key] = entry
+            self._cache.clear()
+            return
+
+        raise ValueError(f"Cannot inject entry at '{path}': parent is not a mapping.")
+
+    # ==========================================================================
+    # Internal helpers
+    # ==========================================================================
 
     def _flatten(self, data: Any) -> List[Any]:
         """
-        (v1.1) Ajustado para lidar com a nova estrutura do Masters Lexicon (Dicionário de Objetos).
+        Flatten nested KB structures into a simple list.
+        Handles lexicon dictionaries whose values are rich objects.
         """
-        items = []
+        items: List[Any] = []
         if isinstance(data, list):
             for item in data:
                 items.extend(self._flatten(item))
         elif isinstance(data, dict):
-            # Heurística v1.1: Detecta se é uma estrutura de léxico.
-            # Se os valores do dicionário forem objetos complexos (outros dicionários),
-            # assumimos que as chaves são as entidades que queremos extrair (e.g., Nomes de Artistas).
-
-            # Verifica se o dicionário não está vazio e se o primeiro valor é um dicionário
             if data and isinstance(next(iter(data.values()), None), dict):
-                # Verifica se a maioria (>80%) dos valores são dicionários
-                is_entity_lexicon = sum(isinstance(v, dict) for v in data.values()) / len(data.values()) > 0.8
+                dict_count = sum(isinstance(v, dict) for v in data.values())
+                is_entity_lexicon = dict_count / len(data.values()) > 0.8
             else:
                 is_entity_lexicon = False
 
             if is_entity_lexicon:
-                # Extrai as chaves (nomes) e formata (e.g. Ganesh_Pyne -> Ganesh Pyne)
-                formatted_keys = [k.replace('_', ' ') for k in data.keys()]
+                formatted_keys = [k.replace("_", " ") for k in data.keys()]
                 items.extend(formatted_keys)
             else:
-                # Comportamento padrão: recursão nos valores
                 for value in data.values():
                     items.extend(self._flatten(value))
         else:
-            # Valor final (folha)
             items.append(data)
         return items
