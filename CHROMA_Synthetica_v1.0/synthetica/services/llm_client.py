@@ -1,7 +1,8 @@
-"""Gemini client wrapper for structured prompt generation."""
+﻿"""Gemini client wrapper for structured prompt generation."""
 
 import json
 import os
+from pathlib import Path
 from typing import Any, Dict, Optional
 
 try:
@@ -13,6 +14,14 @@ except ImportError as exc:  # pragma: no cover - handled at runtime
     ) from exc
 
 
+def _load_key_from_config() -> Optional[str]:
+    config_path = Path(__file__).resolve().parent.parent / "config" / "gemini_api_key.txt"
+    if config_path.exists():
+        key = config_path.read_text(encoding="utf-8").strip()
+        return key or None
+    return None
+
+
 class GeminiClient:
     """Thin wrapper around the Gemini GenerativeModel API."""
 
@@ -22,11 +31,11 @@ class GeminiClient:
         model_name: str = "models/gemini-2.5-pro",
         safety_settings: Optional[Dict[str, Any]] = None,
     ) -> None:
-        key = api_key or os.getenv("GEMINI_API_KEY")
+        key = api_key or os.getenv("GEMINI_API_KEY") or _load_key_from_config()
         if not key:
             raise RuntimeError(
-                "GeminiClient requer uma chave de API. "
-                "Defina a variável de ambiente GEMINI_API_KEY."
+                "GeminiClient requer uma chave de API. Defina GEMINI_API_KEY ou crie "
+                "config/gemini_api_key.txt com a chave."
             )
 
         genai.configure(api_key=key)
@@ -49,14 +58,14 @@ class GeminiClient:
 
         text = response.candidates[0].content.parts[0].text.strip()
 
-        # Alguns modelos envolvem o JSON em markdown; fazemos limpeza básica.
-        if text.startswith("```"):
-            text = text.strip("`")
-            # Remove o prefixo como ```json
+        if text.startswith("`"):
+            text = text.strip("")
             if text.lower().startswith("json"):
                 text = text[4:].lstrip()
 
         try:
             return json.loads(text)
         except json.JSONDecodeError as exc:
-            raise ValueError(f"Não foi possível decodificar JSON do Gemini. Conteúdo: {text}") from exc
+            raise ValueError(
+                f"Não foi possível decodificar JSON do Gemini. Conteúdo: {text}"
+            ) from exc

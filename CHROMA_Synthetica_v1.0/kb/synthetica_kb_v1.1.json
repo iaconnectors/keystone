@@ -1167,5 +1167,618 @@
       "Splash Photography": "Líquidos em alta velocidade, congelamento de movimento.",
       "Product Photography": "Iluminação de estúdio precisa para destacar formas e materiais."
     }
+  },
+  "16.0_Creative_Suites_Playbooks": {
+    "16.1_SeaDream_Freepik": {
+      "metadata": {
+        "title": "Codex — SeaDream (Freepik) 4.0 → 4.4 + Manual Seedream 4",
+        "version": "1.0.0",
+        "last_updated": "2025-10-16",
+        "language": "pt-BR",
+        "owner": "Wallace (usuario)",
+        "scope": [
+          "Operação do SeaDream no ecossistema Freepik",
+          "Capacidades principais e fluxos",
+          "Ferramentas do AI Suite",
+          "Framework de prompt (Manual Seedream 4)",
+          "Glossário"
+        ],
+        "source_documents": [
+          {
+            "filename": "Dominando o SeaDream no Freepik_ Da Versão 4.0 à Atualização Estratégica 4.4.pdf"
+          },
+          {
+            "filename": "MANUAL GERADOR DE PROMPT SEEDREAM 4.pdf"
+          }
+        ]
+      },
+      "como_opera": {
+        "arquitetura": "Geração → edição por linguagem natural → iteração, tudo numa mesma sessão/GUI.",
+        "fluxo_gui": [
+          "Gerar imagem base no SeaDream",
+          "Ajustar com controles visuais (Style, Colors, Composition etc.)",
+          "Editar cirurgicamente via Retouch",
+          "Enviar para o editor Freepik para compor com logos/ícones/fontes",
+          "Exportar nos formatos/rácios necessários"
+        ],
+        "orquestracao_ai_suite": {
+          "ideia": "O Gerador é o hub; o valor vem de combinar módulos (Reimagine, Retouch, Upscale, Composition, Custom Characters/Style).",
+          "papeis": {
+            "prompt_textual": "Define conteúdo: sujeito, ação, cenário.",
+            "controles_ui": "Definem estética, paleta, layout e direção de câmera."
+          }
+        },
+        "pipeline_exemplo": [
+          "Ideação no SeaDream",
+          "Buscar ativos (logos/ícones) na biblioteca",
+          "Compor/editar tudo no editor integrado",
+          "Exportar e recortar em rácios (1:1, 9:16, 16:9) conforme canal"
+        ],
+        "mentalidade": [
+          "Trate a 1ª geração como ponto de partida",
+          "Itere rápido (Reimagine, variações em lote)",
+          "Use a ferramenta certa: Retouch para microcorreções; Composition para layout"
+        ]
+      },
+      "o_que_faz": {
+        "capacidade": [
+          "Alta definição (até 4K/hiper-detalhe) com inferência rápida",
+          "Tipografia avançada: altera texto preservando cor/fonte/alinhamento",
+          "Geração sequencial de séries coerentes (até 9 imagens)",
+          "Direção de câmera/estética via UI (ângulo, plano, Style Tuner)",
+          "Consistência de personagem/produto com Custom Characters/Objects + Reimagine + Retouch",
+          "Multi-model na mesma casa (SeaDream premium para foto/edição complexa/múltiplas referências)",
+          "Pronto para empresas (tendência de API para automação)"
+        ]
+      },
+      "o_que_possui": {
+        "editor_integrado": true,
+        "biblioteca_ativos": [
+          "logos",
+          "ícones",
+          "fotos",
+          "fontes"
+        ],
+        "ai_suite": [
+          "Reimagine",
+          "Retouch",
+          "Upscale",
+          "Composition",
+          "Custom Characters",
+          "Custom Style"
+        ],
+        "controles_direcao": [
+          "Style/Style Tuner",
+          "Colors (paletas)",
+          "Composition (layout/zonas)",
+          "Parâmetros de câmera/ângulo/lente",
+          "Reforços de qualidade (ex.: 4K/hiper-detalhe)"
+        ]
+      },
+      "framework_prompt_seedream4": {
+        "filosofia": "Diretor (intenção) + Diretor de Fotografia Virtual (estética/técnica)",
+        "regras": [
+          "Atmosfera primeiro; depois Intenção",
+          "Checklist obrigatório; perguntas proativas para lacunas",
+          "Saída final em inglês",
+          "Rigor extra para séries (consistência)"
+        ],
+        "estrutura_mestra": [
+          "Image/Frame Content — sujeito + ação/pose + ambiente",
+          "Cinematography/Composition — tipo de plano + ângulo + regra de composição",
+          "Camera, Lens & Film Grain — câmera + lente + filme/processo",
+          "Lighting & Color — luz (fonte/qualidade) + temperatura + relação cromática",
+          "DNA Visual — referência artística + clima geral + refinamentos de qualidade",
+          "Output Parameters — proporção + estilo",
+          "Ordem prática: deixar 'DNA Visual' ao final do prompt para dar prioridade à estética"
+        ],
+        "fluxo_padrao": [
+          "Receber visão/brief",
+          "Aplicar checklist e esclarecer lacunas",
+          "Montar 1 prompt único em inglês",
+          "Gerar no SeaDream e iterar"
+        ],
+        "avancado": {
+          "ponderacao_estilos": "Misture estilos com pesos claros no texto",
+          "multi_referencia": "Combine personagem/fundo/estilo a partir de múltiplas imagens com instruções explícitas",
+          "series": "Gerar 'negativos digitais' e aplicar Color Script/grão iguais na pós para consistência"
+        }
+      },
+      "workflows": [
+        {
+          "nome": "Marketing de produto consistente",
+          "objetivo": "Manter fidelidade visual de um produto ao longo de campanhas.",
+          "passos": [
+            "Treinar Objects/LoRA do produto",
+            "Planejar com Composition (zonas e hierarquia)",
+            "Escrever prompt de cena conciso",
+            "Gerar em lote (variações com Reimagine)",
+            "Ajustar com Retouch e finalizar no editor"
+          ],
+          "ferramentas": [
+            "Objects",
+            "Composition",
+            "Reimagine",
+            "Retouch",
+            "Editor"
+          ],
+          "sinais_de_qualidade": [
+            "mesmas proporções",
+            "mesma paleta",
+            "detalhe de material coerente"
+          ]
+        },
+        {
+          "nome": "Cartaz com tipografia avançada",
+          "objetivo": "Controlar texto preservando layout.",
+          "passos": [
+            "Priorizar instruções de texto no prompt",
+            "Gerar base no SeaDream",
+            "Editar texto por linguagem natural",
+            "Ajustar paleta/estilo no Colors/Style",
+            "Exportar nos formatos por canal"
+          ],
+          "ferramentas": [
+            "SeaDream",
+            "Retouch",
+            "Colors",
+            "Style",
+            "Editor"
+          ]
+        },
+        {
+          "nome": "Storyboard/Series",
+          "objetivo": "Séries coerentes de 6–9 quadros.",
+          "passos": [
+            "Definir Intenção + Atmosfera (Color Script)",
+            "Montar prompt-mestre com estrutura mestra",
+            "Gerar lote (até 9) com Reimagine",
+            "Padronizar grão/cor na pós (Editor/Upscale)"
+          ],
+          "ferramentas": [
+            "SeaDream",
+            "Reimagine",
+            "Upscale",
+            "Editor"
+          ]
+        }
+      ],
+      "glossario": [
+        {
+          "termo": "SeaDream 4.0",
+          "definicao": "Gerador com arquitetura unificada (gera/edita por linguagem natural) e fluxo iterativo."
+        },
+        {
+          "termo": "GUI Web (Freepik)",
+          "definicao": "Interface visual em navegador integrada ao editor e à biblioteca."
+        },
+        {
+          "termo": "AI Suite",
+          "definicao": "Conjunto de módulos Freepik (Reimagine, Retouch, Upscale, Composition, Custom Characters/Style)."
+        },
+        {
+          "termo": "Reimagine",
+          "definicao": "Gera variações a partir de uma imagem base; útil para explorar estilos mantendo consistência."
+        },
+        {
+          "termo": "Retouch",
+          "definicao": "Edições cirúrgicas/locais sem recomeçar a geração."
+        },
+        {
+          "termo": "Upscale",
+          "definicao": "Aumento de resolução e nitidez do render."
+        },
+        {
+          "termo": "Composition",
+          "definicao": "Ferramenta de layout/zonas que guia posicionamento e hierarquia visual."
+        },
+        {
+          "termo": "Custom Characters",
+          "definicao": "Treinamento de personagem/mascote para consistência em séries (técnica tipo LoRA)."
+        },
+        {
+          "termo": "Custom Style",
+          "definicao": "Travamento de estética/look & feel para repetibilidade de marca."
+        },
+        {
+          "termo": "Objects",
+          "definicao": "Treinamento focal em produtos/itens para fidelidade entre cenas."
+        },
+        {
+          "termo": "Style / Style Tuner",
+          "definicao": "Seleção e ajuste fino de estética global."
+        },
+        {
+          "termo": "Colors",
+          "definicao": "Painel para aplicar/ajustar paletas de cor após a geração."
+        },
+        {
+          "termo": "Direção de câmera",
+          "definicao": "Tipo de plano, ângulo, lente, profundidade de campo; linguagem fotográfica entendida pelo modelo."
+        },
+        {
+          "termo": "Tipografia avançada",
+          "definicao": "Edição de texto preservando fonte/alinhamento/paleta."
+        },
+        {
+          "termo": "Geração sequencial",
+          "definicao": "Produção de séries coerentes (até 9 imagens) no mesmo lote."
+        },
+        {
+          "termo": "Negativos digitais",
+          "definicao": "Imagens neutras/limpas para padronização posterior de cor/grão na pós."
+        }
+      ],
+      "melhores_praticas": [
+        "Escreva prompt conciso e objetivo para conteúdo; deixe estética/layout para UI",
+        "Itere com variações (Reimagine) em vez de tentar um 'prompt perfeito'",
+        "Use Composition para layout em vez de descrever longamente posição de elementos",
+        "Concentre tipografia no início do prompt e refine por linguagem natural",
+        "Padronize cor/grão em séries via Editor/Upscale (consistência)"
+      ],
+      "mapeamento_ferramenta_capacidade": [
+        {
+          "ferramenta": "SeaDream (gerador)",
+          "capacidades": [
+            "Geração base",
+            "Edição por linguagem natural",
+            "Controle de proporção"
+          ]
+        },
+        {
+          "ferramenta": "Reimagine",
+          "capacidades": [
+            "Variação em lote",
+            "Exploração de estilos"
+          ]
+        },
+        {
+          "ferramenta": "Retouch",
+          "capacidades": [
+            "Correção local",
+            "Troca de elementos"
+          ]
+        },
+        {
+          "ferramenta": "Upscale",
+          "capacidades": [
+            "Resolução 2K/4K",
+            "Nitidez/limpeza"
+          ]
+        },
+        {
+          "ferramenta": "Composition",
+          "capacidades": [
+            "Layout",
+            "Zonas de texto",
+            "Hierarquia"
+          ]
+        },
+        {
+          "ferramenta": "Custom Characters/Objects",
+          "capacidades": [
+            "Consistência de personagem/produto"
+          ]
+        },
+        {
+          "ferramenta": "Style/Style Tuner/Colors",
+          "capacidades": [
+            "Estética global",
+            "Paleta de cor",
+            "Repetibilidade"
+          ]
+        }
+      ],
+      "import_relevancia": {
+        "tags": [
+          "seadream",
+          "freepik",
+          "ai-suite",
+          "prompting",
+          "tipografia",
+          "series",
+          "consistencia",
+          "workflow"
+        ],
+        "prioridades": [
+          {
+            "item": "framework_prompt_seedream4.estrutura_mestra",
+            "relevance_score": 0.98
+          },
+          {
+            "item": "workflows[0] (Marketing de produto consistente)",
+            "relevance_score": 0.95
+          },
+          {
+            "item": "o_que_faz.capacidade",
+            "relevance_score": 0.92
+          },
+          {
+            "item": "o_que_possui.ai_suite",
+            "relevance_score": 0.9
+          }
+        ]
+      },
+      "exemplos_prompt": [
+        {
+          "cenario": "Cartaz de show (tipografia avançada)",
+          "prompt_en": "Concert poster, headline 'Nova Brasil FM — Tocando de Verdade', center-aligned typography, keep color palette purple/white, subject: acoustic guitar artist on stage, medium shot, audience bokeh, cinematic lighting warm key light, balanced composition with text zones preserved, highly detailed 4K, final typography editable",
+          "notas": [
+            "Depois, ajustar datas/textos por linguagem natural no SeaDream",
+            "Refinar paleta em Colors"
+          ]
+        },
+        {
+          "cenario": "Produto em still (consistência)",
+          "prompt_en": "Studio still life of [@produto], on matte background, 3/4 angle, softbox top-left, shallow depth of field, realistic material rendering, 4K hyper-detailed, neutral color script",
+          "notas": [
+            "Treinar Objects do produto antes",
+            "Aplicar o mesmo Color Script na pós para séries"
+          ]
+        }
+      ],
+      "themes": {
+        "cinematografico": {
+          "description": "Film language focused on drama, pacing, and immersive storytelling.",
+          "atmosphere_hint": "Emphasize cinematic tension, emotional pacing, and atmospheric depth.",
+          "content_hint": "Describe protagonist, conflict beats, and supporting cast with implied motion.",
+          "composition_hint": "Reference shot types (wide, close-up, over-the-shoulder) and camera moves (dolly, pan).",
+          "camera_hint": "Mention cinema cameras (ARRI Alexa, RED) and expressive lenses (anamorphic, fast primes).",
+          "lighting_hint": "Use motivated lighting, key/fill ratios, and cinematic color contrast such as teal vs orange.",
+          "dna_hint": "Cite directors or cinematographers (e.g., Denis Villeneuve, Roger Deakins).",
+          "output_hint": "Suggest 2.39:1 or 16:9 frames, 4K stills, continuity notes for storyboards.",
+          "checklist": [
+            "Which beat of the narrative arc do we frame?",
+            "Should the camera move or remain static?"
+          ],
+          "notes": [
+            "Remind to plan establishing shots or coverage if needed."
+          ],
+          "context": "cinematic",
+          "defaults": {
+            "camera": "shot on ARRI Alexa 35 cinema camera",
+            "lens": "using Cooke anamorphic prime lenses",
+            "treatment": "captured on Kodak Vision3 500T film stock with subtle grain",
+            "dp": "Roger Deakins",
+            "dp_aliases": [
+              "roger deakins",
+              "darius khondji",
+              "wally pfister"
+            ]
+          }
+        },
+        "publicitario": {
+          "description": "Marketing visuals with strong call-to-action and brand consistency.",
+          "atmosphere_hint": "Keep tone persuasive, confident, and aligned with brand personality.",
+          "content_hint": "Highlight hero product, key benefit, and supporting lifestyle cues.",
+          "composition_hint": "Use clear hierarchy, negative space, and space for headline/CTA.",
+          "camera_hint": "Favor clean focal lengths (35-85mm) and angles that showcase the product hero.",
+          "lighting_hint": "Apply polished lighting, controlled reflections, and brand-driven color harmony.",
+          "dna_hint": "Reference brand guidelines, typography style, and campaign keywords.",
+          "output_hint": "Deliver multiple aspect ratios (1:1, 4:5, 9:16) ready for ads.",
+          "checklist": [
+            "What is the primary call-to-action?",
+            "Which brand colors or typography must appear?"
+          ],
+          "notes": [
+            "Reserve safe area for legal copy or logos."
+          ],
+          "context": "commercial",
+          "defaults": {
+            "camera": "shot on ARRI Alexa LF cinema camera",
+            "lens": "with Zeiss Master Prime lenses",
+            "treatment": "commercial-grade clean post-production pipeline",
+            "dp": "Peter Lindbergh",
+            "dp_aliases": [
+              "peter lindbergh",
+              "david lachapelle",
+              "annie leibovitz"
+            ]
+          }
+        },
+        "design": {
+          "description": "Graphic design compositions driven by layout, typography, and color.",
+          "atmosphere_hint": "Aim for intentional use of negative space and design harmony.",
+          "content_hint": "Describe core elements (headline, subhead, imagery, iconography).",
+          "composition_hint": "Mention grid system, alignment, and balance principles.",
+          "camera_hint": "Focus on flat or orthographic views for clarity.",
+          "lighting_hint": "Keep lighting minimal; emphasize palette and contrast.",
+          "dna_hint": "Reference design movements (Swiss, Memphis, Bauhaus) or inspirations.",
+          "output_hint": "Specify resolution, bleed, or export format for print/digital.",
+          "checklist": [
+            "Which typography styles or weights are required?",
+            "Should we follow a specific brand grid?"
+          ],
+          "notes": [
+            "Call out editable text layers or vector delivery if needed."
+          ],
+          "context": "commercial",
+          "defaults": {
+            "camera": "shot on ARRIFLEX 435 35mm film camera",
+            "lens": "with spherical prime lenses",
+            "treatment": "scanned on 4K for crisp graphic presentation",
+            "dp": "Saul Bass Art Direction",
+            "dp_aliases": [
+              "saul bass",
+              "paula scher",
+              "massimo vignelli"
+            ]
+          }
+        },
+        "arquitetura": {
+          "description": "Architectural visualization with spatial storytelling.",
+          "atmosphere_hint": "Convey sense of scale, materiality, and ambient experience.",
+          "content_hint": "Describe structure, context, and human scale elements.",
+          "composition_hint": "Indicate camera height, vanishing points, and framing (one-point, two-point).",
+          "camera_hint": "Mention wide lenses, isometric or aerial perspectives when relevant.",
+          "lighting_hint": "Specify natural vs artificial lighting, time of day, and material highlights.",
+          "dna_hint": "Reference architects or movements (Tadao Ando, Zaha Hadid, brutalism, biomimicry).",
+          "output_hint": "Request renders suitable for boards (4K, 300 dpi) and orthographic overlays.",
+          "checklist": [
+            "Which materials or finishes must be highlighted?",
+            "Is the viewpoint interior, exterior, or aerial?"
+          ],
+          "notes": [
+            "Include annotations for circulation or structural elements if necessary."
+          ],
+          "context": "cinematic",
+          "defaults": {
+            "camera": "shot on ARRI Alexa LF with architectural rig",
+            "lens": "using Canon tilt-shift 17mm lens",
+            "treatment": "HDR architectural grade finish",
+            "dp": "Tadao Ando Cinematography",
+            "dp_aliases": [
+              "tadao ando",
+              "luca guadagnino",
+              "john toll"
+            ]
+          }
+        },
+        "montagem_de_stands": {
+          "description": "Experiential booth and stand design for events or fairs.",
+          "atmosphere_hint": "Project welcoming, branded energy that supports visitor flow.",
+          "content_hint": "Describe hero zone, interaction points, signage, and product displays.",
+          "composition_hint": "Highlight layout zones, height hierarchy, and directional cues for attendees.",
+          "camera_hint": "Use perspectives that show traffic flow (3/4 view, bird’s-eye).",
+          "lighting_hint": "Combine functional lighting (wash, spots) with ambient brand color washes.",
+          "dna_hint": "Reference experiential design trends or brand case studies.",
+          "output_hint": "Deliver elevations or 3D views plus modular breakdowns.",
+          "checklist": [
+            "Qual é a metragem do stand?",
+            "Há requisitos para fluxo ou ponto focal?"
+          ],
+          "notes": [
+            "Sugira materiais modulares para montagem rápida."
+          ],
+          "context": "commercial",
+          "defaults": {
+            "camera": "shot on ARRI Alexa Mini with gimbal",
+            "lens": "using Angenieux EZ zoom lenses",
+            "treatment": "event-grade HDR finishing",
+            "dp": "Fabien Baron",
+            "dp_aliases": [
+              "fabien baron",
+              "david fincher",
+              "janusz kaminski"
+            ]
+          }
+        },
+        "criacao_de_personagem": {
+          "description": "Character ideation emphasizing silhouette, personality, and storytelling.",
+          "atmosphere_hint": "Capture the character’s core emotion and archetype.",
+          "content_hint": "Detail backstory cues, costume elements, props, and expression.",
+          "composition_hint": "Mention turnarounds, hero pose, and silhouette readability.",
+          "camera_hint": "Use focal lengths that flatter the character (50-85mm) or stylized orthographic views.",
+          "lighting_hint": "Design lighting to reinforce personality (rim lights, dramatic contrast).",
+          "dna_hint": "Reference character designers, animation studios, or illustrative styles.",
+          "output_hint": "Request front/side/3/4 views, 4K sheets, and color palette swatches.",
+          "checklist": [
+            "What personality traits must be obvious?",
+            "Are there cultural or brand references to respect?"
+          ],
+          "notes": [
+            "Include accessory callouts and material hints."
+          ],
+          "context": "cinematic",
+          "defaults": {
+            "camera": "shot on ARRI Alexa Mini LF",
+            "lens": "with Zeiss Supreme Prime lenses",
+            "treatment": "captured on Kodak Portra 400 film scan aesthetic",
+            "dp": "Greig Fraser",
+            "dp_aliases": [
+              "greig fraser",
+              "greg fraser",
+              "seamus mcgarvey"
+            ]
+          }
+        },
+        "criacao_de_cena": {
+          "description": "Environment or scene layout focusing on storytelling beats.",
+          "atmosphere_hint": "Establish mood through lighting, weather, and spatial rhythm.",
+          "content_hint": "Describe key set pieces, foreground/midground/background, and character interactions.",
+          "composition_hint": "Highlight depth cues, staging, and leading lines.",
+          "camera_hint": "Propose camera placement to guide viewer eye (crane, steadicam, static wide).",
+          "lighting_hint": "Balance practical lights with atmosphere (fog, volumetrics, color grading).",
+          "dna_hint": "Reference concept art studios, matte painting styles, or cinematographers.",
+          "output_hint": "Provide multi-angle or mood board frames for art direction.",
+          "checklist": [
+            "What narrative beat occurs in this scene?",
+            "Should we suggest camera continuity to adjacent shots?"
+          ],
+          "notes": [
+            "Include environmental storytelling props or motifs."
+          ],
+          "context": "cinematic",
+          "defaults": {
+            "camera": "shot on ARRI Alexa LF cinema camera",
+            "lens": "with Panavision anamorphic glass",
+            "treatment": "graded with cinematic log workflow",
+            "dp": "Emmanuel Lubezki",
+            "dp_aliases": [
+              "emmanuel lubezki",
+              "chivo",
+              "bruno delbonnel"
+            ]
+          }
+        },
+        "estudo_de_objeto": {
+          "description": "Object study highlighting form, material, and function.",
+          "atmosphere_hint": "Keep tone analytical yet aspirational (museum or product study).",
+          "content_hint": "Detail geometry, exploded views, and material transitions.",
+          "composition_hint": "Use macro crops, orthographic projections, and callout space.",
+          "camera_hint": "Specify macro lenses or orthographic renders with controlled perspective.",
+          "lighting_hint": "Employ studio lighting to reveal specular highlights and texture.",
+          "dna_hint": "Reference industrial design photography or render studios.",
+          "output_hint": "Deliver 4K plates and diagram layers for documentation.",
+          "checklist": [
+            "Which materials or finishes must be emphasized?",
+            "Need exploded or cross-section views?"
+          ],
+          "notes": [
+            "Consider backdrop color to emphasize silhouette."
+          ],
+          "context": "commercial",
+          "defaults": {
+            "camera": "shot on ARRI Alexa 65 with macro rig",
+            "lens": "using Laowa 24mm probe lens",
+            "treatment": "studio-grade macro photography finish",
+            "dp": "Karl Taylor",
+            "dp_aliases": [
+              "karl taylor",
+              "mitchell kanashkevich",
+              "nick knight"
+            ]
+          }
+        },
+        "estudo_de_personagem": {
+          "description": "Analytical character study for documentation and consistency.",
+          "atmosphere_hint": "Neutral and well-lit to emphasize anatomy and wardrobe.",
+          "content_hint": "Provide front, side, back, and expression sheets.",
+          "composition_hint": "Align poses on clean grid with scale references.",
+          "camera_hint": "Use orthographic views or consistent focal lengths for comparability.",
+          "lighting_hint": "Apply even three-point lighting or HDRI neutral setups.",
+          "dna_hint": "Reference style guides, production bibles, or animation studios.",
+          "output_hint": "Export character turnarounds at high resolution with color swatches.",
+          "checklist": [
+            "Are there costume variations or accessories to include?",
+            "Should we show proportion guides or skeleton overlay?"
+          ],
+          "notes": [
+            "Reserve space for annotation and callouts of fabric/material."
+          ],
+          "context": "cinematic",
+          "defaults": {
+            "camera": "shot on ARRI Alexa 65",
+            "lens": "using ARRI Signature Prime lenses",
+            "treatment": "studio-grade neutral color pipeline",
+            "dp": "Hoyte van Hoytema",
+            "dp_aliases": [
+              "hoyte van hoytema",
+              "hoyte van hoytema asc"
+            ]
+          }
+        }
+      }
+    }
   }
 }
