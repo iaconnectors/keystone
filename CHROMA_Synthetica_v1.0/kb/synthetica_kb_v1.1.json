@@ -331,6 +331,349 @@
           "Narrative_Function": "O Mentor (Quirônico); O Psicopompo (Anúbico); O Governante Sábio."
         }
       }
+    },
+    "2.9_Cinematic_Semiotic_Codes": {
+      "Emotion_to_Archetype": {
+        "power": {
+          "archetype": "The Sovereign",
+          "visual_codes": [
+            "elevated throne-like staging",
+            "low-angle framing",
+            "rigid posture"
+          ]
+        },
+        "loneliness": {
+          "archetype": "The Orphan",
+          "visual_codes": [
+            "isolated figure in negative space",
+            "eyeline toward void",
+            "cool desaturated palette"
+          ]
+        },
+        "luxury": {
+          "archetype": "The Lover",
+          "visual_codes": [
+            "opulent textures (silk, velvet)",
+            "warm rim lighting",
+            "close focus on tactile details"
+          ]
+        },
+        "rebellion": {
+          "archetype": "The Outlaw",
+          "visual_codes": [
+            "canted angles",
+            "disrupted symmetry",
+            "high-contrast practical lighting"
+          ]
+        }
+      },
+      "Symbol_Library": {
+        "sovereignty": [
+          "crowns",
+          "architectural columns",
+          "long corridors"
+        ],
+        "isolation": [
+          "lone chair",
+          "distant window light",
+          "fogged glass"
+        ],
+        "nostalgia": [
+          "film grain overlays",
+          "polaroid borders",
+          "sunset lens flare"
+        ],
+        "fear": [
+          "tight framing",
+          "shallow breathing audio cues",
+          "flickering fluorescents"
+        ]
+      },
+      "Gestural_Language": {
+        "authority": [
+          "chin raised",
+          "hands folded behind back",
+          "stillness"
+        ],
+        "vulnerability": [
+          "shoulders slumped",
+          "hands clutching chest",
+          "eyes avoiding camera"
+        ],
+        "desire": [
+          "fingers tracing object",
+          "lean-in posture",
+          "soft-focus gaze"
+        ],
+        "tension": [
+          "clenched jaw",
+          "rapid head turns",
+          "body leaning away from threat"
+        ]
+      }
+    },
+    "3.4_Graphic_Design_Language": {
+      "Layout_Principles": {
+        "Swiss_International": {
+          "grid_system": "Modular baseline grid, left alignment",
+          "visual_codes": [
+            "asymmetrical balance",
+            "sans-serif typography",
+            "red/black/white palette"
+          ],
+          "use_when": "Corporate visual identities, editorial clarity"
+        },
+        "Memphis": {
+          "grid_system": "Freeform layered shapes",
+          "visual_codes": [
+            "vibrant geometric motifs",
+            "playful contrast",
+            "pattern repetition"
+          ],
+          "use_when": "Youth-oriented branding, event posters"
+        },
+        "Bauhaus": {
+          "grid_system": "Geometric construction, primary shapes",
+          "visual_codes": [
+            "primary colors",
+            "bold diagonals",
+            "functional typography"
+          ],
+          "use_when": "Modernist, functional product campaigns"
+        }
+      },
+      "Typography_Semiotics": {
+        "Serif": [
+          "tradition",
+          "credibility",
+          "editorial heritage"
+        ],
+        "Sans_Serif": [
+          "modernity",
+          "clarity",
+          "digital native"
+        ],
+        "Script": [
+          "personal",
+          "intimate",
+          "boutique"
+        ],
+        "Display": [
+          "attention-grabbing",
+          "expressive"
+        ]
+      }
+    },
+    "3.5_Architectural_Storytelling": {
+      "Spatial_Archetypes": {
+        "Sanctuary": [
+          "high ceilings",
+          "diffused daylight",
+          "sacred symmetry"
+        ],
+        "Labyrinth": [
+          "narrow corridors",
+          "repetitive patterns",
+          "low key lighting"
+        ],
+        "Agora": [
+          "open plazas",
+          "human scale markers",
+          "warm communal tones"
+        ],
+        "Monolith": [
+          "minimal surfaces",
+          "foreground negative space",
+          "emphasis on vertical lines"
+        ]
+      },
+      "Material_Symbols": {
+        "Concrete": [
+          "brutalism",
+          "weight",
+          "permanence"
+        ],
+        "Glass": [
+          "transparency",
+          "modernity",
+          "openness"
+        ],
+        "Timber": [
+          "warmth",
+          "craftsmanship",
+          "biophilic connection"
+        ],
+        "Steel": [
+          "industrial strength",
+          "precision",
+          "high-tech"
+        ]
+      }
+    },
+    "3.6_Brand_Persuasion_Codes": {
+      "Value_Proposition": {
+        "confidence": [
+          "direct eye contact portraits",
+          "bold uppercase typography",
+          "spotlight on hero product"
+        ],
+        "trust": [
+          "clean white space",
+          "soft gradients",
+          "documentary lighting on real people"
+        ],
+        "exclusivity": [
+          "dark vignette",
+          "selective focus on premium materials",
+          "gold foil accents"
+        ]
+      },
+      "Call_To_Action_Motifs": {
+        "urgency": [
+          "countdown timers",
+          "dynamic diagonal compositions",
+          "warm accent color"
+        ],
+        "assurance": [
+          "testimonial quote overlays",
+          "symmetrical layout",
+          "cool calming palette"
+        ],
+        "innovation": [
+          "glossy reflections",
+          "neon edge lighting",
+          "futuristic iconography"
+        ]
+      }
+    },
+    "3.7_Experiential_Space_Archetypes": {
+      "Booth_Zones": {
+        "Hero_Stage": [
+          "elevated platform",
+          "focused key lighting",
+          "large-scale LED backdrop"
+        ],
+        "Engagement_Pod": [
+          "interactive touch table",
+          "360 branding band",
+          "ambient soundscape"
+        ],
+        "Hospitality_Bar": [
+          "warm underlighting",
+          "soft seating clusters",
+          "brand scent dispensers"
+        ]
+      },
+      "Visitor_Flow_Cues": {
+        "Signal_Towers": [
+          "vertical illuminated pylons",
+          "wayfinding typography"
+        ],
+        "Threshold_Frames": [
+          "arched entry portals",
+          "projection mapping reveals"
+        ],
+        "Memory_Nodes": [
+          "photo booth moments",
+          "giveaway displays",
+          "AR checkpoints"
+        ]
+      }
+    },
+    "3.8_Character_Emotion_Atlas": {
+      "Archetypes": {
+        "Hero": [
+          "upright silhouette",
+          "open chest posture",
+          "forward lean"
+        ],
+        "Mentor": [
+          "soft eye contact",
+          "hands behind back",
+          "layered garments"
+        ],
+        "Trickster": [
+          "tilted head",
+          "asymmetrical stance",
+          "mismatched color accents"
+        ],
+        "Shadow": [
+          "hooded gaze",
+          "clenched fists",
+          "low key rim light"
+        ]
+      },
+      "Costume_Semiotics": {
+        "fabric": {
+          "armor": "strength, protection",
+          "silk": "elegance, allure",
+          "denim": "approachability, timelessness"
+        },
+        "palette": {
+          "monochrome": "discipline, mystery",
+          "analogous": "harmony, calm",
+          "complementary": "dynamic tension"
+        }
+      }
+    },
+    "3.9_Environment_Drama_Grammar": {
+      "Depth_Cues": [
+        "foreground silhouette framing",
+        "particle haze layers",
+        "occluded practical lights"
+      ],
+      "Story_Beats": {
+        "inciting_incident": [
+          "explosive burst of light",
+          "shattered props mid-air"
+        ],
+        "climax": [
+          "converging leading lines",
+          "intensified color saturation"
+        ],
+        "resolution": [
+          "soft focus glow",
+          "balanced symmetry"
+        ]
+      }
+    },
+    "3.10_Product_Study_Semiotics": {
+      "Material_Focus": {
+        "glass": [
+          "caustic highlights",
+          "black velvet background"
+        ],
+        "metal": [
+          "gradient sweep lighting",
+          "cool blue accent"
+        ],
+        "organic": [
+          "macro dew droplets",
+          "earth-toned backdrop"
+        ]
+      },
+      "Functional_Narrative": [
+        "exploded view callouts",
+        "360 rotational sequences",
+        "scale comparison props"
+      ]
+    },
+    "3.11_Performance_Documentation": {
+      "Turnaround_Guides": [
+        "front/side/back orthographic views",
+        "neutral pose expression sheet",
+        "silhouette pass"
+      ],
+      "Annotation_Language": [
+        "joint markers",
+        "fabric fold arrows",
+        "color swatch blocks"
+      ],
+      "Consistency_Rules": [
+        "fixed camera height",
+        "identical lens for each pose",
+        "matching lighting setup"
+      ]
     }
   },
   "3.0_Visual_Language_and_Composition": {
@@ -534,6 +877,14 @@
         "Andrei Tarkovsky": {
           "Signature": "Planos longos e poética espiritual.",
           "Use_When": "Explorar contemplacao metafisica"
+        },
+        "Chloé Zhao": {
+          "Signature": "Minimalist natural light, intimate handheld compositions.",
+          "Use_When": "Tell grounded human stories with expansive landscapes."
+        },
+        "Barry Jenkins": {
+          "Signature": "Color grade as emotional motif, lingering portraiture.",
+          "Use_When": "Explore poetic, character-driven narratives."
         }
       },
       "DoPs": {
@@ -548,6 +899,14 @@
         "Hoyte van Hoytema": {
           "Signature": "Escala IMAX, contraste elevado.",
           "Use_When": "Narrativas grandiosas"
+        },
+        "Rachel Morrison": {
+          "Signature": "Textural imagery, empathetic framing, period authenticity.",
+          "Use_When": "Biographical or historical dramas needing warmth and grain."
+        },
+        "Bradford Young": {
+          "Signature": "Underexposed chiaroscuro, rich blacks, spiritual atmosphere.",
+          "Use_When": "Stories requiring soulful, contemplative mood."
         }
       }
     },
@@ -570,6 +929,30 @@
         "Gregory Crewdson": {
           "Signature": "Cenas cinematograficas encenadas.",
           "Use_When": "Atmosferas suburbanas misteriosas"
+        }
+      },
+      "Commercial": {
+        "Annie_Leibovitz": {
+          "Signature": "Cinematic portraiture, narrative lighting.",
+          "Use_When": "Brand storytelling with celebrity or characters."
+        },
+        "Nick_Knight": {
+          "Signature": "High gloss fashion experimentation.",
+          "Use_When": "Avant-garde product hero shots."
+        },
+        "Dan_Winter": {
+          "Signature": "Precision lighting for product/device reveals.",
+          "Use_When": "Technology campaigns needing clarity."
+        }
+      },
+      "Product_Still": {
+        "Karl_Taylor": {
+          "Signature": "Studio precision, clean gradient lighting.",
+          "Use_When": "Packaging, consumer goods macro detail."
+        },
+        "Mitchell_Kanashkevich": {
+          "Signature": "Adventure gear storytelling, rugged textures.",
+          "Use_When": "Outdoor equipment, travel accessories."
         }
       }
     },
@@ -634,6 +1017,40 @@
         "Refik_Anadol": {},
         "Beeple": {},
         "Ash_Thorp": {}
+      },
+      "Graphic_Design": {
+        "Paula_Scher": {
+          "Signature": "Typographic maps, bold use of scale.",
+          "Use_When": "Need impactful brand typography."
+        },
+        "Stefan_Sagmeister": {
+          "Signature": "Expressive hand-crafted visuals, storytelling.",
+          "Use_When": "Avant-garde campaigns requiring surprise."
+        },
+        "Massimo_Vignelli": {
+          "Signature": "Minimalist grids, Helvetica discipline.",
+          "Use_When": "Require timeless corporate systems."
+        }
+      },
+      "Architectural_Directors": {
+        "Denis_Villeneuve": {
+          "Signature": "Scale-driven futurism, controlled color scripts.",
+          "Use_When": "Need epic architectural storytelling."
+        },
+        "Christopher_Nolan": {
+          "Signature": "Structural metaphors, practical effects maximalism.",
+          "Use_When": "Mind-bending architecture narratives."
+        }
+      },
+      "Experiential_Design": {
+        "Moment_Factory": {
+          "Signature": "Interactive audio-visual installations.",
+          "Use_When": "Immersive booth or retail experiences."
+        },
+        "Invisible_North": {
+          "Signature": "Brand storytelling through physical spaces.",
+          "Use_When": "Experiential marketing tours."
+        }
       }
     },
     "5.4_Expanded_Design_Movements": {
@@ -649,7 +1066,15 @@
         "Recommended_For": "Narrativas de magia suave e ecologia"
       },
       "Satoshi Kon": "Surrealismo psicológico, edição fluida.",
-      "Genndy Tartakovsky": "Estilização geométrica, ação dinâmica."
+      "Genndy Tartakovsky": "Estilização geométrica, ação dinâmica.",
+      "Glen_Keane": {
+        "Signature": "Expressive anatomical line work.",
+        "Recommended_For": "Character emotion studies and heroic arcs."
+      },
+      "Makoto_Shingai": {
+        "Signature": "Atmospheric scene compositions, light interplay.",
+        "Recommended_For": "Environment/scene mood boards."
+      }
     },
     "5.6_Fashion_and_Costume_Design": {
       "Description": "Moda conceitual e figurino.",
@@ -659,6 +1084,12 @@
     "5.7_Scientific_Illustration": {
       "Description": "Precisão e estética na ciência.",
       "Ernst Haeckel": "Formas biológicas detalhadas, simetria radial."
+    },
+    "5.8_Reference_Libraries": {
+      "Character_Study": {
+        "Line_of_Action": "Database of character poses and gesture breakdowns.",
+        "Character_Design_References": "Curated board of expressions, outfits, silhouettes."
+      }
     }
   },
   "6.0_Workflow_and_State_Management": {
@@ -1064,6 +1495,172 @@
       "Fractals": "Padrões auto-similares em diferentes escalas.",
       "Perlin Noise": "Textura procedural natural e orgânica.",
       "Voronoi Diagrams": "Padrões de células (e.g., pedra rachada)."
+    },
+    "10.10_Cinematic_Camera_Packages": {
+      "ARRI_Alexa_35": {
+        "Sensor": "4.6K Super 35 ARRI ALEV 4",
+        "Use_Case": "Modern narrative, HDR-friendly pipeline.",
+        "Notes": [
+          "Supports REVEAL Color Science",
+          "Ideal for handheld or Steadicam with compact build."
+        ]
+      },
+      "ARRIFLEX_235": {
+        "Sensor": "35mm film (2-perf/3-perf)",
+        "Use_Case": "Lightweight film camera for handheld/chase sequences.",
+        "Notes": [
+          "Matches ARRICAM LT optics",
+          "Requires film dailies pipeline."
+        ]
+      },
+      "Panavision_Millennium_DXL2": {
+        "Sensor": "8K RED MONSTRO VV with Panavision Color Matrix",
+        "Use_Case": "Large-format epics, VFX-friendly plate acquisition.",
+        "Notes": [
+          "Pairs with Panavision T-series anamorphics",
+          "High-bandwidth data workflow."
+        ]
+      }
+    },
+    "10.11_Graphic_Design_Assets": {
+      "Grid_Templates": [
+        "Modular 12-column grid",
+        "Baseline grid",
+        "Golden ratio layout"
+      ],
+      "Software_Workflows": [
+        "Adobe InDesign with linked libraries",
+        "Figma component systems",
+        "Affinity Publisher"
+      ],
+      "Export_Pipelines": [
+        "Print-ready PDF/X-4 with bleed",
+        "Responsive web assets @2x/@3x",
+        "Motion graphic boards for After Effects"
+      ]
+    },
+    "10.12_Architectural_Rendering_Pipelines": {
+      "Software": [
+        "Autodesk Revit + Enscape",
+        "Rhino + Grasshopper + V-Ray",
+        "Unreal Engine for real-time walkthrough"
+      ],
+      "Output": [
+        "4K board-ready stills",
+        "Orthographic elevations with annotations",
+        "VR-ready navigation packages"
+      ],
+      "Lighting_Scenarios": [
+        "Golden hour exterior HDRI",
+        "Interior mixed lighting (3000K practical + 5600K skylight)",
+        "Nighttime facade accent lighting"
+      ]
+    },
+    "10.13_Marketing_Output_Specs": {
+      "Social": [
+        "1080x1080 square",
+        "1080x1920 vertical stories",
+        "1200x628 horizontal ad"
+      ],
+      "Print": [
+        "A3 bleed 3mm",
+        "Poster 24x36 inches CMYK",
+        "Brochure tri-fold with safe area"
+      ],
+      "Motion": [
+        "15s vertical cut, 30s horizontal master",
+        "CTA end card 3 seconds"
+      ],
+      "Checklist": [
+        "CTA lockup",
+        "Legal text zone",
+        "Brand color compliance"
+      ]
+    },
+    "10.14_Experiential_Booth_Systems": {
+      "Structures": [
+        "Aluminum truss modular kit",
+        "Custom scenic walls",
+        "LED mesh displays"
+      ],
+      "Logistics": [
+        "Crating and transport plan",
+        "On-site assembly timeline",
+        "Power distribution map"
+      ],
+      "Deliverables": [
+        "Floor plan 1:50",
+        "Elevation boards",
+        "Material/finish schedule"
+      ]
+    },
+    "10.15_Character_Pipeline": {
+      "Assets": [
+        "Turnaround sheets",
+        "Color scripts",
+        "Prop callouts"
+      ],
+      "Software": [
+        "ZBrush + Substance Painter",
+        "Blender Grease Pencil",
+        "Procreate for line passes"
+      ],
+      "Consistency": [
+        "Universal scale reference",
+        "Pose library reuse",
+        "Rig-ready topology notes"
+      ]
+    },
+    "10.16_Scene_Layout_Toolchain": {
+      "Previz": [
+        "Storyboard Pro",
+        "Unreal Engine previs",
+        "Blender Eevee blocking"
+      ],
+      "Environment_Generation": [
+        "Kitbashing libraries",
+        "Photogrammetry scans",
+        "Midjourney concept paints"
+      ],
+      "Delivery": [
+        "Coverage map",
+        "Camera continuity sheet",
+        "Lighting plot"
+      ]
+    },
+    "10.17_Product_Study_Lab": {
+      "Rigs": [
+        "Motorized turntable",
+        "Overhead boom for top shots",
+        "Polarizing filter setup"
+      ],
+      "Lighting": [
+        "Three-point strobe with diffusion",
+        "Specular control flags",
+        "Cross-polarized macro kit"
+      ],
+      "Post": [
+        "Focus stacking workflow",
+        "Retouching presets",
+        "Color calibration LUTs"
+      ]
+    },
+    "10.18_Character_Documentation_Workflow": {
+      "Templates": [
+        "Model sheet grid",
+        "Expression sheet layout",
+        "Silhouette thumbnails board"
+      ],
+      "Quality_Control": [
+        "Pose proportion checklist",
+        "Palette swatch approval",
+        "Fabric/material legend"
+      ],
+      "Handoff": [
+        "Layered PSD with annotations",
+        "Turntable video reference",
+        "CSV metadata for asset database"
+      ]
     }
   },
   "11.0_Narrative_Structure_and_Storytelling": {
