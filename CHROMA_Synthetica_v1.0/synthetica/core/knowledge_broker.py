@@ -92,6 +92,11 @@ class KnowledgeBroker:
         matches = difflib.get_close_matches(query, options, n=1, cutoff=cutoff)
         return matches[0] if matches else None
 
+    def inject_entry(self, path: str, entry: Any) -> None:
+        """Injects an entry into the in-memory KB cache (used for gap fills)."""
+        self._kb[path] = entry
+        self._cache.clear()
+
     def _flatten(self, data: Any) -> List[Any]:
         """
         (v1.1) Ajustado para lidar com a nova estrutura do Masters Lexicon (Dicionário de Objetos).

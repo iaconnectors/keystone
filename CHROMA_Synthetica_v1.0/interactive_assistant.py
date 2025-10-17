@@ -11,6 +11,7 @@ from synthetica.core.models import (
 )
 from synthetica.orchestrator import ChromaSyntheticaOrchestrator
 from synthetica.services.llm_client import GeminiClient
+from synthetica.services.knowledge_gap import KnowledgeGapResolver
 
 
 TARGET_MODELS = [
@@ -168,6 +169,7 @@ def create_aco_from_payload(payload: Dict[str, Any]) -> (AbstractCreativeObject,
 def run_interaction(user_brief: str, model_name: str) -> None:
     orchestrator = ChromaSyntheticaOrchestrator()
     broker = orchestrator.broker
+    gap_resolver = KnowledgeGapResolver(broker)
 
     context = build_context(broker)
     system_prompt = build_system_prompt(context)
@@ -176,6 +178,38 @@ def run_interaction(user_brief: str, model_name: str) -> None:
     llm = GeminiClient(model_name=model_name)
     payload = llm.generate_json(system_prompt, user_prompt)
 
+    paths_to_check: List[Dict[str, Any]] = []
+    for subject in payload.get("subjects", []):
+        ref = subject.get("hybrid_ontology_ref")
+        if ref:
+            paths_to_check.append({"path": ref, "hint": subject.get("description")})
+
+    anthropophagy = payload.get("anthropophagy") or {}
+    if anthropophagy.get("devouring_culture"):
+        paths_to_check.append(
+            {
+                "path": anthropophagy["devouring_culture"],
+                "hint": payload.get("narrative_moment"),
+            }
+        )
+    if anthropophagy.get("devoured_element"):
+        paths_to_check.append(
+            {
+                "path": anthropophagy["devoured_element"],
+                "hint": payload.get("narrative_moment"),
+            }
+        )
+    dynamics_data = payload.get("archetypal_dynamics") or {}
+    if dynamics_data.get("manifestation"):
+        paths_to_check.append(
+            {
+                "path": dynamics_data["manifestation"],
+                "hint": dynamics_data.get("shadow_state"),
+            }
+        )
+
+    gap_resolver.ensure_paths(paths_to_check)
+
     aco, pipeline = create_aco_from_payload(payload)
 
     print("\n=== JSON gerado pelo Gemini ===")
@@ -183,6 +217,16 @@ def run_interaction(user_brief: str, model_name: str) -> None:
 
     print("\n=== Gerando prompts com a CHROMA Synthetica ===")
     orchestrator.run_workflow(aco, TARGET_MODELS, operator_pipeline=pipeline)
+
+    if gap_resolver.generated_entries:
+        print("\n=== Entradas auto-geradas para lacunas da KB ===")
+        for suggestion in gap_resolver.generated_entries:
+            print(f"- {suggestion.path} ← {suggestion.topic}")
+            for source, payload in suggestion.sources.items():
+                summary = payload.get("summary", "")[:180].strip()
+                print(f"    [{source}] {payload.get('title')}: {summary}")
+                if payload.get("url"):
+                    print(f"    URL: {payload['url']}")
 
 
 def main() -> None:
